@@ -1,27 +1,3 @@
 title: "Carlos Reyes"
 description: "Reflexiones, medicina, filosofía y disciplina."
-theme: minimal-mistakes-jekyll
-url: "https://carlosreyes.github.io"
-minimal_mistakes_skin: "default"
-markdown: kramdown
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-paginate: 5
-
-author:
-  name   : "Carlos Reyes"
-  avatar : "/assets/images/profile.jpg"
-  bio    : "Estudiante de medicina | Filosofía | Salud Pública | Crecimiento personal"
-
-collections:
-  posts:
-    output: true
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
+theme: minima
