@@ -8,7 +8,7 @@ permalink: /sobre-mi/
   Soy Carlos Reyes, estudiante de medicina en la UNAH.
 Este blog es mi cuaderno público de trabajo. Un espacio donde registro investigaciones sobre temas relevantes 
 o de mi interés, registro lo que estudio, lo que descubro y lo que intento convertir en hábitos, carácter y 
-visión. 
+visión.                                                                                                  
   Surgió de la siguiente intuición: Lo que aprendemos no es un tesoro que se encierra, sino una 
 herramienta que se comparte. El conocimiento que no circula se pudre. La reflexión que no se pone a prueba
 se vuelve dogma.
