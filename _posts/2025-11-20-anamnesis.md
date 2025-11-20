@@ -1,7 +1,7 @@
 ---
 title: "Anamnesis: guía para estudiantes de medicina"
 date: 2025-11-20
-categories: [Medicina, Semiología]
+categories: [Medicina]
 ---
 
 Introducción
