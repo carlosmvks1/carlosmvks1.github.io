@@ -2,7 +2,6 @@
 layout: page
 title: Proyectos personales
 permalink: /proyectos-personales/
-category: proyectos personales
 description: Aquí documento mis proyectos a largo plazo: blog, estudios, entrenamiento, escritura, cuaderno de observaciones, y más.
 
 ---
