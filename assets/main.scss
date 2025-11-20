@@ -1,25 +1,37 @@
 ---
 ---
 
-/* 1) Primero cargamos el tema base */
+/* 1. Importar el tema base de Minima */
 @import "minima";
 
-/* 2) Luego importamos la fuente que queremos usar */
+/* 2. Fuente Inter desde Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-/* 3) Y al final SOBREESCRIBIMOS la fuente del tema */
+/* 3. Sobrescribir la fuente en todo el sitio */
+
 html,
-body,
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif !important;
+}
+
+/* Títulos y navegación */
 .site-title,
 .site-nav,
 .post-title,
-.page-title,
+.page-title {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif !important;
+}
+
+/* Contenido del post */
 .post-content,
 .post-content p,
 .post-content li {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif !important;
 }
+
 
 /* ---------- PALETA CLARA / OSCURA ---------- */
 
