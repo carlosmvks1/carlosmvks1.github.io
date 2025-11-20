@@ -11,10 +11,16 @@ body {
 }
 
 /* 2. Contenedor general */
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* contenido de la página dentro del wrapper */
 .page-content {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;  /* deja respiración a los lados */
 }
 
 
@@ -131,13 +137,14 @@ body {
 
 /* ----- HOME EN DOS COLUMNAS ----- */
 
-.home-layout {
+ .home-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.5fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
   gap: 3rem;
   align-items: flex-start;
   margin-top: 2.5rem;
 }
+
 
 
 /* que el contenido no quede tan centrado, se siente más a la izquierda */
