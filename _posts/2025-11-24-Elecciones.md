@@ -305,8 +305,9 @@ Y esa ambivalencia es exactamente lo que la hace tan poderosa y tan peligrosa.
 --- 
 # **¿Qué propone cada candidato?**
 
-Acá hacemos un paneo limpio, sin tecnicismos pesados, de **qué dice realmente cada candidato que hará**.  
-Después pasamos una gran tabla comparativa.
+
+Ahora, veamos un paneo limpio, de **qué dice realmente cada candidato que hará**.  
+Después una gran tabla comparativa.
 
 # **– Economía y Empleo**
 
