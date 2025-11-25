@@ -20,7 +20,7 @@ Lo que sigue no busca convencer a nadie, sino mostrar, con la mayor claridad pos
 Porque decidir no es escoger quién habla más bonito.  Es entender **qué futuro estamos poniendo en la mesa**
 
 
-#Retrato de cada candidato. 
+# Retrato de cada candidato. 
 
 
 ## **Salvador Nasralla — El anticorrupción que quiere rehacer el Estado desde las entrañas**
