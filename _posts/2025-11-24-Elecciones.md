@@ -592,6 +592,8 @@ Su lógica: **Estado protector, inclusivo y redistributivo**, ampliando cobertur
 # **Tabla Comparativa Global de Candidatos**.
 
 ### **COMPARATIVA GLOBAL**
+
+
 | **Área**                  | **Salvador Nasralla**                                                                                                              | **Nasry "Tito" Asfura**                                                                                                          | **Rixi Moncada**                                                                                        |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | **Modelo económico**      | Liberal-digital. Productividad, reglas claras, reducción de costos y modernización del Estado.                                     | Proempresa clásico. Orden fiscal, estabilidad macro, incentivos al sector privado.                                               | Estado ampliado, cooperativas, banca pública, empresas estatales y reforma redistributiva.              |
