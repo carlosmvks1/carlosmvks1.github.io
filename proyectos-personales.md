@@ -1,14 +1,15 @@
 ---
 layout: category
-title: Proyectos personales
-permalink: /proyectos-personales/
-categories: [proyectos]
-description: "Aquí documento mis proyectos a largo plazo: blog, estudios, entrenamiento, escritura, cuaderno de observaciones y más."
+title: Proyectos persolanes
+permalink: /proyectos/
+category: proyectos
+description: Aquí reúno las piezas que no pertenecen a ninguna otra casa: prosa, análisis, ensayos, intuiciones, ejercicios de pensamiento.
+Es el cuarto intermedio donde mi mente dialoga consigo misma, sin la obligación de ajustarse a una disciplina específica.
 
 ---
 
 {% for post in site.posts %}
-  {% if post.categories contains "Proyectos_personales" %}
+  {% if post.categories contains "pyoyectos" %}
   - [{{ post.title }}]({{ post.url }})
   {% endif %}
 {% endfor %}
