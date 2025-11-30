@@ -10,6 +10,8 @@ Pienso, leo y escribo porque descubrí que uno se vuelve más claro cuando se ob
 
 Me guía una intuición sencilla: si uno no piensa lo que vive, termina viviendo cosas que nunca pensó. Y si no se escribe, lo poco que se entiende se desvanece.
 
+Lo que aprendemos no es un tesoro que se encierra, sino una herramienta que se comparte. El conocimiento que no circula se pudre. La reflexión que no se pone a prueba se vuelve dogma.
+
 Con el tiempo, mis intereses se fueron acomodando en cuatro líneas que trato de cultivar:
 
 **Medicina**:
