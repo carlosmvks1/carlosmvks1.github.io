@@ -4,28 +4,23 @@ layout: default
 
 <div class="home">
 
-
-  <!-- INTRO DEL INDEX -->
+  <!-- HERO / INTRO DEL INDEX: viene de index.md -->
   <div class="home-intro">
     {{ content }}
   </div>
 
-  {% assign featured = site.posts.first %}
+  {%- assign featured_post = site.posts.first -%}
+  {%- assign esenciales = site.posts | where: "featured", true | sort: "date" | reverse -%}
 
   <div class="home-layout">
-    <!-- COLUMNA IZQUIERDA: posts (excepto el destacado) -->
-    <div class="home-main">
+
+    <!-- COLUMNA IZQUIERDA: LO MÁS RECIENTE -->
+    <section class="home-main">
       {% if site.posts.size > 0 %}
-        <h2 class="post-list-heading">
-          {{ page.list_title | default: "Posts" }}
-        </h2>
+        <h2 class="section-title">Lo más reciente</h2>
 
         <ul class="post-list">
-          {% for post in site.posts %}
-            {% if post.url == featured.url %}
-              {% continue %}
-            {% endif %}
-
+          {% for post in site.posts limit: 4 %}
             <li class="post-card small-card">
               <span class="post-meta">
                 {{ post.date | date: "%b %-d, %Y" }}
@@ -37,7 +32,9 @@ layout: default
                 </a>
               </h3>
 
-              <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+              {% if post.excerpt %}
+                <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+              {% endif %}
 
               <a class="read-more" href="{{ post.url | relative_url }}">
                 Leer más →
@@ -46,31 +43,90 @@ layout: default
           {% endfor %}
         </ul>
       {% endif %}
-    </div>
+    </section>
 
-    <!-- COLUMNA DERECHA: POST MÁS RECIENTE -->
+    <!-- COLUMNA DERECHA: LECTURAS ESENCIALES -->
     <aside class="home-featured">
-      {% if featured %}
-        <div class="post-card featured-card">
-          <span class="post-meta">
-            {{ featured.date | date: "%b %-d, %Y" }}
-          </span>
+      <div class="post-card featured-card">
+        <span class="post-meta">Lecturas esenciales</span>
 
-          <h2 class="featured-title">
-            <a class="post-link" href="{{ featured.url | relative_url }}">
-              {{ featured.title | escape }}
-            </a>
-          </h2>
+        <h2 class="featured-title">Si solo leés tres cosas</h2>
 
-          <p class="featured-excerpt">
-            {{ featured.excerpt | strip_html | truncate: 260 }}
-          </p>
+        <p class="featured-excerpt">
+          Textos que marcan el tono de este cuaderno: donde pienso más hondo,
+          donde elijo ser brutalmente honesto conmigo y con lo que escribo.
+        </p>
 
-          <a class="read-more" href="{{ featured.url | relative_url }}">
-            Leer el artículo completo →
-          </a>
-        </div>
-      {% endif %}
+        <ul class="featured-list">
+          {% if esenciales and esenciales.size > 0 %}
+            {% for post in esenciales limit: 3 %}
+              <li>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                <span class="featured-date">
+                  · {{ post.date | date: "%b %-d, %Y" }}
+                </span>
+              </li>
+            {% endfor %}
+          {% else %}
+            <!-- fallback: si aún no marcaste featured, usa los 3 más recientes -->
+            {% for post in site.posts limit: 3 %}
+              <li>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                <span class="featured-date">
+                  · {{ post.date | date: "%b %-d, %Y" }}
+                </span>
+              </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
     </aside>
+
   </div>
+
+  <!-- PILARES DEL CUADERNO -->
+  <section class="pillars">
+    <h2 class="section-title">Pilares de este cuaderno</h2>
+
+    <div class="pillars-grid">
+
+      <article class="pillar-card">
+        <h3>Medicina</h3>
+        <p>
+          Apuntes clínicos, fisiopatología, farmacología y todo lo que voy
+          aprendiendo entre sala, libros y guardias.
+        </p>
+        <a href="{{ '/medicina.html' | relative_url }}">Ver más →</a>
+      </article>
+
+      <article class="pillar-card">
+        <h3>Filosofía</h3>
+        <p>
+          Ensayos donde intento pensar con calma: virtud, carácter, tiempo,
+          autores que me acompañan y me incomodan.
+        </p>
+        <a href="{{ '/filosofia.html' | relative_url }}">Ver más →</a>
+      </article>
+
+      <article class="pillar-card">
+        <h3>Fe y ética</h3>
+        <p>
+          Lo que la Biblia, la conciencia y la experiencia dicen cuando se
+          sientan a dialogar sin máscaras.
+        </p>
+        <a href="{{ '/fe-y-etica.html' | relative_url }}">Ver más →</a>
+      </article>
+
+      <article class="pillar-card">
+        <h3>Honduras y futuro</h3>
+        <p>
+          Análisis del país, elecciones, crimen organizado y los futuros
+          posibles que estamos construyendo (o descuidando).
+        </p>
+        <a href="{{ '/proyectos-personales.html' | relative_url }}">Ver más →</a>
+      </article>
+
+    </div>
+  </section>
+
 </div>
