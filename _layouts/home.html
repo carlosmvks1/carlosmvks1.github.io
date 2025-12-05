@@ -4,28 +4,22 @@ layout: default
 
 <div class="home">
 
-  <!-- INTRO DEL INDEX -->
+  <!-- INTRO DEL INDEX (hero de index.md) -->
   <div class="home-intro">
     {{ content }}
   </div>
 
-  {% assign featured = site.posts.first %}
+  {%- assign esenciales = site.posts | where: "featured", true | sort: "date" | reverse -%}
 
   <div class="home-layout">
 
-    <!-- COLUMNA IZQUIERDA -->
+    <!-- COLUMNA IZQUIERDA: POSTS MÁS RECIENTES -->
     <div class="home-main">
       {% if site.posts.size > 0 %}
-        <h2 class="post-list-heading">
-          {{ page.list_title | default: "Posts" }}
-        </h2>
+        <h2 class="post-list-heading">Lo más reciente</h2>
 
         <ul class="post-list">
-          {% for post in site.posts %}
-            {% if post.url == featured.url %}
-              {% continue %}
-            {% endif %}
-
+          {% for post in site.posts limit: 6 %}
             <li class="post-card small-card">
               <span class="post-meta">
                 {{ post.date | date: "%b %-d, %Y" }}
@@ -48,29 +42,41 @@ layout: default
       {% endif %}
     </div>
 
-    <!-- COLUMNA DERECHA: POST MÁS RECIENTE -->
+    <!-- COLUMNA DERECHA: LECTURAS FUNDAMENTALES -->
     <aside class="home-featured">
-      {% if featured %}
-        <div class="post-card featured-card">
-          <span class="post-meta">
-            {{ featured.date | date: "%b %-d, %Y" }}
-          </span>
+      <div class="post-card featured-card">
+        <span class="post-meta">Lecturas fundamentales</span>
 
-          <h2 class="featured-title">
-            <a class="post-link" href="{{ featured.url | relative_url }}">
-              {{ featured.title | escape }}
-            </a>
-          </h2>
+        <h2 class="featured-title">Si solo leés tres cosas</h2>
 
-          <p class="featured-excerpt">
-            {{ featured.excerpt | strip_html | truncate: 260 }}
-          </p>
+        <p class="featured-excerpt">
+          Textos que condensan lo que intento hacer aquí: pensar con rigor,
+          escribir con honestidad y dejar registro de lo que realmente me importa.
+        </p>
 
-          <a class="read-more" href="{{ featured.url | relative_url }}">
-            Leer el artículo completo →
-          </a>
-        </div>
-      {% endif %}
+        <ul class="featured-list">
+          {% if esenciales and esenciales.size > 0 %}
+            {% for post in esenciales limit: 3 %}
+              <li>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                <span class="featured-date">
+                  · {{ post.date | date: "%b %-d, %Y" }}
+                </span>
+              </li>
+            {% endfor %}
+          {% else %}
+            <!-- Fallback: si aún no marcaste featured, usa los 3 más recientes -->
+            {% for post in site.posts limit: 3 %}
+              <li>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                <span class="featured-date">
+                  · {{ post.date | date: "%b %-d, %Y" }}
+                </span>
+              </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
     </aside>
 
   </div>
