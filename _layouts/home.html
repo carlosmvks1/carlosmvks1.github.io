@@ -14,14 +14,14 @@ layout: default
   <div class="home-layout">
 
     <!-- COLUMNA IZQUIERDA: POSTS MÁS RECIENTES -->
-    <div class="home-main">
+    <div class="home-main" id="lo-mas-reciente">
       {% if site.posts.size > 0 %}
         <h2 class="post-list-heading">Lo más reciente</h2>
 
         <ul class="post-list">
           {% for post in site.posts limit: 6 %}
             <li class="post-card small-card">
-              <span class="post-meta">
+              <span class="post-meta subtle-meta">
                 {{ post.date | date: "%b %-d, %Y" }}
               </span>
 
@@ -31,7 +31,7 @@ layout: default
                 </a>
               </h3>
 
-              <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+              <p>{{ post.excerpt | strip_html | truncate: 90 }}</p>
 
               <a class="read-more" href="{{ post.url | relative_url }}">
                 Leer más →
@@ -44,40 +44,63 @@ layout: default
 
     <!-- COLUMNA DERECHA: LECTURAS FUNDAMENTALES -->
     <aside class="home-featured">
-      <div class="post-card featured-card">
-        <span class="post-meta">Lecturas fundamentales</span>
+      <div class="featured-editorial">
+        <span class="post-meta">Selección editorial</span>
 
         <h2 class="featured-title">Si solo leés tres cosas</h2>
 
         <p class="featured-excerpt">
-          Textos que condensan lo que intento hacer aquí: pensar con rigor,
-          escribir con honestidad y dejar registro de lo que realmente me importa.
+          Entradas que concentran el tono, el método y las obsesiones de este cuaderno.
         </p>
 
-        <ul class="featured-list">
+        <ol class="featured-list">
           {% if esenciales and esenciales.size > 0 %}
             {% for post in esenciales limit: 3 %}
               <li>
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                <span class="featured-date">
-                  · {{ post.date | date: "%b %-d, %Y" }}
-                </span>
+                <span class="featured-index">{{ forloop.index | prepend: "0" }}</span>
+                <div>
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                  <p class="featured-reason">
+                    {{ post.excerpt | strip_html | truncate: 80 }}
+                  </p>
+                </div>
               </li>
             {% endfor %}
           {% else %}
             <!-- Fallback: si aún no marcaste featured, usa los 3 más recientes -->
             {% for post in site.posts limit: 3 %}
               <li>
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                <span class="featured-date">
-                  · {{ post.date | date: "%b %-d, %Y" }}
-                </span>
+                <span class="featured-index">{{ forloop.index | prepend: "0" }}</span>
+                <div>
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                  <p class="featured-reason">
+                    {{ post.excerpt | strip_html | truncate: 80 }}
+                  </p>
+                </div>
               </li>
             {% endfor %}
           {% endif %}
-        </ul>
+        </ol>
       </div>
     </aside>
 
   </div>
+
+  <section class="home-explore" id="explorar-temas">
+    <div class="home-explore-header">
+      <h2>Explorar temas</h2>
+      <p>Cuadernos principales, directo al grano.</p>
+    </div>
+    <ul class="home-link-list">
+      {% assign category_pages = site.pages | where: "layout", "category" | sort: "title" %}
+      {% for page in category_pages %}
+        <li>
+          <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+          {% if page.description %}
+            <span>{{ page.description | strip_html | truncate: 80 }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 </div>
