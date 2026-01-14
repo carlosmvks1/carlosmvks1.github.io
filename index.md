@@ -4,18 +4,18 @@ title: Carlos Reyes
 ---
 
 <div class="hero">
-  <p class="hero-kicker">BLOG PERSONAL · MEDICINA · FILOSOFÍA · FE</p>
-  <h1 class="hero-title">Carlos Reyes</h1>
-  <p class="hero-tagline">
-    Cuaderno público de un estudiante que piensa y escribe.
-  </p>
-  <p class="hero-subtitle">
-    Escribo para entender. Publico para recordar.<br>
-    Y en el proceso, intento convertirme en alguien que piense a profundidad y viva con claridad.
-  </p>
+  <div class="hero-content">
+    <p class="hero-kicker">MEDICINA · FILOSOFÍA · FE · DISCIPLINA</p>
+    <h1 class="hero-title">Carlos Reyes</h1>
+    <p class="hero-tagline">
+      Cuaderno público de estudio, notas clínicas y pensamiento crítico.
+    </p>
+    <p class="hero-stance">
+      No es un blog de autoayuda ni de frases bonitas.
+    </p>
+    <div class="hero-actions">
+      <a class="hero-cta primary" href="#lo-mas-reciente">Leer lo más reciente</a>
+      <a class="hero-cta" href="#explorar-temas">Explorar temas</a>
+    </div>
+  </div>
 </div>
-
-<p class="hero-note">
-  Aquí ordeno lo que estudio, lo que creo y lo que voy descubriendo.
-  Este blog es mi archivo de trabajo: medicina, pensamiento crítico, fe y proyectos personales.
-</p>

@@ -3,6 +3,7 @@ description: "Reflexiones, medicina, filosofía y disciplina."
 theme: minima
 header_pages:
   - about.md
+  - cuaderno.md
   - medicina.md
   - filosofia.md
   - fe-y-etica.md
