@@ -1,5 +1,17 @@
 <footer class="site-footer">
-  <div class="wrapper">
-    Blog personal
+  <div class="wrapper footer-grid">
+    <div>
+      <strong>{{ site.title }}</strong>
+      <p>Blog personal · {{ site.time | date: "%Y" }}</p>
+    </div>
+
+    <nav class="footer-links">
+      {% for path in site.header_pages %}
+        {% assign page = site.pages | where: "path", path | first %}
+        {% if page.title %}
+          <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
   </div>
 </footer>

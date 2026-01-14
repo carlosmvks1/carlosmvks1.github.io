@@ -80,4 +80,39 @@ layout: default
     </aside>
 
   </div>
+
+  <section class="home-sections">
+    <div class="home-card">
+      <h2>Explorar temas</h2>
+      <p class="home-card-intro">
+        Un acceso directo a los cuadernos principales del blog, organizados por
+        áreas de interés.
+      </p>
+      <ul class="home-link-list">
+        {% assign category_pages = site.pages | where: "layout", "category" | sort: "title" %}
+        {% for page in category_pages %}
+          <li>
+            <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+            {% if page.description %}
+              <span>{{ page.description }}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="home-card">
+      <h2>Sobre este cuaderno</h2>
+      <p class="home-card-intro">
+        {{ site.description }}
+      </p>
+      <p>
+        Aquí escribo para entender, pero también para dejar un mapa de lo que
+        estoy aprendiendo en medicina, filosofía, fe y disciplina personal.
+      </p>
+      <a class="read-more" href="{{ "/sobre-mi/" | relative_url }}">
+        Conocer más →
+      </a>
+    </div>
+  </section>
 </div>
