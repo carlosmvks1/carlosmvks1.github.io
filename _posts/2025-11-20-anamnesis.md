@@ -63,16 +63,21 @@ Un formato detallado de historia clínica incluye varios apartados que el estudi
 **Síntoma principal (SP):** 1 a 3 signos/síntomas elegidos por criterio clínico: se escribe en **lenguaje técnico**, lo elige el entrevistador, y **debe orientar diagnóstico**.
 
 **Ejemplo**
-- MC: "me duele la boca del estómago desde ayer"
-- SP: dolor epigástrico agudo
+- MC: "me arde el estómago desde ayer"
+- SP: dolor abdominal.
 
 ---
 
-### 2) HEA (HPI) ejemplo
+### HEA (HPI) ejemplo
+Paciente masculino de 9 años con 24 horas de evolución de dolor abdominal de localización difusa ("en todo el abdomen"), sin irradiación. Describe el dolor como urente, de intensidad 7/10 (ENV), con alivio parcial con el reposo y exacerbaciones, que aumenta con la ingesta de alimentos y con la marcha. Niega distensión abdominal; niega evacuación de sangre; niega antecedente de trauma abdominal.
+
+A las 2 horas del inicio del dolor abdominal comienza con vómitos, presentando 15 episodios en el transcurso de aproximadamente 22 horas, con mayor intensidad durante las primeras 6 horas (1 episodio cada 30–60 min) y posteriormente con disminución relativa (3 episodios en las últimas 6 horas). Los vómitos fueron inicialmente de contenido alimentario y luego de contenido acuoso amarillento, sin sangre, asociados a intolerancia a la vía oral. Niega vómito biliar; niega hematemesis; niega cefalea intensa. La madre administró un antiemético no especificado, sin mejoría.
+
+En el transcurso del día presenta diarrea líquida en 2 episodios, sin sangre ni moco referidos, con un episodio de incontinencia fecal (manchó su ropa interior). Concomitante fiebre continua, subjetivamente alta, no cuantificada, sin atenuación tras la administración de acetaminofén (dosis no recordada). La madre reporta sed aumentada y disminución de diuresis (orina 1 vez en las últimas 12 horas). Niega dolor lumbar; niega tenesmo rectal; niega disuria. Niega tos, odinofagia, dolor testicular o ingesta de cuerpos extraños. Niega antecedentes de cuadros similares previos.
 
 ---
 
-### 3) FOG: se redacta comparando “antes vs durante”
+### FOG: se redacta comparando “antes vs durante”
 
 
 Formato recomendado:
@@ -83,7 +88,7 @@ Formato recomendado:
 - Defecación: antes ___ / durante ___ / Relación ___
 ---
 
-### 4) IOAS
+### IOAS
 IOAS sirve para **capturar síntomas no mencionados** y complementar la HEA. Dos reglas:
 
 - Si es **negativo**, se anota corto.
@@ -179,24 +184,6 @@ Ofrece un enfoque humano y empático del arte de la anamnesis y el examen físic
 
 **Propedéutica clínica / Semiología médica –**  
 Existen otros varios textos en español (ej. Propedéutica y Semiología Clínica de Argente, Semiología Médica de Rafael González, etc.).
-
----
-
-## **Artículos académicos**
-
-**Modelo Calgary-Cambridge de la entrevista médica –** Descrito originalmente por Kurtz y Silverman. No es un artículo único sino una serie de publicaciones y guías (existe un resumen en Wikipedia y materiales en sitios de educación médica). Este modelo estructura la entrevista en cinco fases (iniciar, recoger información, examen físico, explicar y planificar, cerrar).
-
-**Artículos sobre empatía y comunicación en medicina:**  
-Por ejemplo, “Gathering the Patient’s Story and Clinical Empathy” o “El poder de la empatía en el cuidado de la salud” (AAPA, 2020, en español) exploran la importancia de la empatía y dan consejos para honrar la experiencia del paciente.
-
----
-
-## **Videos educativos y demostraciones en línea**
-
-- “Historia Clínica: Anamnesis” (YouTube, 2017)
-- “Estructura de la Anamnesis – Anamnesis clínica para estudiantes” (YouTube, 2020).
-- “¿Cómo hacer Anamnesis médica efectiva?” (YouTube, 2025)
-- **Videos de entrenamiento en entrevista clínica (inglés):** Plataformas como GeekyMedics ofrecen videos gratuitos de simulación de historia clínica.
 
 ---
 
