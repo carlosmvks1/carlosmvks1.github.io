@@ -47,3 +47,34 @@ Eros nace de la carencia, pero el amor verdadero no puede quedarse ahí.
 Porque si el amor se queda en la falta, se vuelve dependencia. Si madura, la falta se transforma en conocimiento. Primero deseo porque algo me falta; luego debo preguntarme qué revela esa falta de mí. Esa es la diferencia entre vivir el amor como esclavitud emocional o usarlo como vía de lucidez.
 
 *Kierkegaard: desesperación y relación con uno mismo*
+Kierkegaard permite pensar la miseria amorosa no como simple tristeza romántica, sino como una crisis del yo. En su análisis, el ser humano no es un "yo" ya terminado, estable y cerrado, sino una tarea: algo que debe llegar a ser. El yo no es una cosa que uno posee; es una relación que uno tiene que aprender a sostener. La SEP resume esta idea diciendo que, para Kierkegaard, el yo humano no es principalmente una sustancia metafísica, sino un logro, una meta hacia la cual se tiende.
+
+La desesperación, en Kierkegaard, no es simplemente sentirse mal. Es una forma de desajuste interior. Pues el yo fracasa en llegar a ser sí mismo. La SEP lo explica a partir de La enfermedad mortal: la desesperación no es solo una emoción, sino el estado en que el yo no logra convertirse verdaderamente en sí mismo.
+El otro no crea nuestra fractura; la ilumina. La persona deseada funciona como una superficie reflectante. Su distancia, su frialdad, su ambigüedad o su falta de reciprocidad no inventan nuestra inseguridad, pero sí la vuelven visible. El amor, entonces, no solo revela quién es el otro; revela cuánto de nuestro propio yo estaba sostenido por la expectativa de ser deseado.
+
+En una lectura superficial, la miseria amorosa parece tener una causa externa: alguien no responde, alguien se aleja, alguien no ama con la misma intensidad. Pero Kierkegaard permite ir más hondo: el problema no es únicamente la ausencia del otro, sino la dependencia interna que esa ausencia desnuda.
+
+No siempre sufrimos porque el otro nos falte; a veces sufrimos porque habíamos puesto en el otro la tarea de sostener un yo que nosotros mismos no sabemos sostener.
+
+**Dos formas de desesperación amorosa**
+
+La SEP menciona dos formas de desesperación que nos serán útiles: la desesperación de posibilidad y la desesperación de necesidad. En la primera, la persona queda perdida en posibilidades imaginarias, postergando la elección y la acción; en la segunda, queda asfixiada por una sensación fatalista donde ya no imagina posibilidades reales.
+
+Aplicado al amor:
+
+Desesperación de posibilidad:
+Es cuando uno vive más en la imaginación que en el vínculo real. Se construyen futuros, escenas, interpretaciones, promesas implícitas, señales ambiguas. Una frase mínima del otro se vuelve material para una novela entera. "Tal vez sí me quiere"; "tal vez solo tiene miedo"; "tal vez con más paciencia se abre"; "tal vez si hago esto, cambia". Aquí el yo no vive el presente: vive secuestrado por posibilidades.
+
+Desesperación de necesidad:
+Es el extremo contrario: "esto siempre me pasa"; "nadie me va a querer como quiero"; "soy demasiado intenso"; "así soy"; "no puedo salir de esto". Aquí el dolor se endurece en identidad. La persona ya no sufre un episodio: se convierte en "el que sufre". Ya no busca claridad: protege su tragedia porque esa tragedia le da una forma.
+
+Ambas son trampas. Una se pierde en fantasías; la otra se encierra en condenas. Una evita decidir; la otra evita cambiar.
+
+Así nace la miseria amorosa; de haberle pedido al amor que haga el trabajo de la identidad. El vínculo se deforma porque el otro deja de ser una persona y se convierte en juez, refugio, espejo y salvación. Entonces uno no ama solamente al otro; ama la posibilidad de ser confirmado por el otro. Y cuando esa confirmación no llega, no solo duele el rechazo: duele el derrumbe de la imagen de uno mismo.
+
+Por eso el amor tiene una función reveladora. Muestra al otro, sí: su capacidad de amar, su frialdad, su miedo, su deseo, su límite. Pero también muestra algo más incómodo: la forma exacta en que uno todavía no sabe sostenerse. En ese sentido, la miseria amorosa puede ser una escuela brutal de autoconocimiento. No porque el sufrimiento sea noble en sí mismo, sino porque obliga a formular una pregunta que normalmente evitamos: “¿qué parte de mí estaba esperando ser rescatada por esta persona?”.
+
+La salida no consiste en volverse indiferente ni en negar el deseo. Eso sería otra forma de desesperación. La salida consiste en devolverle al otro su tamaño humano. El otro puede importar, puede doler, puede ser amado profundamente. Pero no puede ser el fundamento absoluto de nuestra identidad. Amar sin desesperar exige aprender a decir: “te deseo, pero no dependo de tu deseo para existir; me importas, pero no eres la medida completa de mi valor; puedo sufrir tu distancia, pero no voy a convertirme en ruina para demostrar que lo que sentí fue verdadero”.
+
+Esa es la lección kierkegaardiana aplicada al amor: el otro revela nuestro deseo, pero también nuestra tarea pendiente. Y quizá la madurez afectiva empieza exactamente ahí: cuando dejamos de usar el amor como anestesia contra la falta de yo.
+
