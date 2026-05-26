@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Amar la herida"
-date: 2026-05-25
+date: 2025-11-23
 categories: [filosofia]
 featured: true
 ---
