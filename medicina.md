@@ -3,12 +3,5 @@ layout: category
 title: Medicina
 permalink: /medicina/
 category: medicina
-description: Aquí encontrarás mis artículos relacionados con medicin.
-
+description: Artículos y notas para integrar ciencia clínica, razonamiento y práctica médica.
 ---
-
-{% for post in site.posts %}
-  {% if post.categories contains "medicina" %}
-  - [{{ post.title }}]({{ post.url }})
-  {% endif %}
-{% endfor %}

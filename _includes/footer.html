@@ -1,17 +1,12 @@
 <footer class="site-footer">
-  <div class="wrapper footer-grid">
+  <div class="site-shell footer-inner">
     <div>
-      <strong>{{ site.title }}</strong>
-      <p>Blog personal · {{ site.time | date: "%Y" }}</p>
+      <p class="footer-name">Carlos Reyes</p>
+      <p class="footer-note">Cuaderno público de estudio y pensamiento.</p>
     </div>
-
-    <nav class="footer-links">
-      {% for path in site.header_pages %}
-        {% assign page = site.pages | where: "path", path | first %}
-        {% if page.title %}
-          <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
-        {% endif %}
-      {% endfor %}
-    </nav>
+    <div class="footer-stamp">
+      <span>Archivo abierto</span>
+      <span>{{ site.time | date: "%Y" }}</span>
+    </div>
   </div>
 </footer>

@@ -1,15 +1,7 @@
 ---
 layout: category
-title: Proyectos persolanes
+title: Proyectos personales
 permalink: /proyectos/
 category: proyectos
-description: "Aquí reúno las piezas que no pertenecen a ninguna otra casa: prosa, análisis, ensayos, intuiciones, ejercicios de pensamiento.
-Es el cuarto intermedio donde mi mente dialoga consigo misma, sin la obligación de ajustarse a una disciplina específica."
-
+description: Prosa, ensayos, intuiciones y ejercicios de pensamiento que no pertenecen a una sola disciplina.
 ---
-
-{% for post in site.posts %}
-  {% if post.categories contains "proyectos" %}
-  - [{{ post.title }}]({{ post.url }})
-  {% endif %}
-{% endfor %}

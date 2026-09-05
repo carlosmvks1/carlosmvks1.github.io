@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'es' }}">
+  <head>
+    {% include head.html %}
+  </head>
+  <body class="layout-{{ page.layout | default: 'page' }}">
+    <header class="site-header">
+      <div class="site-shell header-inner">
+        <a class="site-mark" href="{{ '/' | relative_url }}" aria-label="Carlos Reyes — Inicio">CR</a>
+
+        <details class="site-index">
+          <summary>Índice</summary>
+          <div class="index-panel">
+            <div class="index-panel-head">
+              <span class="micro-label">Archivo</span>
+              <span class="index-rule" aria-hidden="true"></span>
+            </div>
+            <nav aria-label="Navegación principal">
+              <a href="{{ '/' | relative_url }}"><span>00</span> Inicio</a>
+              {% for path in site.header_pages %}
+                {% assign nav_page = site.pages | where: "path", path | first %}
+                {% if nav_page.title %}
+                  <a href="{{ nav_page.url | relative_url }}">
+                    <span>{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+                    {{ nav_page.title }}
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </nav>
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <main id="contenido">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </body>
+</html>

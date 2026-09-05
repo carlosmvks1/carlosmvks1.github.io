@@ -1,5 +1,6 @@
-title: "Cuaderno personal de estudio y reflexión"
-description: "Reflexiones, medicina, filosofía y disciplina."
+title: "Carlos Reyes"
+description: "Cuaderno público de estudio, medicina, filosofía, fe y pensamiento crítico."
+lang: es
 theme: minima
 header_pages:
   - about.md

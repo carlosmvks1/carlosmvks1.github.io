@@ -2,35 +2,34 @@
 layout: default
 ---
 
-<div class="category-page">
-  <header class="category-header">
+{% assign cat = page.category %}
+{% assign category_posts = site.posts | where_exp: "post", "post.categories contains cat" %}
+
+<section class="archive-page site-shell">
+  <header class="archive-header">
+    <p class="micro-label">Cuaderno / Archivo temático</p>
     <h1>{{ page.title }}</h1>
     {% if page.description %}
-      <p>{{ page.description }}</p>
+      <p class="archive-description">{{ page.description }}</p>
     {% endif %}
   </header>
 
-  <ul class="post-list">
-    {% assign cat = page.category %}
-    {% for post in site.posts %}
-      {% if post.categories contains cat %}
-        <li class="post-card">
-          <span class="post-meta">
-            {{ post.date | date: "%b %-d, %Y" }}
-          </span>
+  <div class="section-line archive-count">
+    <span class="micro-label">Entradas</span>
+    <span class="micro-label">{{ category_posts.size }}</span>
+  </div>
 
-          <h2>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title }}
-            </a>
-          </h2>
-
-          <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
-          <a class="read-more" href="{{ post.url | relative_url }}">
-            Leer más →
-          </a>
-        </li>
-      {% endif %}
+  <ol class="archive-list">
+    {% for post in category_posts %}
+    <li>
+      <div class="archive-index">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</div>
+      <div class="archive-date micro-label">{{ post.date | date: "%d.%m.%Y" }}</div>
+      <div class="archive-copy">
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt | strip_html | truncate: 165 }}</p>
+      </div>
+      <a class="entry-arrow" href="{{ post.url | relative_url }}" aria-label="Leer {{ post.title }}">→</a>
+    </li>
     {% endfor %}
-  </ul>
-</div>
+  </ol>
+</section>

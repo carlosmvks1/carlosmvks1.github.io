@@ -2,105 +2,95 @@
 layout: default
 ---
 
-<div class="home">
-
-  <!-- INTRO DEL INDEX (hero de index.md) -->
-  <div class="home-intro">
-    {{ content }}
+<section class="home-masthead site-shell">
+  <div class="masthead-kicker micro-label">Medicina / Filosofía / Fe / Notas</div>
+  <h1 class="masthead-title">Carlos<br>Reyes</h1>
+  <div class="masthead-bottom">
+    <p>Cuaderno público de estudio y pensamiento.</p>
+    <a href="#archivo">Ver archivo <span aria-hidden="true">↓</span></a>
   </div>
+</section>
 
-  {%- assign esenciales = site.posts | where: "featured", true | sort: "date" | reverse -%}
+{% assign latest = site.posts.first %}
+{% if latest %}
+<section class="lead-story site-shell" aria-labelledby="ultima-entrada">
+  <div class="section-line">
+    <span class="micro-label">Última entrada</span>
+    <span class="micro-label">N.º {{ site.posts.size }}</span>
+  </div>
+  <div class="lead-grid">
+    <div class="lead-date micro-label">{{ latest.date | date: "%d.%m.%Y" }}</div>
+    <div class="lead-copy">
+      <h2 id="ultima-entrada"><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
+      <p>{{ latest.excerpt | strip_html | truncate: 190 }}</p>
+      <a class="text-link" href="{{ latest.url | relative_url }}">Leer entrada <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+{% endif %}
 
-  <div class="home-layout">
-
-    <!-- COLUMNA IZQUIERDA: POSTS MÁS RECIENTES -->
-    <div class="home-main" id="lo-mas-reciente">
-      {% if site.posts.size > 0 %}
-        <h2 class="post-list-heading">Lo más reciente</h2>
-
-        <ul class="post-list">
-          {% for post in site.posts limit: 6 %}
-            <li class="post-card small-card">
-              <span class="post-meta subtle-meta">
-                {{ post.date | date: "%b %-d, %Y" }}
-              </span>
-
-              <h3>
-                <a class="post-link" href="{{ post.url | relative_url }}">
-                  {{ post.title | escape }}
-                </a>
-              </h3>
-
-              <p>{{ post.excerpt | strip_html | truncate: 90 }}</p>
-
-              <a class="read-more" href="{{ post.url | relative_url }}">
-                Leer más →
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+<section class="home-body site-shell" id="archivo">
+  <div class="recent-column">
+    <div class="section-line">
+      <span class="micro-label">Archivo reciente</span>
+      <span class="micro-label">{{ site.posts.size }} entradas</span>
     </div>
 
-    <!-- COLUMNA DERECHA: LECTURAS FUNDAMENTALES -->
-    <aside class="home-featured">
-      <div class="featured-editorial">
-        <span class="post-meta">Selección editorial</span>
-
-        <h2 class="featured-title">Si solo leés tres cosas</h2>
-
-        <p class="featured-excerpt">
-          Entradas que concentran el tono, el método y las obsesiones de este cuaderno.
-        </p>
-
-        <ol class="featured-list">
-          {% if esenciales and esenciales.size > 0 %}
-            {% for post in esenciales limit: 3 %}
-              <li>
-                <span class="featured-index">{{ forloop.index | prepend: "0" }}</span>
-                <div>
-                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                  <p class="featured-reason">
-                    {{ post.excerpt | strip_html | truncate: 80 }}
-                  </p>
-                </div>
-              </li>
-            {% endfor %}
-          {% else %}
-            <!-- Fallback: si aún no marcaste featured, usa los 3 más recientes -->
-            {% for post in site.posts limit: 3 %}
-              <li>
-                <span class="featured-index">{{ forloop.index | prepend: "0" }}</span>
-                <div>
-                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                  <p class="featured-reason">
-                    {{ post.excerpt | strip_html | truncate: 80 }}
-                  </p>
-                </div>
-              </li>
-            {% endfor %}
-          {% endif %}
-        </ol>
-      </div>
-    </aside>
-
-  </div>
-
-  <section class="home-explore" id="explorar-temas">
-    <div class="home-explore-header">
-      <h2>Explorar temas</h2>
-      <p>Cuadernos principales.</p>
-    </div>
-    <ul class="home-link-list">
-      {% assign category_pages = site.pages | where: "layout", "category" | sort: "title" %}
-      {% for page in category_pages %}
-        <li>
-          <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
-          {% if page.description %}
-            <span>{{ page.description | strip_html | truncate: 80 }}</span>
-          {% endif %}
-        </li>
+    <ol class="editorial-list">
+      {% for post in site.posts offset:1 limit:6 %}
+      <li>
+        <div class="entry-index">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</div>
+        <div class="entry-main">
+          <time class="micro-label" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncate: 115 }}</p>
+        </div>
+        <a class="entry-arrow" href="{{ post.url | relative_url }}" aria-label="Leer {{ post.title }}">→</a>
+      </li>
       {% endfor %}
-    </ul>
-  </section>
-</div>
+    </ol>
+  </div>
+
+  <aside class="essential-column">
+    <div class="section-line">
+      <span class="micro-label">Lecturas esenciales</span>
+      <span class="micro-label">Selección</span>
+    </div>
+
+    {% assign esenciales = site.posts | where: "featured", true | sort: "date" | reverse %}
+    {% if esenciales.size == 0 %}
+      {% assign esenciales = site.posts %}
+    {% endif %}
+
+    <ol class="essential-list">
+      {% for post in esenciales limit:3 %}
+      <li>
+        <span class="essential-number">0{{ forloop.index }}</span>
+        <div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </aside>
+</section>
+
+<section class="topic-index site-shell" id="temas">
+  <div class="section-line">
+    <span class="micro-label">Índice temático</span>
+    <span class="micro-label">Cuadernos</span>
+  </div>
+
+  <div class="topic-grid">
+    {% assign category_pages = site.pages | where: "layout", "category" | sort: "title" %}
+    {% for item in category_pages %}
+      <a class="topic-row" href="{{ item.url | relative_url }}">
+        <span class="topic-number">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <span class="topic-name">{{ item.title }}</span>
+        <span class="topic-description">{{ item.description | strip_html | truncate: 86 }}</span>
+        <span class="topic-arrow" aria-hidden="true">↗</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
