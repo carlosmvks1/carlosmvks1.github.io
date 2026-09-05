@@ -1,0 +1,88 @@
+---
+---
+
+/*
+  COMPOSICIÓN DE ESCRITORIO ANCHO
+  La home, navegación y superficies editoriales aprovechan monitores grandes.
+  Las páginas de lectura conservan una medida íntima y legible.
+*/
+
+@media (min-width: 1180px) {
+  .site-shell {
+    width: min(calc(100% - 5.5rem), 1380px);
+  }
+
+  /* El hero respira hacia los lados en lugar de comprimirse en el centro. */
+  .home-intro {
+    grid-template-columns: minmax(0, 1.3fr) minmax(380px, 0.7fr);
+    gap: clamp(4.5rem, 6vw, 7rem);
+    padding-top: clamp(5rem, 7vw, 6.75rem);
+    padding-bottom: clamp(4rem, 5.5vw, 5.25rem);
+  }
+
+  .home-intro h1 {
+    max-width: 900px;
+    font-size: clamp(3.65rem, 5.1vw, 5.25rem);
+  }
+
+  .intro-copy {
+    max-width: 720px;
+  }
+
+  .home-intro-visual {
+    width: 100%;
+    max-width: 500px;
+    justify-self: end;
+  }
+
+  /* La entrada principal usa de verdad el ancho disponible. */
+  .featured-post {
+    grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.65fr);
+  }
+
+  .featured-visual {
+    min-height: 360px;
+  }
+
+  .featured-copy {
+    padding: clamp(2.2rem, 3.5vw, 3.2rem);
+  }
+
+  .recent-posts {
+    column-gap: clamp(3rem, 4.5vw, 4.75rem);
+  }
+
+  .topic-cards {
+    gap: 1.35rem;
+  }
+
+  .margin-note {
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: 1.5rem;
+  }
+
+  /* El ancho editorial NO debe contaminar la lectura larga. */
+  .article-shell,
+  .page-shell {
+    width: min(calc(100% - 3rem), 760px);
+  }
+
+  .category-page {
+    width: min(calc(100% - 5.5rem), 1240px);
+  }
+
+  .category-list {
+    max-width: 980px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .home-intro-visual {
+    max-width: 530px;
+  }
+
+  .featured-visual {
+    min-height: 390px;
+  }
+}
