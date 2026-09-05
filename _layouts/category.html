@@ -5,31 +5,24 @@ layout: default
 {% assign cat = page.category %}
 {% assign category_posts = site.posts | where_exp: "post", "post.categories contains cat" %}
 
-<section class="archive-page site-shell">
-  <header class="archive-header">
-    <p class="micro-label">Cuaderno / Archivo temático</p>
+<section class="category-page site-shell">
+  <header class="category-header">
+    <p class="eyebrow">Tema</p>
     <h1>{{ page.title }}</h1>
     {% if page.description %}
-      <p class="archive-description">{{ page.description }}</p>
+      <p>{{ page.description }}</p>
     {% endif %}
   </header>
 
-  <div class="section-line archive-count">
-    <span class="micro-label">Entradas</span>
-    <span class="micro-label">{{ category_posts.size }}</span>
-  </div>
-
-  <ol class="archive-list">
+  <div class="category-list">
     {% for post in category_posts %}
-    <li>
-      <div class="archive-index">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</div>
-      <div class="archive-date micro-label">{{ post.date | date: "%d.%m.%Y" }}</div>
-      <div class="archive-copy">
+      <article class="post-row">
+        <div class="post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+        </div>
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-        <p>{{ post.excerpt | strip_html | truncate: 165 }}</p>
-      </div>
-      <a class="entry-arrow" href="{{ post.url | relative_url }}" aria-label="Leer {{ post.title }}">→</a>
-    </li>
+        <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+      </article>
     {% endfor %}
-  </ol>
+  </div>
 </section>

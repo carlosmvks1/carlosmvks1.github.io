@@ -6,28 +6,25 @@
   <body class="layout-{{ page.layout | default: 'page' }}">
     <header class="site-header">
       <div class="site-shell header-inner">
-        <a class="site-mark" href="{{ '/' | relative_url }}" aria-label="Carlos Reyes — Inicio">CR</a>
+        <a class="site-title" href="{{ '/' | relative_url }}">El cuaderno</a>
 
-        <details class="site-index">
-          <summary>Índice</summary>
-          <div class="index-panel">
-            <div class="index-panel-head">
-              <span class="micro-label">Archivo</span>
-              <span class="index-rule" aria-hidden="true"></span>
-            </div>
-            <nav aria-label="Navegación principal">
-              <a href="{{ '/' | relative_url }}"><span>00</span> Inicio</a>
-              {% for path in site.header_pages %}
-                {% assign nav_page = site.pages | where: "path", path | first %}
-                {% if nav_page.title %}
-                  <a href="{{ nav_page.url | relative_url }}">
-                    <span>{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
-                    {{ nav_page.title }}
-                  </a>
-                {% endif %}
-              {% endfor %}
-            </nav>
-          </div>
+        <nav class="desktop-nav" aria-label="Navegación principal">
+          <a href="{{ '/medicina/' | relative_url }}">Medicina</a>
+          <a href="{{ '/filosofia/' | relative_url }}">Filosofía</a>
+          <a href="{{ '/fe_y_etica/' | relative_url }}">Fe y ética</a>
+          <a href="{{ '/proyectos/' | relative_url }}">Proyectos</a>
+          <a href="{{ '/sobre-mi/' | relative_url }}">Sobre mí</a>
+        </nav>
+
+        <details class="mobile-menu">
+          <summary>Menú</summary>
+          <nav aria-label="Navegación móvil">
+            <a href="{{ '/medicina/' | relative_url }}">Medicina</a>
+            <a href="{{ '/filosofia/' | relative_url }}">Filosofía</a>
+            <a href="{{ '/fe_y_etica/' | relative_url }}">Fe y ética</a>
+            <a href="{{ '/proyectos/' | relative_url }}">Proyectos</a>
+            <a href="{{ '/sobre-mi/' | relative_url }}">Sobre mí</a>
+          </nav>
         </details>
       </div>
     </header>

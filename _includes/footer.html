@@ -1,12 +1,6 @@
 <footer class="site-footer">
   <div class="site-shell footer-inner">
-    <div>
-      <p class="footer-name">Carlos Reyes</p>
-      <p class="footer-note">Cuaderno público de estudio y pensamiento.</p>
-    </div>
-    <div class="footer-stamp">
-      <span>Archivo abierto</span>
-      <span>{{ site.time | date: "%Y" }}</span>
-    </div>
+    <p><a href="{{ '/' | relative_url }}">El cuaderno</a> · {{ site.time | date: "%Y" }}</p>
+    <a href="{{ '/sobre-mi/' | relative_url }}">Sobre mí</a>
   </div>
 </footer>

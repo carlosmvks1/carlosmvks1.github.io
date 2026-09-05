@@ -1,4 +1,4 @@
 ---
 layout: home
-title: Carlos Reyes
+title: El cuaderno
 ---

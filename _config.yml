@@ -1,11 +1,10 @@
-title: "Carlos Reyes"
-description: "Cuaderno público de estudio, medicina, filosofía, fe y pensamiento crítico."
+title: "El cuaderno"
+description: "Notas sobre medicina, ideas, fe y otras cosas que intento entender."
 lang: es
 theme: minima
 header_pages:
-  - about.md
-  - cuaderno.md
   - medicina.md
   - filosofia.md
   - fe-y-etica.md
   - proyectos-personales.md
+  - about.md

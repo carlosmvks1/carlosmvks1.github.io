@@ -2,94 +2,79 @@
 layout: default
 ---
 
-<section class="home-masthead site-shell">
-  <div class="masthead-kicker micro-label">Medicina / Filosofía / Fe / Notas</div>
-  <h1 class="masthead-title">Carlos<br>Reyes</h1>
-  <div class="masthead-bottom">
-    <p>Cuaderno público de estudio y pensamiento.</p>
-    <a href="#archivo">Ver archivo <span aria-hidden="true">↓</span></a>
-  </div>
+<section class="home-intro site-shell">
+  <p class="eyebrow">Cuaderno público</p>
+  <h1>Notas sobre medicina, ideas y otras cosas que intento entender.</h1>
+  <p class="intro-copy">Un lugar para ordenar lo que aprendo, pensar con más cuidado y dejar registro de lo que vale la pena volver a leer.</p>
 </section>
 
 {% assign latest = site.posts.first %}
 {% if latest %}
-<section class="lead-story site-shell" aria-labelledby="ultima-entrada">
-  <div class="section-line">
-    <span class="micro-label">Última entrada</span>
-    <span class="micro-label">N.º {{ site.posts.size }}</span>
+<section class="home-section site-shell">
+  <div class="section-heading">
+    <h2>Última entrada</h2>
   </div>
-  <div class="lead-grid">
-    <div class="lead-date micro-label">{{ latest.date | date: "%d.%m.%Y" }}</div>
-    <div class="lead-copy">
-      <h2 id="ultima-entrada"><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
-      <p>{{ latest.excerpt | strip_html | truncate: 190 }}</p>
-      <a class="text-link" href="{{ latest.url | relative_url }}">Leer entrada <span aria-hidden="true">→</span></a>
+
+  <article class="featured-post">
+    <div class="post-meta">
+      {% assign latest_cat = latest.categories | first %}
+      {% case latest_cat %}
+        {% when 'medicina' %}<span>Medicina</span>
+        {% when 'filosofia' %}<span>Filosofía</span>
+        {% when 'fe' %}<span>Fe y ética</span>
+        {% when 'proyectos' %}<span>Proyectos</span>
+        {% else %}<span>Cuaderno</span>
+      {% endcase %}
+      <span aria-hidden="true">·</span>
+      <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%d.%m.%Y" }}</time>
     </div>
-  </div>
+
+    <h2><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
+    <p>{{ latest.excerpt | strip_html | truncate: 180 }}</p>
+    <a class="read-link" href="{{ latest.url | relative_url }}">Leer entrada <span aria-hidden="true">→</span></a>
+  </article>
 </section>
 {% endif %}
 
-<section class="home-body site-shell" id="archivo">
-  <div class="recent-column">
-    <div class="section-line">
-      <span class="micro-label">Archivo reciente</span>
-      <span class="micro-label">{{ site.posts.size }} entradas</span>
-    </div>
-
-    <ol class="editorial-list">
-      {% for post in site.posts offset:1 limit:6 %}
-      <li>
-        <div class="entry-index">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</div>
-        <div class="entry-main">
-          <time class="micro-label" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt | strip_html | truncate: 115 }}</p>
-        </div>
-        <a class="entry-arrow" href="{{ post.url | relative_url }}" aria-label="Leer {{ post.title }}">→</a>
-      </li>
-      {% endfor %}
-    </ol>
+<section class="home-section site-shell">
+  <div class="section-heading">
+    <h2>Más reciente</h2>
+    <a href="#temas">Explorar temas</a>
   </div>
 
-  <aside class="essential-column">
-    <div class="section-line">
-      <span class="micro-label">Lecturas esenciales</span>
-      <span class="micro-label">Selección</span>
-    </div>
-
-    {% assign esenciales = site.posts | where: "featured", true | sort: "date" | reverse %}
-    {% if esenciales.size == 0 %}
-      {% assign esenciales = site.posts %}
-    {% endif %}
-
-    <ol class="essential-list">
-      {% for post in esenciales limit:3 %}
-      <li>
-        <span class="essential-number">0{{ forloop.index }}</span>
-        <div>
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+  <div class="recent-posts">
+    {% for post in site.posts offset:1 limit:6 %}
+      <article class="post-row">
+        <div class="post-meta">
+          {% assign post_cat = post.categories | first %}
+          {% case post_cat %}
+            {% when 'medicina' %}<span>Medicina</span>
+            {% when 'filosofia' %}<span>Filosofía</span>
+            {% when 'fe' %}<span>Fe y ética</span>
+            {% when 'proyectos' %}<span>Proyectos</span>
+            {% else %}<span>Cuaderno</span>
+          {% endcase %}
+          <span aria-hidden="true">·</span>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
         </div>
-      </li>
-      {% endfor %}
-    </ol>
-  </aside>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
+      </article>
+    {% endfor %}
+  </div>
 </section>
 
-<section class="topic-index site-shell" id="temas">
-  <div class="section-line">
-    <span class="micro-label">Índice temático</span>
-    <span class="micro-label">Cuadernos</span>
+<section class="home-section topics-section site-shell" id="temas">
+  <div class="section-heading">
+    <h2>Explorar</h2>
   </div>
 
-  <div class="topic-grid">
+  <div class="topic-cards">
     {% assign category_pages = site.pages | where: "layout", "category" | sort: "title" %}
     {% for item in category_pages %}
-      <a class="topic-row" href="{{ item.url | relative_url }}">
-        <span class="topic-number">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
-        <span class="topic-name">{{ item.title }}</span>
-        <span class="topic-description">{{ item.description | strip_html | truncate: 86 }}</span>
-        <span class="topic-arrow" aria-hidden="true">↗</span>
+      <a class="topic-card" href="{{ item.url | relative_url }}">
+        <strong>{{ item.title }}</strong>
+        {% if item.description %}<span>{{ item.description | strip_html | truncate: 100 }}</span>{% endif %}
       </a>
     {% endfor %}
   </div>

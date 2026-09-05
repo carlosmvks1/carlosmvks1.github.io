@@ -2,28 +2,20 @@
 layout: default
 ---
 
-{% assign archive_number = 0 %}
-{% assign chronological = site.posts | reverse %}
-{% for item in chronological %}
-  {% if item.url == page.url %}
-    {% assign archive_number = forloop.index %}
-  {% endif %}
-{% endfor %}
-
 {% assign primary_category = page.categories | first %}
 {% case primary_category %}
-  {% when 'medicina' %}{% assign category_code = 'MED' %}{% assign category_name = 'Medicina' %}
-  {% when 'filosofia' %}{% assign category_code = 'FIL' %}{% assign category_name = 'Filosofía' %}
-  {% when 'fe' %}{% assign category_code = 'FE' %}{% assign category_name = 'Fe y ética' %}
-  {% when 'proyectos' %}{% assign category_code = 'NOTA' %}{% assign category_name = 'Proyectos' %}
-  {% else %}{% assign category_code = 'ARCH' %}{% assign category_name = 'Cuaderno' %}
+  {% when 'medicina' %}{% assign category_name = 'Medicina' %}
+  {% when 'filosofia' %}{% assign category_name = 'Filosofía' %}
+  {% when 'fe' %}{% assign category_name = 'Fe y ética' %}
+  {% when 'proyectos' %}{% assign category_name = 'Proyectos' %}
+  {% else %}{% assign category_name = 'Cuaderno' %}
 {% endcase %}
 
-<article class="article-shell">
+<article class="article-shell site-shell">
   <header class="article-header">
-    <div class="article-meta micro-label">
-      <span>{{ category_code }}</span>
-      <span>N.º {% if archive_number < 10 %}0{% endif %}{{ archive_number }}</span>
+    <div class="post-meta">
+      <span>{{ category_name }}</span>
+      <span aria-hidden="true">·</span>
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d.%m.%Y" }}</time>
     </div>
 
@@ -34,35 +26,20 @@ layout: default
     {% endif %}
   </header>
 
-  <div class="page-rule" aria-hidden="true"></div>
-
-  <div class="article-grid">
-    <aside class="article-rail" aria-label="Metadatos de la entrada">
-      <div>
-        <span class="micro-label">Sección</span>
-        <p>{{ category_name }}</p>
-      </div>
-      <div>
-        <span class="micro-label">Archivo</span>
-        <p>{{ site.posts.size }} entradas</p>
-      </div>
-    </aside>
-
-    <div class="prose article-prose">
-      {{ content }}
-    </div>
+  <div class="prose article-prose">
+    {{ content }}
   </div>
 
   <nav class="article-nav" aria-label="Entradas adyacentes">
     {% if page.previous %}
       <a href="{{ page.previous.url | relative_url }}">
-        <span class="micro-label">Anterior</span>
+        <span>Anterior</span>
         <strong>{{ page.previous.title }}</strong>
       </a>
     {% endif %}
     {% if page.next %}
       <a href="{{ page.next.url | relative_url }}" class="next">
-        <span class="micro-label">Siguiente</span>
+        <span>Siguiente</span>
         <strong>{{ page.next.title }}</strong>
       </a>
     {% endif %}
