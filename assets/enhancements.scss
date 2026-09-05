@@ -1,0 +1,476 @@
+---
+---
+
+:root {
+  --cat-medicina: #8fae9a;
+  --cat-filosofia: #9e9ac8;
+  --cat-fe: #b88f95;
+  --cat-proyectos: #c49b69;
+  --surface-raised: #1c242c;
+}
+
+/* --- Textura mínima: rompe la planitud sin convertirse en efecto --- */
+body {
+  position: relative;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+/* --- Hero: texto + objeto visual propio --- */
+.home-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.home-intro-copy {
+  min-width: 0;
+}
+
+.home-intro-copy::after {
+  content: "";
+  display: block;
+  width: 170px;
+  height: 10px;
+  margin-top: 1.5rem;
+  border-top: 2px solid var(--accent);
+  border-radius: 50%;
+  transform: rotate(-1.4deg) skewX(-14deg);
+  opacity: 0.72;
+}
+
+.home-intro-visual {
+  min-width: 0;
+}
+
+.hero-sketch {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid rgba(194, 169, 126, 0.18);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(194, 169, 126, 0.08), transparent 54%),
+    rgba(255, 255, 255, 0.008);
+  overflow: hidden;
+}
+
+.hero-sketch::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.035);
+  border-radius: 17px;
+  pointer-events: none;
+}
+
+.hero-sketch svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-sketch path,
+.hero-sketch circle {
+  vector-effect: non-scaling-stroke;
+}
+
+.sketch-faint {
+  fill: none;
+  stroke: rgba(232, 230, 225, 0.12);
+  stroke-width: 1;
+}
+
+.sketch-main {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sketch-main circle {
+  fill: var(--accent);
+  stroke: none;
+}
+
+.sketch-notes {
+  fill: none;
+  stroke: rgba(232, 230, 225, 0.35);
+  stroke-width: 1;
+}
+
+.sketch-notes text {
+  fill: rgba(232, 230, 225, 0.5);
+  stroke: none;
+  font-family: var(--serif);
+  font-size: 15px;
+  font-style: italic;
+}
+
+.sketch-dots {
+  fill: var(--accent);
+  stroke: none;
+}
+
+.draw-line {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: draw-sketch 1.4s cubic-bezier(.2,.65,.2,1) forwards;
+}
+
+.draw-line--2 { animation-delay: 180ms; }
+.draw-line--3 { animation-delay: 360ms; }
+
+@keyframes draw-sketch {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (hover: hover) {
+  .hero-sketch .sketch-notes,
+  .hero-sketch .sketch-dots {
+    transition: transform 350ms ease;
+  }
+
+  .hero-sketch:hover .sketch-notes {
+    transform: translate(3px, -2px);
+  }
+
+  .hero-sketch:hover .sketch-dots {
+    transform: translate(-2px, 2px);
+  }
+}
+
+/* --- Colores semánticos muy contenidos --- */
+.category-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  flex-wrap: wrap;
+}
+
+.category-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.category-meta--medicina .category-dot { background: var(--cat-medicina); }
+.category-meta--filosofia .category-dot { background: var(--cat-filosofia); }
+.category-meta--fe .category-dot { background: var(--cat-fe); }
+.category-meta--proyectos .category-dot { background: var(--cat-proyectos); }
+
+.category-mark {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+
+.category-mark svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.category-mark--medicina { color: var(--cat-medicina); }
+.category-mark--filosofia { color: var(--cat-filosofia); }
+.category-mark--fe { color: var(--cat-fe); }
+.category-mark--proyectos { color: var(--cat-proyectos); }
+.category-mark--large { width: 112px; height: 112px; }
+
+/* --- Featured: por fin un objeto visual, no solo una caja con texto --- */
+.featured-post {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--surface-raised);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.13);
+}
+
+.featured-post::before {
+  left: 0;
+  width: 92px;
+}
+
+.featured-copy {
+  padding: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.featured-visual {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  border-left: 1px solid var(--border);
+  background: #12181e;
+}
+
+.featured-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 450ms cubic-bezier(.2,.7,.2,1);
+}
+
+.featured-post:hover .featured-visual img {
+  transform: scale(1.018);
+}
+
+.featured-visual-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 1rem;
+}
+
+.featured-visual-fallback::before,
+.featured-visual-fallback::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.featured-visual-fallback::before {
+  width: 210px;
+  height: 210px;
+}
+
+.featured-visual-fallback::after {
+  width: 285px;
+  height: 285px;
+}
+
+.visual-word {
+  position: relative;
+  z-index: 1;
+  color: var(--faint);
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* --- Nota al margen: pequeña ruptura humana de la cuadrícula --- */
+.margin-note {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 520px) 30px;
+  gap: 1rem;
+  justify-content: end;
+  align-items: start;
+  padding-top: 0.5rem;
+  padding-bottom: clamp(4rem, 7vw, 5.5rem);
+  transform: rotate(-0.35deg);
+}
+
+.margin-note-label {
+  padding-top: 0.3rem;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.margin-note p {
+  margin: 0;
+  color: #c9c7c1;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.margin-note-mark {
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+/* --- Más reciente: menos mecánico, más ritmo --- */
+.post-row--wide {
+  grid-column: 1 / -1;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.post-row--wide h3 {
+  max-width: 760px;
+  font-size: clamp(1.9rem, 3.3vw, 2.6rem);
+}
+
+.post-row-heading {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  margin-top: 0.5rem;
+}
+
+.post-row-heading h2,
+.post-row-heading h3 {
+  margin-top: 0;
+}
+
+.post-row-heading .category-mark {
+  margin-top: 0.08rem;
+}
+
+/* --- Temas: cada sección empieza a tener una cara --- */
+.topic-card {
+  position: relative;
+  min-height: 190px;
+  overflow: hidden;
+  background: var(--surface-soft);
+}
+
+.topic-card::after {
+  content: "";
+  position: absolute;
+  right: -48px;
+  bottom: -72px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.035);
+  transition: transform 250ms ease, border-color 250ms ease;
+}
+
+.topic-card:hover::after {
+  transform: scale(1.08);
+  border-color: rgba(255,255,255,0.07);
+}
+
+.topic-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.topic-arrow {
+  color: var(--faint);
+  transition: transform 160ms ease, color 160ms ease;
+}
+
+.topic-card:hover .topic-arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+.topic-card--medicina { border-top-color: rgba(143, 174, 154, 0.65); }
+.topic-card--filosofia { border-top-color: rgba(158, 154, 200, 0.65); }
+.topic-card--fe { border-top-color: rgba(184, 143, 149, 0.65); }
+.topic-card--proyectos { border-top-color: rgba(196, 155, 105, 0.65); }
+
+/* --- Categorías y artículos comparten el mismo lenguaje visual --- */
+.category-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.article-cover {
+  margin: 2.3rem 0 0;
+}
+
+.article-cover img {
+  width: 100%;
+  max-height: 540px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.article-cover figcaption {
+  margin-top: 0.65rem;
+  color: var(--faint);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .home-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .home-intro-visual {
+    max-width: 620px;
+  }
+
+  .featured-post {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-visual {
+    min-height: 260px;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .margin-note {
+    grid-template-columns: 1fr 28px;
+    justify-content: stretch;
+    max-width: 720px;
+  }
+
+  .margin-note-label {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-sketch {
+    border-radius: 18px;
+    padding: 0.5rem;
+  }
+
+  .featured-visual {
+    min-height: 220px;
+  }
+
+  .category-mark--large {
+    width: 86px;
+    height: 86px;
+  }
+
+  .margin-note {
+    padding-bottom: 3.8rem;
+  }
+
+  .margin-note p {
+    font-size: 1.28rem;
+  }
+
+  .post-row--wide {
+    padding: 1.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .draw-line {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

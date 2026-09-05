@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign primary_category = page.categories | first %}
+{% assign primary_category = page.categories | first | default: 'cuaderno' %}
 {% case primary_category %}
   {% when 'medicina' %}{% assign category_name = 'Medicina' %}
   {% when 'filosofia' %}{% assign category_name = 'Filosofía' %}
@@ -11,9 +11,10 @@ layout: default
   {% else %}{% assign category_name = 'Cuaderno' %}
 {% endcase %}
 
-<article class="article-shell site-shell">
+<article class="article-shell site-shell article-shell--{{ primary_category }}">
   <header class="article-header">
-    <div class="post-meta">
+    <div class="post-meta category-meta category-meta--{{ primary_category }}">
+      <span class="category-dot" aria-hidden="true"></span>
       <span>{{ category_name }}</span>
       <span aria-hidden="true">·</span>
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d.%m.%Y" }}</time>
@@ -25,6 +26,13 @@ layout: default
       <p class="article-deck">{{ page.subtitle }}</p>
     {% endif %}
   </header>
+
+  {% if page.cover %}
+    <figure class="article-cover">
+      <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | default: page.title | escape }}">
+      {% if page.cover_caption %}<figcaption>{{ page.cover_caption }}</figcaption>{% endif %}
+    </figure>
+  {% endif %}
 
   <div class="prose article-prose">
     {{ content }}

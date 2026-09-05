@@ -3,38 +3,63 @@ layout: default
 ---
 
 <section class="home-intro site-shell">
-  <p class="eyebrow">Cuaderno público</p>
-  <h1>Notas sobre medicina, ideas y otras cosas que intento entender.</h1>
-  <p class="intro-copy">Un lugar para ordenar lo que aprendo, pensar con más cuidado y dejar registro de lo que vale la pena volver a leer.</p>
+  <div class="home-intro-copy">
+    <p class="eyebrow">Cuaderno público</p>
+    <h1>Notas sobre medicina, ideas y otras cosas que intento entender.</h1>
+    <p class="intro-copy">Un lugar para ordenar lo que aprendo, pensar con más cuidado y dejar registro de lo que vale la pena volver a leer.</p>
+  </div>
+  <div class="home-intro-visual">
+    {% include hero-sketch.html %}
+  </div>
 </section>
 
 {% assign latest = site.posts.first %}
 {% if latest %}
+  {% assign latest_cat = latest.categories | first | default: 'cuaderno' %}
 <section class="home-section site-shell">
   <div class="section-heading">
     <h2>Última entrada</h2>
   </div>
 
-  <article class="featured-post">
-    <div class="post-meta">
-      {% assign latest_cat = latest.categories | first %}
-      {% case latest_cat %}
-        {% when 'medicina' %}<span>Medicina</span>
-        {% when 'filosofia' %}<span>Filosofía</span>
-        {% when 'fe' %}<span>Fe y ética</span>
-        {% when 'proyectos' %}<span>Proyectos</span>
-        {% else %}<span>Cuaderno</span>
-      {% endcase %}
-      <span aria-hidden="true">·</span>
-      <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%d.%m.%Y" }}</time>
+  <article class="featured-post featured-post--{{ latest_cat }}{% if latest.cover %} featured-post--with-cover{% endif %}">
+    <div class="featured-copy">
+      <div class="post-meta category-meta category-meta--{{ latest_cat }}">
+        <span class="category-dot" aria-hidden="true"></span>
+        {% case latest_cat %}
+          {% when 'medicina' %}<span>Medicina</span>
+          {% when 'filosofia' %}<span>Filosofía</span>
+          {% when 'fe' %}<span>Fe y ética</span>
+          {% when 'proyectos' %}<span>Proyectos</span>
+          {% else %}<span>Cuaderno</span>
+        {% endcase %}
+        <span aria-hidden="true">·</span>
+        <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%d.%m.%Y" }}</time>
+      </div>
+
+      <h2><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
+      <p>{{ latest.excerpt | strip_html | truncate: 180 }}</p>
+      <a class="read-link" href="{{ latest.url | relative_url }}">Leer entrada <span aria-hidden="true">→</span></a>
     </div>
 
-    <h2><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
-    <p>{{ latest.excerpt | strip_html | truncate: 180 }}</p>
-    <a class="read-link" href="{{ latest.url | relative_url }}">Leer entrada <span aria-hidden="true">→</span></a>
+    <a class="featured-visual" href="{{ latest.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      {% if latest.cover %}
+        <img src="{{ latest.cover | relative_url }}" alt="" loading="eager">
+      {% else %}
+        <div class="featured-visual-fallback">
+          {% include category-mark.html cat=latest_cat large=true %}
+          <span class="visual-word">{% case latest_cat %}{% when 'medicina' %}observar{% when 'filosofia' %}preguntar{% when 'fe' %}examinar{% when 'proyectos' %}construir{% else %}pensar{% endcase %}</span>
+        </div>
+      {% endif %}
+    </a>
   </article>
 </section>
 {% endif %}
+
+<aside class="margin-note site-shell" aria-label="Nota al margen">
+  <span class="margin-note-label">Nota al margen</span>
+  <p>Entender algo y poder explicarlo siguen siendo habilidades distintas.</p>
+  <span class="margin-note-mark" aria-hidden="true">↳</span>
+</aside>
 
 <section class="home-section site-shell">
   <div class="section-heading">
@@ -44,9 +69,10 @@ layout: default
 
   <div class="recent-posts">
     {% for post in site.posts offset:1 limit:6 %}
-      <article class="post-row">
-        <div class="post-meta">
-          {% assign post_cat = post.categories | first %}
+      {% assign post_cat = post.categories | first | default: 'cuaderno' %}
+      <article class="post-row post-row--{{ post_cat }}{% if forloop.first %} post-row--wide{% endif %}">
+        <div class="post-meta category-meta category-meta--{{ post_cat }}">
+          <span class="category-dot" aria-hidden="true"></span>
           {% case post_cat %}
             {% when 'medicina' %}<span>Medicina</span>
             {% when 'filosofia' %}<span>Filosofía</span>
@@ -57,7 +83,10 @@ layout: default
           <span aria-hidden="true">·</span>
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
         </div>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <div class="post-row-heading">
+          {% include category-mark.html cat=post_cat %}
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        </div>
         <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
       </article>
     {% endfor %}
@@ -72,9 +101,16 @@ layout: default
   <div class="topic-cards">
     {% assign category_pages = site.pages | where: "layout", "category" | sort: "title" %}
     {% for item in category_pages %}
-      <a class="topic-card" href="{{ item.url | relative_url }}">
-        <strong>{{ item.title }}</strong>
-        {% if item.description %}<span>{{ item.description | strip_html | truncate: 100 }}</span>{% endif %}
+      {% assign item_cat = item.category | default: 'cuaderno' %}
+      <a class="topic-card topic-card--{{ item_cat }}" href="{{ item.url | relative_url }}">
+        <div class="topic-card-top">
+          {% include category-mark.html cat=item_cat %}
+          <span class="topic-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div>
+          <strong>{{ item.title }}</strong>
+          {% if item.description %}<span>{{ item.description | strip_html | truncate: 100 }}</span>{% endif %}
+        </div>
       </a>
     {% endfor %}
   </div>
