@@ -9,6 +9,11 @@ Leela antes de tocar el diseño, los collages o las imágenes. Estas son las
 reglas esenciales. Si algo cambia en el código, actualizá esa guía en el
 mismo cambio.
 
+**Sistema editorial (propuesta pendiente de revisión de Carlos):**
+[`docs/editorial-system.md`](docs/editorial-system.md), con su análisis en
+[`docs/editorial-analysis.md`](docs/editorial-analysis.md). Leelo antes de
+redactar o editar artículos.
+
 ## Identidad (vigente)
 
 - Dirección «Revista nocturna»: **el collage editorial es el protagonista**,
@@ -74,12 +79,24 @@ sección 11 de la guía.
   **no autorizan a reutilizar sus obras**. Ninguna imagen sale de ellas.
 - Si quitás un recurso, quitá también su crédito.
 
-## Contenido
+## Contenido y escritura
 
+- **Leé [`docs/editorial-system.md`](docs/editorial-system.md) antes de
+  redactar o editar artículos.** Es una propuesta: solo lo marcado allí como
+  **[Vigente]** o **[Carlos]** es obligatorio; lo marcado como
+  **[Propuesta]** es sugerencia hasta que Carlos lo apruebe.
 - **Conservá los enlaces públicos** (nombres de archivo, `permalink`, rutas de
   categorías), la voz de Carlos (voseo, registro) y el sentido de los textos.
+- **Conservá su voz sin reproducir sus errores.** Las erratas, muletillas,
+  mezclas de voseo y tuteo o afirmaciones sin respaldo no son rasgos de estilo
+  (ver la sección 4 del análisis).
+- **No inventes experiencias, creencias ni posiciones personales** de Carlos.
+  Si un texto necesita un ejemplo propio, dejá `[EJEMPLO: …]` y preguntale.
+- **No modifiques el sentido de un texto sin señalarlo** en el resumen del
+  cambio, aunque sea para hacerlo más prudente.
 - Verificá la fuente antes de cambiar una afirmación, cifra, cita o
   referencia. Si no podés verificarla, no la cambies: anotala como pendiente.
+- **Respetá el sistema visual existente:** la guía editorial no lo redefine.
 
 ## Antes de entregar
 
