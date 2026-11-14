@@ -11,17 +11,27 @@ python3 _collage/componer.py mentira    # uno
 
 Requiere Python 3 con Pillow (`pip install pillow`).
 
+La guía completa del sistema visual está en
+[`docs/visual-system.md`](../docs/visual-system.md). Esta página resume las
+reglas y registra la procedencia.
+
+Fotos propias: `python3 _collage/preparar_propias.py /ruta/a/copias` genera
+los derivados recortados y sin metadatos de `fuentes/propias/`. Los originales
+no se guardan aquí.
+
 ## Reglas del sistema
 
 1. Fondo de noche (carbón azulado) con grano.
 2. Fotografía de lugar en duotono tinta/cal. Solo las fotos nocturnas conservan
-   su color, calentado.
+   su color, calentado. Las fotos propias tienen prioridad cuando aportan
+   al texto.
 3. Láminas y grabados de archivo: tinta sobre papel de cal.
 4. Máximo dos colores planos por pieza (terracota, ámbar, azul, rosa), usados
    para tapar, sustituir o señalar algo del argumento.
 5. Cortes rectos; como mucho un borde rasgado por pieza.
 6. Sombra corta y dura. Rotaciones de 3 grados o menos.
-7. Una sola palabra o frase del texto, recortada en papel.
+7. Como mucho una palabra o frase del texto, recortada en papel.
+8. Círculos, etiquetas y grabados son opcionales, no obligatorios.
 
 Cada collage sale en tres formatos: `-v` (4:5, escritorio), `-m` (1:1, móvil,
 recompuesto con menos piezas) y `-h` (3:2, listas).
@@ -30,7 +40,8 @@ Una entrada sin collage propio no necesita nada: el sitio arma una portada
 automática con un fragmento de `assets/collage/fragmentos/`, el color y la
 marca de su tema. Hay dos composiciones (disco a la derecha o banda recta a la
 izquierda); la fecha decide cuál y qué fragmento, de modo que las entradas
-cercanas no se repiten. Para sumar un fragmento: guardarlo en esa carpeta,
+cercanas no se repiten. Una entrada puede fijar su fragmento con
+`fragmento: nombre`. Para sumar un fragmento: guardarlo en esa carpeta,
 añadir su nombre a la lista de `_includes/cover.html` y correr
 `python3 _collage/componer.py tamanos`.
 
@@ -42,6 +53,28 @@ collage_alt: "Una fachada partida en dos versiones; encima, una lámina del ojo 
 ```
 
 ## Procedencia de las imágenes
+
+### Fotografías propias
+
+Fotografías de Carlos Reyes, de su carpeta privada «fotos blog», publicadas
+con su autorización (noviembre de 2026). No tienen licencia abierta
+declarada. Los derivados están recortados, reducidos y sin metadatos (EXIF,
+GPS, XMP, ICC). Solo se atribuye un lugar cuando la imagen lo prueba.
+
+| Archivo (`fuentes/propias/`) | Qué muestra | Uso |
+|---|---|---|
+| `vado.jpg` | Vado de concreto sobre un río crecido | Collage `puente` (Lo que repetís, eso sos) |
+| `busto-plaza.jpg` | Busto de una plaza, de noche, con el yeso saltado | Collage `reflejo` (Narcisismo) |
+| `luna.jpg` | Luna entre ramas | Collage `brasa` (Fuego que no debe tocar nada) |
+| `iglesia.jpg` | Iglesia iluminada de noche | Fragmento fijo de «Si Dios permanece…» |
+| `crucifijo.jpg` | Crucifijo en relieve y santo en su nicho, en una fachada de La Campa (el letrero del cerro lo atestigua; no aparece en el recorte) | Fragmento fijo de «Romanos 1–3» |
+| `curva.jpg` | Calle de noche con señal de curva | Fragmento fijo de «Lo que Honduras decide en 2025» |
+| `isla.jpg` | Isla sola en el mar | Fragmento fijo de «El fundamento o el abismo» |
+| `guerrero.jpg` | Estatua de un guerrero indígena y torre de reloj, de noche | Fragmento de la rotación general |
+
+Excluidas por decisión de Carlos: las fotos del bolsillo y del microscopio.
+
+### Fuentes externas
 
 Ninguna es una obra de las referencias de diseño (Javier Palma, 24 Grados,
 Mujeres en las Artes, Estudio 1331). Todas vienen de Wikimedia Commons y se

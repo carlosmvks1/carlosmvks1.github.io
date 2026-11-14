@@ -2,6 +2,9 @@
 
 Blog personal de Carlos Reyes sobre medicina, filosofía, fe y ética. Publicado con Jekyll en GitHub Pages: https://carlosmvks1.github.io
 
+Sistema visual e instrucciones para agentes: [`AGENTS.md`](AGENTS.md) y
+[`docs/visual-system.md`](docs/visual-system.md).
+
 ## Escribir una entrada
 
 Crea `_posts/AAAA-MM-DD-slug.md`. La fecha del nombre de archivo debe coincidir con `date:`.
@@ -31,6 +34,7 @@ bundle exec jekyll serve
 ```yaml
 collage: mentira          # usa assets/collage/mentira-{v,m,h}.webp
 collage_alt: "…"          # descripción del collage para lectores de pantalla
+fragmento: iglesia        # sin collage: fija el fragmento de la portada automática
 cita: "…"                 # frase destacada en la portada si es la última entrada
 apertura: guia            # para guías médicas: imagen más pequeña e índice al frente
 serie: "El ser necesario" # agrupa entradas en una serie

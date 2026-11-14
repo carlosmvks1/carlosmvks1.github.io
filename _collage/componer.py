@@ -348,7 +348,112 @@ def fragmentos():
         print(path, im.size, os.path.getsize(path) // 1024, "KB")
 
 
-COLLAGES = {"mentira": mentira, "herida": herida, "tdah": tdah, "fragmentos": fragmentos}
+# ---------------------------------------------------------------------------
+# Fotografías propias (Carlos). Fuentes ya recortadas y sin metadatos en
+# _collage/fuentes/propias/, generadas con preparar_propias.py.
+# ---------------------------------------------------------------------------
+def propia(name):
+    return src(os.path.join("propias", name + ".jpg"))
+
+
+# Lo que repetís, eso sos. «El hábito es el puente entre lo que podrías ser y
+# lo que realmente sos.» El vado sobre el río crecido, en duotono; sobre la
+# losa, tiras de papel ámbar repetidas que se achican con la perspectiva: los
+# actos que hacen el camino. Lejos «lo que podrías ser»; cerca «eso sos».
+def puente():
+    vado = propia("vado")
+    # (x, y, ancho) en fracciones de la foto; siguen la losa hacia el fondo
+    pasos = [(0.47, 0.42, 0.05), (0.49, 0.48, 0.08), (0.52, 0.56, 0.12), (0.565, 0.67, 0.17), (0.63, 0.81, 0.24)]
+
+    def build(W, H, P, far, near):
+        cv = background((W, H))
+        paste(cv, piece(duotone(fit(vado, (P[2], P[3])), contrast=1.25), torn="b", seed=51), (P[0], P[1]))
+        for i, (fx, fy, fw) in enumerate(pasos):
+            w = int(P[2] * fw)
+            t = slab((w, max(6, int(w * 0.16))), C["ambar"], torn="lr", seed=60 + i)
+            t = t.rotate([1.5, -1, 2, -1.5, 1][i], resample=Image.BICUBIC, expand=True)
+            paste(cv, t, (P[0] + P[2] * fx - t.width / 2, P[1] + P[3] * fy))
+        paste(cv, label("lo que podrías ser", size=far[1], rotate=1.5), far[0])
+        paste(cv, label("eso sos", size=near[1], rotate=-2), near[0])
+        return cv
+
+    save(build(1200, 1500, (60, 80, 1080, 1250), ((380, 40), 40), ((720, 1360), 56)), "puente", "v")
+    save(build(1000, 1000, (30, 30, 940, 820), ((300, 10), 34), ((620, 880), 46)), "puente", "m")
+    save(build(1200, 800, (220, 30, 760, 700), ((40, 60), 34), ((900, 680), 42)), "puente", "h")
+
+
+# Narcisismo. «Un reflejo que cambia según los ojos que te miran.» Un busto de
+# plaza, de noche (color conservado), con el yeso saltado junto al ojo. Un
+# espejo redondo con aro azul muestra el rostro invertido en duotono: el
+# reflejo que no coincide. El busto no se corta, para no repetir «Amar la herida».
+def reflejo():
+    busto = propia("busto-plaza")
+    cara = crop_frac(busto, (0.25, 0.053, 0.574, 0.213))
+
+    def build(W, H, B, M, lab):
+        cv = background((W, H))
+        paste(cv, piece(night(fit(busto, (B[2], B[3])), warmth=1.08), torn="b", seed=71), (B[0], B[1]))
+        d = M[2]
+        paste(cv, disc(d + 26, C["azul"], seed=72), (M[0] - 13, M[1] - 13))
+        paste(cv, circle_window(duotone(ImageOps.mirror(cara), light=C["cal_tibia"], contrast=1.3), d), (M[0], M[1]), shadow=False)
+        paste(cv, label("el reflejo", size=lab[1], rotate=-1.5), lab[0])
+        return cv
+
+    save(build(1200, 1500, (40, 60, 700, 1380), (600, 260, 480), ((700, 1320), 50)), "reflejo", "v")
+    save(build(1000, 1000, (30, 30, 480, 940), (450, 160, 460), ((560, 860), 42)), "reflejo", "m")
+    save(build(1200, 800, (80, 30, 360, 740), (520, 120, 440), ((820, 660), 40)), "reflejo", "h")
+
+
+# Fuego que no debe tocar nada. «Como brasas que alumbran pero no queman»;
+# «un hilo finísimo tendido entre el deseo y la cordura». La luna entre las
+# ramas (color nocturno), cruzada por un hilo ámbar; abajo, un disco terracota
+# a medio tapar por la foto: la brasa que se queda adentro.
+def brasa():
+    luna = propia("luna")
+
+    def build(W, H, L, D, hilo, lab):
+        cv = background((W, H))
+        paste(cv, disc(D[2], C["terracota"], seed=81), (D[0], D[1]))
+        paste(cv, piece(night(fit(luna, (L[2], L[3])), warmth=1.05), torn="l", seed=82), (L[0], L[1]))
+        t = slab((hilo[2], 7), C["ambar"], seed=83).rotate(hilo[3], resample=Image.BICUBIC, expand=True)
+        paste(cv, t, (hilo[0], hilo[1]))
+        paste(cv, label("brasas que alumbran", size=lab[1], rotate=1.5), lab[0])
+        return cv
+
+    save(build(1200, 1500, (120, 90, 1000, 1150), (70, 1000, 260), (0, 690, 1200, -4), ((560, 1330), 46)), "brasa", "v")
+    save(build(1000, 1000, (110, 40, 860, 760), (40, 610, 220), (0, 440, 1000, -4), ((380, 860), 40)), "brasa", "m")
+    save(build(1200, 800, (330, 30, 840, 680), (170, 400, 230), (0, 330, 1200, -3), ((60, 680), 38)), "brasa", "h")
+
+
+# Fragmentos de fotos propias. Las nocturnas conservan su color, calentado;
+# las de día van en duotono. Algunas entradas eligen el suyo con `fragmento:`.
+FRAG_PROPIOS = {
+    "iglesia": "noche",     # Si Dios permanece, el amor aparece («Dios es luz»)
+    "crucifijo": "duotono", # La lección de Romanos 1–3
+    "curva": "noche",       # Lo que Honduras decide en 2025 («futuros posibles»)
+    "isla": "duotono",      # El fundamento o el abismo
+    "guerrero": "noche",    # rotación general (raíces)
+}
+
+
+def fragmentos_propios():
+    os.makedirs(os.path.join(OUT, "fragmentos"), exist_ok=True)
+    for name, trato in FRAG_PROPIOS.items():
+        im = propia(name)
+        im.thumbnail((900, 900), Image.LANCZOS)
+        im = night(im, warmth=1.08) if trato == "noche" else duotone(im, contrast=1.15)
+        im = grain(im, 9)
+        path = os.path.join(OUT, "fragmentos", name + ".webp")
+        im.save(path, "WEBP", quality=72, method=6)
+        print(path, im.size, os.path.getsize(path) // 1024, "KB")
+        tamanos(path)
+
+
+COLLAGES = {
+    "mentira": mentira, "herida": herida, "tdah": tdah, "fragmentos": fragmentos,
+    "puente": puente, "reflejo": reflejo, "brasa": brasa, "fragmentos_propios": fragmentos_propios,
+}
+
 
 def todos_los_tamanos():
     """Regenera solo los anchos menores a partir de las imágenes existentes."""

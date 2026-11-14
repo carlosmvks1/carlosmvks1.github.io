@@ -5,6 +5,9 @@ date: 2025-09-16
 description: "Qué es y qué no es el narcisismo: la diferencia entre rasgos y trastorno, sus rostros grandioso y vulnerable, y el vacío frágil que sostiene la fachada."
 categories: [medicina]
 featured: true
+collage: reflejo
+apertura: guia
+collage_alt: "Collage: el busto de una plaza, de noche, con el yeso saltado junto al ojo; a su lado, un espejo redondo con aro azul muestra el mismo rostro invertido y en otro tono, rotulado «el reflejo»."
 ---
 
 Imagina estar frente al espejo. No es un espejo cualquiera: refleja tu rostro, pero también las expectativas de los demás, los elogios que nunca parecen suficientes y las críticas que incluso cuando son constructivas no se sienten como simples observaciones, sino que hieren como ataques. Además, la admiración ajena que lejos de llenar ese vacío, se vuelve un combustible que exige más y más. Un reflejo que cambia según los ojos que te miran, y cuanto más lo buscas, más frágil se vuelve.

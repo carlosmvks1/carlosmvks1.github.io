@@ -8,3 +8,12 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+exclude:
+  - AGENTS.md
+  - README.md
+  - docs
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - .gitignore

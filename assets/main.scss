@@ -663,6 +663,24 @@ h1, h2, h3 {
   .prose blockquote:has(> p:only-child > strong:only-child) { margin-right: -6rem; }
 }
 
+/* Tablas: se desplazan dentro de su propio marco en pantallas estrechas */
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.prose th, .prose td {
+  border-bottom: 1px solid var(--linea);
+  padding: 0.55rem 0.8rem 0.55rem 0;
+  text-align: left;
+  vertical-align: top;
+  min-width: 9rem;
+}
+.prose th { font-weight: 600; color: var(--marfil); border-bottom-color: var(--tema); }
+
 /* Anotaciones del autor y notas de fuentes: al margen en escritorio, plegables en móvil */
 .prose .anotacion, .nota-margen {
   font-size: 0.86rem;

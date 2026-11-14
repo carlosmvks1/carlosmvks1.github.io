@@ -5,8 +5,8 @@ permalink: /creditos/
 description: Procedencia y licencias de las imágenes usadas en los collages de El cuaderno.
 ---
 
-Los collages de este sitio se componen a partir de fotografías y láminas con
-licencia libre o de dominio público. Todas las imágenes están **modificadas**:
+Los collages de este sitio se componen a partir de fotografías propias del
+autor y de fotografías y láminas con licencia libre o de dominio público. Todas las imágenes están **modificadas**:
 recortadas, pasadas a duotono, con grano y combinadas con otras piezas. Los
 collages que incluyen obras CC BY-SA se comparten bajo
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es).
@@ -14,7 +14,17 @@ collages que incluyen obras CC BY-SA se comparten bajo
 Licencias y autoría verificadas en las páginas de Wikimedia Commons de cada
 archivo el 14 de noviembre de 2026.
 
-**Fotografías de Honduras**
+**Fotografías propias**
+
+Fotografías de Carlos Reyes, todos los derechos reservados. Se usan en «Lo que
+repetís, eso sos» (un vado sobre un río crecido), «Narcisismo y Trastorno
+Narcisista de la Personalidad» (un busto de plaza de noche), «Fuego que no debe
+tocar nada» (la luna entre ramas) y en las portadas automáticas de «Si Dios
+permanece, el amor aparece», «La lección que Romanos 1–3 imprime en el alma»,
+«Lo que Honduras decide en 2025» y «El fundamento o el abismo», además de la
+rotación general de portadas.
+
+**Fotografías de Honduras (Wikimedia Commons)**
 
 - *Old house in Tegucigalpa* (2021), Luis Alfredo Romero. [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es). [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Old_house_in_Tegucigalpa.jpg). En «La mentira que no se siente como mentira».
 - *La Leona Tegucigalpa stairs* (2006), chamo estudio. [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/deed.es). [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:La_Leona_Tegucigalpa_stairs.jpg). En «Explorando el TDAH desde dentro» y en portadas automáticas.

@@ -4,6 +4,7 @@ title: "Lo que Honduras decide en 2025: no personas, sino futuros posibles"
 date: 2025-11-25
 description: "Un análisis sin propaganda de las propuestas de Nasralla, Asfura y Moncada: qué promete cada uno, qué tan viable es y qué costaría cada modelo de país."
 categories: [filosofia]
+fragmento: curva
 ---
 
 *Este análisis fue elaborado con el mayor rigor posible, basado únicamente en propuestas verificables, documentos oficiales y evidencia pública. El objetivo es ofrecer una lectura clara, no propagandística, sobre lo que cada proyecto presidencial implica para el país.*
