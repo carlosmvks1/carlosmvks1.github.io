@@ -22,8 +22,9 @@ layout: default
 
     <h1>{{ page.title | escape }}</h1>
 
-    {% if page.subtitle %}
-      <p class="article-deck">{{ page.subtitle }}</p>
+    {% assign deck = page.subtitle | default: page.description %}
+    {% if deck %}
+      <p class="article-deck">{{ deck }}</p>
     {% endif %}
   </header>
 

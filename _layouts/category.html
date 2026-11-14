@@ -28,7 +28,7 @@ layout: default
           {% include category-mark.html cat=cat %}
           <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
         </div>
-        <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 170 }}</p>
       </article>
     {% endfor %}
   </div>

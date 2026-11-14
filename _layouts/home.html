@@ -37,7 +37,7 @@ layout: default
       </div>
 
       <h2><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
-      <p>{{ latest.excerpt | strip_html | truncate: 180 }}</p>
+      <p>{{ latest.description | default: latest.excerpt | strip_html | truncate: 180 }}</p>
       <a class="read-link" href="{{ latest.url | relative_url }}">Leer entrada <span aria-hidden="true">→</span></a>
     </div>
 
@@ -81,7 +81,7 @@ layout: default
           {% include category-mark.html cat=post_cat %}
           <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         </div>
-        <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
+        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 160 }}</p>
       </article>
     {% endfor %}
   </div>

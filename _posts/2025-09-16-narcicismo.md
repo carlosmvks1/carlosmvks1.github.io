@@ -2,6 +2,7 @@
 layout: post
 title: "Narcisismo y Trastorno Narcisista de la Personalidad: una mirada desde dentro"
 date: 2025-09-16
+description: "Qué es y qué no es el narcisismo: la diferencia entre rasgos y trastorno, sus rostros grandioso y vulnerable, y el vacío frágil que sostiene la fachada."
 categories: [medicina]
 featured: true
 ---

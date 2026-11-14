@@ -2,11 +2,12 @@
 layout: post
 title: "La mentira que no se siente como mentira"
 date: 2026-06-20
+subtitle: "Protegemos nuestra identidad, reorganizamos lo ocurrido y terminamos creyendo que nuestra versión es objetiva."
+description: "Disonancia cognitiva, sesgo autoservicial y punto ciego del sesgo: cómo la mente protege nuestra identidad y nos convence de que nuestra versión es la objetiva."
 categories: [filosofia]
 featured: true
 ---
 
-### _Protegemos nuestra identidad, reorganizamos lo ocurrido y terminamos creyendo que nuestra versión es objetiva_
 
 Esto nos ocurre a todos. Exploremos la idea:
 
@@ -22,7 +23,7 @@ Después de esa reorganización, nuestra se siente como la realidad.
 
 Tres fenómenos estudiados por la psicología permiten reconstruir este proceso: la disonancia cognitiva, el sesgo atribucional autoservicial y el punto ciego del sesgo.
 
-## Disonancia cognitiva.
+## Disonancia cognitiva
 
 Este concepto que seguramente hayas escuchado antes nos lleva a explorar lo que pone en marcha el proceso antes mencionado.
 

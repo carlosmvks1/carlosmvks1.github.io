@@ -1,7 +1,9 @@
 ---
 layout: post
 title: "Amar la herida"
-date: 2025-11-23
+date: 2026-05-26
+permalink: /filosofia/2025/11/23/Amarlaherida.html
+description: "A veces no amamos a una persona, sino el estado que despierta en nosotros. Con Platón como andamio, sobre confundir la fuerza de la carencia con la verdad del amor."
 categories: [filosofia]
 featured: true
 ---
