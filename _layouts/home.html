@@ -1,111 +1,114 @@
 ---
 layout: default
 ---
+{%- assign lead = site.posts.first -%}
+{%- assign lead_cat = lead.categories | first | default: 'cuaderno' -%}
 
-<section class="home-intro site-shell">
-  <div class="home-intro-copy">
-    <p class="eyebrow">Cuaderno público</p>
-    <h1>Notas sobre medicina, ideas y otras cosas que intento entender.</h1>
-    <p class="intro-copy">Un lugar para ordenar lo que aprendo, pensar con más cuidado y dejar registro de lo que vale la pena volver a leer.</p>
-  </div>
-  <div class="home-intro-visual">
-    {% include hero-sketch.html %}
+<section class="portadilla shell" aria-labelledby="portadilla-titulo">
+  <p class="eyebrow">Cuaderno público de Carlos Reyes</p>
+  <h1 id="portadilla-titulo" class="portadilla-titulo">Medicina, filosofía, fe y proyectos, <em>escritos desde Tegucigalpa.</em></h1>
+  <div class="portadilla-texto">
+    <p>Estudio medicina en la UNAH y, mientras aprendo el oficio, intento pensar la vida con un poco de orden. Escribo para entender; y publico para no olvidarme de lo que ya entendí.</p>
+    <p class="portadilla-enlaces"><a href="{{ '/sobre-mi/' | relative_url }}">Sobre mí</a> <a href="{{ '/archivo/' | relative_url }}">Archivo completo</a></p>
   </div>
 </section>
 
-{% assign latest = site.posts.first %}
-{% if latest %}
-  {% assign latest_cat = latest.categories | first | default: 'cuaderno' %}
-<section class="home-section site-shell">
-  <div class="section-heading">
-    <h2>Última entrada</h2>
+{%- if lead %}
+<article class="protagonista shell tema--{{ lead_cat }}" aria-labelledby="protagonista-titulo">
+  <a class="protagonista-imagen" href="{{ lead.url | relative_url }}" tabindex="-1">
+    {% include cover.html post=lead format="v" eager=true alt=lead.collage_alt %}
+  </a>
+  <div class="protagonista-texto">
+    <p class="kicker">Última entrada</p>
+    <h2 id="protagonista-titulo" class="protagonista-titulo"><a href="{{ lead.url | relative_url }}">{{ lead.title }}</a></h2>
+    <p class="deck">{{ lead.subtitle | default: lead.description }}</p>
+    {% include meta.html post=lead %}
+    {%- if lead.cita %}
+    <blockquote class="cita-portada"><p>{{ lead.cita }}</p></blockquote>
+    {%- endif %}
+    <a class="leer" href="{{ lead.url | relative_url }}">Leer la entrada <span aria-hidden="true">→</span></a>
   </div>
+</article>
+{%- endif %}
 
-  <article class="featured-post featured-post--{{ latest_cat }}{% if latest.cover %} featured-post--with-cover{% endif %}">
-    <div class="featured-copy">
-      <div class="post-meta category-meta category-meta--{{ latest_cat }}">
-        <span class="category-dot" aria-hidden="true"></span>
-        {% case latest_cat %}
-          {% when 'medicina' %}<span>Medicina</span>
-          {% when 'filosofia' %}<span>Filosofía</span>
-          {% when 'fe' %}<span>Fe y ética</span>
-          {% when 'proyectos' %}<span>Proyectos</span>
-          {% else %}<span>Cuaderno</span>
-        {% endcase %}
-        <span aria-hidden="true">·</span>
-        <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%d.%m.%Y" }}</time>
-      </div>
+<section class="recientes shell" aria-labelledby="recientes-titulo">
+  <header class="seccion-cabeza">
+    <h2 id="recientes-titulo">También en el cuaderno</h2>
+    <a href="{{ '/archivo/' | relative_url }}">Ver todo el archivo <span aria-hidden="true">→</span></a>
+  </header>
 
-      <h2><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
-      <p>{{ latest.description | default: latest.excerpt | strip_html | truncate: 180 }}</p>
-      <a class="read-link" href="{{ latest.url | relative_url }}">Leer entrada <span aria-hidden="true">→</span></a>
-    </div>
-
-    <a class="featured-visual" href="{{ latest.url | relative_url }}" tabindex="-1" aria-hidden="true">
-      {% if latest.cover %}
-        <img src="{{ latest.cover | relative_url }}" alt="" loading="eager">
-      {% else %}
-        <div class="featured-visual-fallback">
-          {% include category-mark.html cat=latest_cat large=true %}
-          <span class="visual-word">{% case latest_cat %}{% when 'medicina' %}observar{% when 'filosofia' %}preguntar{% when 'fe' %}examinar{% when 'proyectos' %}construir{% else %}pensar{% endcase %}</span>
-        </div>
-      {% endif %}
-    </a>
-  </article>
-</section>
-{% endif %}
-
-<section class="home-section site-shell">
-  <div class="section-heading">
-    <h2>Más reciente</h2>
-    <a href="#temas">Explorar temas</a>
-  </div>
-
-  <div class="recent-posts">
-    {% for post in site.posts offset:1 limit:6 %}
-      {% assign post_cat = post.categories | first | default: 'cuaderno' %}
-      <article class="post-row post-row--{{ post_cat }}{% if forloop.first %} post-row--wide{% endif %}">
-        <div class="post-meta category-meta category-meta--{{ post_cat }}">
-          <span class="category-dot" aria-hidden="true"></span>
-          {% case post_cat %}
-            {% when 'medicina' %}<span>Medicina</span>
-            {% when 'filosofia' %}<span>Filosofía</span>
-            {% when 'fe' %}<span>Fe y ética</span>
-            {% when 'proyectos' %}<span>Proyectos</span>
-            {% else %}<span>Cuaderno</span>
-          {% endcase %}
-          <span aria-hidden="true">·</span>
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
-        </div>
-        <div class="post-row-heading">
-          {% include category-mark.html cat=post_cat %}
+  <div class="recientes-grid">
+    {%- for post in site.posts offset:1 limit:3 -%}
+      {%- assign p_cat = post.categories | first | default: 'cuaderno' -%}
+      {%- if forloop.first %}
+      <article class="entrada entrada--grande tema--{{ p_cat }}">
+        <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1">{% include cover.html post=post format="h" alt=post.collage_alt %}</a>
+        <div class="entrada-texto">
+          {% include meta.html post=post %}
           <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html | truncate: 170 }}{% endif %}</p>
         </div>
-        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 160 }}</p>
       </article>
-    {% endfor %}
+      <div class="recientes-columna">
+      {%- else %}
+        <article class="entrada entrada--texto tema--{{ p_cat }}">
+          {% include meta.html post=post %}
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html | truncate: 170 }}{% endif %}</p>
+        </article>
+      {%- endif -%}
+    {%- endfor %}
+      </div>
   </div>
 </section>
 
-<section class="home-section topics-section site-shell" id="temas">
-  <div class="section-heading">
-    <h2>Explorar</h2>
+{%- assign archivo_destacado = site.posts | where_exp: "p", "p.collage" | where_exp: "p", "p.url != lead.url" | last -%}
+{%- if archivo_destacado %}
+{%- assign a_cat = archivo_destacado.categories | first | default: 'cuaderno' -%}
+<section class="pausa tema--{{ a_cat }}" aria-labelledby="pausa-titulo">
+  <div class="shell pausa-inner">
+    <a class="pausa-imagen" href="{{ archivo_destacado.url | relative_url }}" tabindex="-1">{% include cover.html post=archivo_destacado format="h" alt=archivo_destacado.collage_alt %}</a>
+    <div class="pausa-texto">
+      <p class="kicker">Del archivo</p>
+      <h2 id="pausa-titulo"><a href="{{ archivo_destacado.url | relative_url }}">{{ archivo_destacado.title }}</a></h2>
+      <p>{{ archivo_destacado.description }}</p>
+      {% include meta.html post=archivo_destacado %}
+    </div>
   </div>
+</section>
+{%- endif %}
 
-  <div class="topic-cards">
-    {% assign category_pages = site.pages | where: "layout", "category" | sort: "title" %}
-    {% for item in category_pages %}
-      {% assign item_cat = item.category | default: 'cuaderno' %}
-      <a class="topic-card topic-card--{{ item_cat }}" href="{{ item.url | relative_url }}">
-        <div class="topic-card-top">
-          {% include category-mark.html cat=item_cat %}
-          <span class="topic-arrow" aria-hidden="true">↗</span>
-        </div>
-        <div>
-          <strong>{{ item.title }}</strong>
-          {% if item.description %}<span>{{ item.description | strip_html | truncate: 100 }}</span>{% endif %}
-        </div>
+<section class="mas shell" aria-label="Más entradas">
+  <div class="mas-grid">
+    {%- for post in site.posts offset:4 limit:3 %}
+      {%- assign p_cat = post.categories | first | default: 'cuaderno' -%}
+      <article class="entrada entrada--columna tema--{{ p_cat }}">
+        <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1">{% include cover.html post=post format="h" %}</a>
+        {% include meta.html post=post %}
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html | truncate: 170 }}{% endif %}</p>
+      </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="temas shell" aria-labelledby="temas-titulo">
+  <header class="seccion-cabeza">
+    <h2 id="temas-titulo">Cuatro líneas de trabajo</h2>
+  </header>
+  <div class="temas-grid">
+    {%- assign temas = "medicina,filosofia,fe,proyectos" | split: "," -%}
+    {%- for t in temas -%}
+      {%- assign t_posts = site.posts | where_exp: "p", "p.categories contains t" -%}
+      {%- assign t_page = site.pages | where: "category", t | first -%}
+      {%- capture t_url %}{% include cat-url.html cat=t %}{% endcapture %}
+      <a class="tema-bloque tema--{{ t }}" href="{{ t_url | relative_url }}">
+        {% include category-mark.html cat=t %}
+        <strong>{% include cat-name.html cat=t %}</strong>
+        <span class="tema-cuenta">{{ t_posts.size }} {% if t_posts.size == 1 %}entrada{% else %}entradas{% endif %}</span>
+        <span class="tema-desc">{{ t_page.description }}</span>
+        {%- if t_posts.first %}<span class="tema-ultima">Última: {{ t_posts.first.title }}</span>{% endif %}
       </a>
-    {% endfor %}
+    {%- endfor %}
   </div>
 </section>

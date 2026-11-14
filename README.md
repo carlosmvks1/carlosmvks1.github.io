@@ -25,3 +25,20 @@ categories: [medicina]   # medicina | filosofia | fe | proyectos
 ```bash
 bundle exec jekyll serve
 ```
+
+## Campos opcionales del diseño
+
+```yaml
+collage: mentira          # usa assets/collage/mentira-{v,m,h}.webp
+collage_alt: "…"          # descripción del collage para lectores de pantalla
+cita: "…"                 # frase destacada en la portada si es la última entrada
+apertura: guia            # para guías médicas: imagen más pequeña e índice al frente
+serie: "El ser necesario" # agrupa entradas en una serie
+serie_parte: 1
+estado: "En desarrollo"   # solo si el texto realmente sigue abierto
+```
+
+Las referencias van como notas al pie de kramdown (`[^nombre]`); en escritorio
+aparecen en el margen, junto al pasaje. Una anotación al margen es un párrafo
+seguido de `{: .anotacion}`. Los collages se generan con `_collage/componer.py`
+(ver `_collage/README.md`).

@@ -5,6 +5,9 @@ date: 2026-06-20
 subtitle: "Protegemos nuestra identidad, reorganizamos lo ocurrido y terminamos creyendo que nuestra versión es objetiva."
 description: "Disonancia cognitiva, sesgo autoservicial y punto ciego del sesgo: cómo la mente protege nuestra identidad y nos convence de que nuestra versión es la objetiva."
 categories: [filosofia]
+collage: mentira
+collage_alt: "Collage: una fachada del centro de Tegucigalpa partida en dos mitades que no coinciden, rotuladas «mi versión» y «la tuya»; encima, una lámina antigua del ojo con el punto ciego tapado por un disco de terracota."
+cita: "Confundimos la ausencia de intención de engañarnos con la ausencia de autoengaño."
 featured: true
 ---
 
@@ -87,7 +90,10 @@ Hagámonos la pregunta
 
 Aquí entra el **sesgo atribucional autoservicial.**
 
-Este sesgo consiste en explicar los acontecimientos positivos mediante causas más internas, estables y globales (Es decir causas que dependen de mí [Internas]; Que seguiran existiendo [Estables] y que se aplican a muchos ámbitos de nuestra vida [Globales]) que las utilizadas para explicar los acontecimientos negativos.
+**Internas:** causas que dependen de mí. **Estables:** que seguiran existiendo. **Globales:** que se aplican a muchos ámbitos de nuestra vida.
+{: .anotacion}
+
+Este sesgo consiste en explicar los acontecimientos positivos mediante causas más internas, estables y globales que las utilizadas para explicar los acontecimientos negativos.
 
 Explicamos los acontecimientos positivos mediante causas que dicen algo favorable y duradero sobre nosotros, ejemplo:
 
@@ -121,7 +127,7 @@ Cuando el otro reaccionas mal:
 
 > "Es emocionalmente inestable".
 
-El metaanálisis de Amy Mezulis encontró un efecto promedio grande. El 89 % de las muestras mostró una tendencia positiva. [[1](https://pubmed.ncbi.nlm.nih.gov/15367078/)].
+El metaanálisis de Amy Mezulis encontró un efecto promedio grande. El 89 % de las muestras mostró una tendencia positiva. [^mezulis].
 
 Es decir, es un patrón humano bastante generalizado el siguiente:
 
@@ -185,7 +191,7 @@ Hasta aquí podríamos imaginar que quien racionaliza sabe, al menos vagamente, 
 
 Pensalo por un momento: ¿cuántas veces reconocés el autoengaño mientras está ocurriendo? Generalmente solo lo vemos después, y muchas veces ni siquiera entonces. Ese último será el caso si crees que no racionalizas.
 
-El trabajo de Emily Pronin y sus colaboradores mostró que tendemos a percibir los sesgos con mayor facilidad en los demás que en nosotros mismos. En tres encuestas, los participantes se consideraron menos susceptibles a diversos sesgos que el estadounidense promedio, sus propios compañeros de clase o los demás viajeros de un aeropuerto [2](https://www.sakkyndig.com/psykologi/artvit/pronin2015.pdf).
+El trabajo de Emily Pronin y sus colaboradores mostró que tendemos a percibir los sesgos con mayor facilidad en los demás que en nosotros mismos. En tres encuestas, los participantes se consideraron menos susceptibles a diversos sesgos que el estadounidense promedio, sus propios compañeros de clase o los demás viajeros de un aeropuerto [^pronin].
 
 El punto ciego persistió incluso cuando el sesgo acababa de manifestarse. Después de evaluar sus propias cualidades, los participantes recibieron una explicación explícita del efecto "mejor que el promedio". Sin embargo, solo el 24 % de quienes se habían colocado por encima de sus compañeros reconoció que su evaluación había podido estar sesgada. La mayoría sostuvo que había sido objetiva; algunos incluso afirmaron que habían sido demasiado modestos...
 
@@ -348,3 +354,7 @@ Vale más quien sabe que puede estar equivocado que quien necesita tener siempre
 Porque peor que no ver es no saber que estamos ciegos.
 
 ¿Utilizás el error para aprender o para construir otra versión de la historia en la que nunca fuiste vos?
+
+[^mezulis]: Mezulis, A. H., Abramson, L. Y., Hyde, J. S. y Hankin, B. L. (2004). «Is there a universal positivity bias in attributions?». *Psychological Bulletin*, 130(5), 711–747. [Resumen en PubMed](https://pubmed.ncbi.nlm.nih.gov/15367078/).
+
+[^pronin]: Pronin, E. y colaboradores, sobre el punto ciego del sesgo. [Texto en PDF](https://www.sakkyndig.com/psykologi/artvit/pronin2015.pdf).

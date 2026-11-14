@@ -1,0 +1,8 @@
+{%- assign m_cat = include.post.categories | first | default: 'cuaderno' -%}
+{%- capture m_url -%}{% include cat-url.html cat=m_cat %}{%- endcapture -%}
+<p class="meta">
+  <a class="tema tema--{{ m_cat }}" href="{{ m_url | relative_url }}">{% include cat-name.html cat=m_cat %}</a>
+  <time datetime="{{ include.post.date | date_to_xmlschema }}">{% include fecha.html date=include.post.date %}</time>
+  <span>{% include reading-time.html content=include.post.content %}</span>
+  {%- if include.post.estado %}<span class="estado">{{ include.post.estado }}</span>{% endif %}
+</p>

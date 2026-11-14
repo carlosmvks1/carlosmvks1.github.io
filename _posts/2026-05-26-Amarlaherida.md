@@ -5,6 +5,8 @@ date: 2026-05-26
 permalink: /filosofia/2025/11/23/Amarlaherida.html
 description: "A veces no amamos a una persona, sino el estado que despierta en nosotros. Con Platón como andamio, sobre confundir la fuerza de la carencia con la verdad del amor."
 categories: [filosofia]
+collage: herida
+collage_alt: "Collage: un busto de Platón partido a la altura de los ojos y unido otra vez con cintas de ámbar, frente a la ladera de El Picacho al anochecer con las ventanas encendidas."
 featured: true
 ---
 

@@ -1,56 +1,86 @@
 ---
 layout: default
 ---
+{%- assign cat = page.categories | first | default: 'cuaderno' -%}
+{%- assign apertura = page.apertura | default: 'literaria' -%}
+{%- unless page.collage -%}{%- assign apertura = 'sencilla' -%}{%- endunless -%}
+{%- if page.apertura == 'guia' -%}{%- assign apertura = 'guia' -%}{%- endif -%}
+{%- capture toc -%}{% include toc.html html=content %}{%- endcapture -%}
 
-{% assign primary_category = page.categories | first | default: 'cuaderno' %}
-{% case primary_category %}
-  {% when 'medicina' %}{% assign category_name = 'Medicina' %}
-  {% when 'filosofia' %}{% assign category_name = 'Filosofía' %}
-  {% when 'fe' %}{% assign category_name = 'Fe y ética' %}
-  {% when 'proyectos' %}{% assign category_name = 'Proyectos' %}
-  {% else %}{% assign category_name = 'Cuaderno' %}
-{% endcase %}
-
-<article class="article-shell site-shell article-shell--{{ primary_category }}">
-  <header class="article-header">
-    <div class="post-meta category-meta category-meta--{{ primary_category }}">
-      <span class="category-dot" aria-hidden="true"></span>
-      <span>{{ category_name }}</span>
-      <span aria-hidden="true">·</span>
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d.%m.%Y" }}</time>
+<article class="articulo articulo--{{ apertura }} tema--{{ cat }}">
+  <header class="apertura">
+    <div class="shell apertura-inner">
+      <div class="apertura-texto">
+        {% include meta.html post=page %}
+        <h1 class="articulo-titulo">{{ page.title | escape }}</h1>
+        {%- assign deck = page.subtitle | default: page.description -%}
+        {%- if deck %}
+        <p class="deck">{{ deck }}</p>
+        {%- endif %}
+        {%- if page.serie %}
+        <p class="serie-aviso">Parte {{ page.serie_parte }} de la serie <em>{{ page.serie }}</em></p>
+        {%- endif %}
+      </div>
+      {%- if page.collage %}
+      <figure class="apertura-imagen">
+        {% include cover.html post=page format="v" eager=true alt=page.collage_alt %}
+        {%- if page.collage_credito %}<figcaption>{{ page.collage_credito }}</figcaption>{% endif %}
+      </figure>
+      {%- endif %}
     </div>
-
-    <h1>{{ page.title | escape }}</h1>
-
-    {% assign deck = page.subtitle | default: page.description %}
-    {% if deck %}
-      <p class="article-deck">{{ deck }}</p>
-    {% endif %}
   </header>
 
-  {% if page.cover %}
-    <figure class="article-cover">
-      <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | default: page.title | escape }}">
-      {% if page.cover_caption %}<figcaption>{{ page.cover_caption }}</figcaption>{% endif %}
-    </figure>
-  {% endif %}
+  <div class="shell lectura{% if toc != '' %} lectura--con-indice{% endif %}">
+    {%- if toc != '' %}
+    <aside class="lectura-indice">
+      <details class="toc-movil">
+        <summary>Índice</summary>
+        {{ toc }}
+      </details>
+    </aside>
+    {%- endif %}
 
-  <div class="prose article-prose">
-    {{ content }}
+    <div class="prose">
+      {{ content }}
+    </div>
   </div>
 
-  <nav class="article-nav" aria-label="Entradas adyacentes">
-    {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}">
-        <span>Anterior</span>
-        <strong>{{ page.previous.title }}</strong>
-      </a>
-    {% endif %}
-    {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}" class="next">
-        <span>Siguiente</span>
-        <strong>{{ page.next.title }}</strong>
-      </a>
-    {% endif %}
-  </nav>
+  <footer class="articulo-pie shell">
+    {%- if page.serie %}
+      {%- assign serie_posts = site.posts | where: "serie", page.serie | sort: "serie_parte" -%}
+      <nav class="serie" aria-labelledby="serie-titulo">
+        <p class="kicker" id="serie-titulo">Serie: {{ page.serie }}</p>
+        <ol>
+          {%- for s in serie_posts %}
+          <li>{% if s.url == page.url %}<span aria-current="page">{{ s.title }}</span>{% else %}<a href="{{ s.url | relative_url }}">{{ s.title }}</a>{% endif %}</li>
+          {%- endfor %}
+        </ol>
+      </nav>
+    {%- endif %}
+
+    {%- assign relacionadas = site.posts | where_exp: "p", "p.categories contains cat" | where_exp: "p", "p.url != page.url" -%}
+    {%- if relacionadas.size > 0 %}
+    <section class="relacionadas" aria-labelledby="relacionadas-titulo">
+      <h2 id="relacionadas-titulo" class="kicker">Para seguir leyendo</h2>
+      <div class="relacionadas-grid">
+        {%- for post in relacionadas limit:3 %}
+        <article class="entrada entrada--columna tema--{{ cat }}">
+          <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1">{% include cover.html post=post format="h" alt=post.collage_alt %}</a>
+          {% include meta.html post=post %}
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        </article>
+        {%- endfor %}
+      </div>
+    </section>
+    {%- endif %}
+
+    <nav class="adyacentes" aria-label="Entradas anterior y siguiente">
+      {%- if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}"><span>Anterior</span>{{ page.previous.title }}</a>
+      {%- endif %}
+      {%- if page.next %}
+      <a class="siguiente" href="{{ page.next.url | relative_url }}"><span>Siguiente</span>{{ page.next.title }}</a>
+      {%- endif %}
+    </nav>
+  </footer>
 </article>

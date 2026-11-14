@@ -1,0 +1,27 @@
+{%- comment -%}
+Portada de una entrada. Si tiene `collage`, usa sus tres recortes
+(4:5 escritorio, 1:1 móvil, 3:2 listas). Si no, arma una portada automática
+con un fragmento de la ciudad, el color y la marca de su tema.
+include.format: "v" (protagonista) u "h" (listas).
+{%- endcomment -%}
+{%- assign c_post = include.post -%}
+{%- assign c_cat = c_post.categories | first | default: 'cuaderno' -%}
+{%- assign c_fmt = include.format | default: 'h' -%}
+{%- if c_post.collage -%}
+  {%- assign c_base = '/assets/collage/' | append: c_post.collage -%}
+  <picture class="cover cover--collage cover--{{ c_fmt }}">
+    {%- if c_fmt == 'v' %}
+    <source media="(min-width: 860px)" srcset="{{ c_base | append: '-v.webp' | relative_url }}" width="1200" height="1500">
+    <source media="(max-width: 859px)" srcset="{{ c_base | append: '-m.webp' | relative_url }}" width="1000" height="1000">
+    {%- endif %}
+    <img src="{{ c_base | append: '-h.webp' | relative_url }}" width="1200" height="800" alt="{{ include.alt | default: '' }}" {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+  </picture>
+{%- else -%}
+  {%- assign c_frags = "grabado,calle,casa,escalinata" | split: "," -%}
+  {%- assign c_i = c_post.date | date: "%-d" | modulo: 4 -%}
+  <div class="cover cover--auto cover--{{ c_fmt }} tema-fondo--{{ c_cat }}" aria-hidden="true">
+    <img src="{{ '/assets/collage/fragmentos/' | append: c_frags[c_i] | append: '.webp' | relative_url }}" alt="" loading="lazy" decoding="async">
+    <span class="cover-shape"></span>
+    {% include category-mark.html cat=c_cat %}
+  </div>
+{%- endif -%}
