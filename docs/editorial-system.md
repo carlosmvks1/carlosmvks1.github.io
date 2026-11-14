@@ -2,8 +2,8 @@
 
 **Estado: propuesta pendiente de revisión por Carlos.** Nada de lo que aquí se
 marca como *Propuesta* es una regla aprobada. Las decisiones que Carlos ya tomó
-están marcadas como **[Carlos]** y registradas en la sección 7. Se basa en el análisis de las 13
-entradas publicadas: [`editorial-analysis.md`](editorial-analysis.md). Ahí
+están marcadas como **[Carlos]** y registradas en la sección 7. Se basa en el
+análisis de las 13 entradas publicadas: [`editorial-analysis.md`](editorial-analysis.md). Ahí
 están la evidencia y los ejemplos completos; esta guía remite a sus secciones
 como «análisis 4.1», etc.
 
@@ -164,11 +164,12 @@ Ejemplos de edición de línea (propuestas, no aplicadas):
 formato. Las partes marcadas como opcionales pueden faltar; el orden puede
 cambiar. No hay una fórmula universal **[Carlos]**.
 
-El análisis encontró **siete formatos**. Cuatro tienen evidencia suficiente
-(dos o tres entradas): divulgación clínica, ensayo argumentativo, lectura
-comentada y ensayo reflexivo. Tres son **provisionales** porque se basan en
-una sola entrada: guía práctica, actualidad y prosa breve. Sus modelos (2.2,
-2.6 y 2.7) son puntos de partida, no patrones confirmados.
+El análisis encontró **siete formatos** (su alcance está en la tabla de la
+sección 3 del análisis). Ninguno tiene más de tres entradas, y las dos del
+ensayo argumentativo son de una misma serie: los modelos describen lo
+observado y no son normas para toda la escritura de Carlos. Tres formatos son
+**provisionales** porque se basan en una sola entrada: guía práctica,
+actualidad y prosa breve. Sus modelos (2.2, 2.6 y 2.7) son puntos de partida.
 
 ### 2.1 Divulgación clínica
 
@@ -204,7 +205,8 @@ con enlace y para qué sirve cada uno.
 | Postura personal | Qué cree el autor más allá del argumento, separado | Sí |
 
 En una serie, cada parte debe retomar lo que la anterior realmente estableció
-(no más). Ver la tensión entre `SN.md` y `Trinidad.md` (análisis 3.3).
+(no más). Ver el aumento de certeza entre `SN.md` y `Trinidad.md`
+(análisis 4.11, punto 2.1).
 
 ### 2.4 Lectura comentada (filosófica o bíblica)
 
@@ -406,7 +408,7 @@ contó, una analogía o un ejemplo inventado que se presenta como tal.
   verificar no se cambia: se anota como pendiente. Los pendientes de
   contenido se registran en la tabla 4.11 de `editorial-analysis.md`, que
   separa lo confirmado de lo sospechado y ordena por impacto (errores
-  factuales y atribuciones; contradicciones argumentales; claridad y estilo).
+  factuales y atribuciones; problemas argumentales; claridad y estilo).
   Los pendientes visuales, en la sección 11 de `visual-system.md`.
 - **[Carlos]** La verificación de esa tabla es un encargo separado.
 
@@ -611,6 +613,18 @@ Respuestas de Carlos a la primera versión de esta guía (14 de noviembre de
 6. **Recursos de estilo** (inicio, 1.1, 1.4).
    - Las antítesis, las frases cortas, las analogías clínicas y las preguntas
      están disponibles, no son obligatorias ni una receta para imitarlo.
+
+7. **Alcance del análisis** (2, y análisis 3 y 4.11).
+   - Las descripciones de formatos indican cuántas entradas las respaldan,
+     si son independientes y hasta dónde se puede generalizar. Dos textos de
+     una misma serie describen esa serie; no fijan una norma para toda su
+     escritura.
+   - Que una diferencia entre pasajes se compruebe en el repositorio no la
+     convierte en contradicción: se distingue entre contradicción explícita,
+     aumento injustificado de certeza, cambio de alcance y premisa no
+     desarrollada.
+   - El sistema no se amplía por ahora: se probará con el próximo artículo y
+     se ajustará según los problemas reales que aparezcan.
 
 **Sigue pendiente:** la revisión general de este documento por Carlos. Hasta
 entonces, lo marcado como **[Propuesta]** es sugerencia.

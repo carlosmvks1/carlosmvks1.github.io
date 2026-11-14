@@ -255,23 +255,26 @@ persona cuando algo falla). El riesgo es que se vuelvan muletillas:
 ## 3. Formatos encontrados
 
 No hay una estructura única. La primera versión de este análisis decía «seis
-formatos», pero enumeraba siete; el recuento correcto es **siete**. Solo cuatro
-tienen evidencia suficiente (dos entradas o más). Los otros tres se basan en
-una sola entrada y son **categorías provisionales**: describen esa entrada, no
-un patrón.
+formatos», pero enumeraba siete; el recuento correcto es **siete**.
 
-| Formato | Entradas | Evidencia |
-| --- | --- | --- |
-| 3.1 Divulgación clínica | `TDAH.md`, `narcicismo.md` | Suficiente (2) |
-| 3.2 Guía práctica | `anamnesis.md` | Provisional (1) |
-| 3.3 Ensayo argumentativo | `SN.md`, `Trinidad.md` | Suficiente (2, de una misma serie) |
-| 3.4 Lectura comentada | `IIEAN.md`, `Romanos.md`, `Juan.md` | Suficiente (3). La variante filosófica tiene una sola entrada. |
-| 3.5 Ensayo reflexivo | `Amor.md`, `Amarlaherida.md`, `Mentirnos.md` | Suficiente (3) |
-| 3.6 Análisis de actualidad | `Elecciones.md` | Provisional (1) |
-| 3.7 Prosa breve | `Fuego.md` | Provisional (1) |
+Ningún formato tiene más de tres entradas, así que la tabla no califica la
+evidencia como «suficiente» o «insuficiente». Describe el alcance observado:
+cuántas entradas hay, si son independientes entre sí y hasta dónde se puede
+generalizar. En todos los casos, la descripción vale para esas entradas y no
+fija una norma para toda la escritura de Carlos.
 
-Incluso los formatos con evidencia suficiente tienen dos o tres entradas: sus
-descripciones son orientativas.
+| Formato | Entradas | Independencia | Límite para generalizar |
+| --- | --- | --- | --- |
+| 3.1 Divulgación clínica | 2: `TDAH.md`, `narcicismo.md` | Independientes: temas distintos, sistemas de referencias distintos | Lo que comparten las dos puede orientar; lo que aparece en una sola, no |
+| 3.2 Guía práctica | 1: `anamnesis.md` | No aplica | Describe esa entrada, no un formato |
+| 3.3 Ensayo argumentativo | 2: `SN.md`, `Trinidad.md` | **No independientes:** son las partes 1 y 2 de una misma serie | Describe esa serie; no establece por sí sola una norma para otros ensayos argumentativos |
+| 3.4 Lectura comentada | 3: `IIEAN.md`, `Romanos.md`, `Juan.md` | Independientes; dos son bíblicas y una filosófica | La variante bíblica tiene dos entradas; la filosófica, una sola |
+| 3.5 Ensayo reflexivo | 3: `Amor.md`, `Amarlaherida.md`, `Mentirnos.md` | Independientes; `Mentirnos.md` tiene ediciones de agentes (sección 1), que no se usaron como evidencia | Es el formato con más muestras, pero tres textos siguen siendo pocos para hablar de una norma |
+| 3.6 Análisis de actualidad | 1: `Elecciones.md` | No aplica | Describe esa entrada, no un formato |
+| 3.7 Prosa breve | 1: `Fuego.md` | No aplica | Describe esa entrada, no un formato |
+
+Los formatos de una sola entrada (3.2, 3.6 y 3.7) son **categorías
+provisionales**. Las descripciones de los demás son orientativas.
 
 ### 3.1 Divulgación clínica (`TDAH.md`, `narcicismo.md`)
 
@@ -319,8 +322,8 @@ descripciones son orientativas.
   (`SN.md:133`). El cierre personal de `SN.md:170-194` deja claro qué es
   argumento y qué es convicción.
 - **Lo débil.** Afirmaciones de exhaustividad sin argumento («Todo lo demás son
-  decoraciones conceptuales», `SN.md:102`). Tensión entre las partes de la
-  serie: `SN.md:162` admite que «No hay demostraciones finales», pero
+  decoraciones conceptuales», `SN.md:102`). Aumento de certeza entre las
+  partes de la serie: `SN.md:162` admite que «No hay demostraciones finales», pero
   `Trinidad.md:59` arranca con «Una vez concluimos que, efectivamente, existe
   un ser necesario». Títulos con mayúsculas a la inglesa en `Trinidad.md`.
 
@@ -415,9 +418,9 @@ Ordenadas por prioridad. Ninguna de estas debilidades debe imitarse.
   demás son decoraciones conceptuales.» (`SN.md:94-102`)
 - **Superlativos sin comparación.** «No existe nada comparable en ningún sistema
   filosófico o religioso.» (`Romanos.md:511`)
-- **Conclusión más fuerte que el cuerpo.** El cuerpo de `Amor.md:24` dice que el
-  amor «no puede sostenerse **solo** en los sentimientos»; el cierre afirma «El
-  amor al final no se siente, se practica.» (`Amor.md:129`)
+- **Alcance que cambia.** `Amor.md:24` dice que el amor «no puede
+  sostenerse **solo** en los sentimientos»; la línea siguiente y el cierre
+  dicen que «no se siente» (`:25`, `:129`).
 - **Categóricos clínicos sin fuente.** «en psiquiatría hay trastornos o
   condiciones, no enfermedades» (`TDAH.md:20`).
 
@@ -623,7 +626,7 @@ encargo separado.
 **Estado:**
 
 - **Confirmado:** se comprueba leyendo el propio repositorio (una
-  contradicción entre dos pasajes, una fuente ausente, una cifra que cambia
+  diferencia entre dos pasajes, una fuente ausente, una cifra que cambia
   entre dos líneas).
 - **Sospecha:** depende de una fuente externa que este análisis **no
   consultó**. Puede resultar correcta. No se presenta como error hasta
@@ -651,19 +654,32 @@ las cifras clínicas y al final las atribuciones de citas.
 | 1.13 | `Romanos.md:348` | Cita atribuida a Nietzsche | **Confirmado:** sin fuente. **Sospecha:** su autenticidad | Ídem. |
 | 1.14 | `Amor.md:107-108` | Cita atribuida a «Coelho (inspirado en el Tao)» | **Confirmado:** sin fuente. **Sospecha:** su autenticidad | Ídem. |
 
-#### Prioridad 2: contradicciones y saltos argumentales
+#### Prioridad 2: problemas argumentales
 
-Todos están **confirmados**: se comprueban leyendo las entradas.
+Que una diferencia entre dos pasajes se compruebe dentro del repositorio no la
+convierte en contradicción. Por eso cada punto lleva dos datos: si la
+diferencia está **confirmada** (se lee en el texto) y de qué **tipo** es:
 
-| # | Ruta | Problema |
-| --- | --- | --- |
-| 2.1 | `Trinidad.md:59` frente a `SN.md:162` | La parte 2 da por demostrada la existencia del ser necesario («Una vez concluimos que, efectivamente, existe»); la parte 1 dice «No hay demostraciones finales» y defiende solo que es la postura «más estable». |
-| 2.2 | `TDAH.md:80` frente a `:92` | Un «podría conllevar» se convierte en «Hay una recaptación excesiva». |
-| 2.3 | `Amor.md:24` frente a `:129` | El cuerpo dice «no solo en los sentimientos»; el cierre, «no se siente». |
-| 2.4 | `SN.md:94-102` | «No hay salida lógica distinta» se afirma sin argumento. |
-| 2.5 | `TDAH.md:84` | La curva en «U invertida» «explica la procrastinación», sin respaldo. |
-| 2.6 | `Romanos.md:511` | «No existe nada comparable en ningún sistema filosófico o religioso», sin comparación. |
-| 2.7 | `Elecciones.md:10` | Promete basarse «únicamente en propuestas verificables, documentos oficiales y evidencia pública», pero no cita ninguna. |
+- **Contradicción explícita:** dos pasajes afirman cosas que no pueden ser
+  verdaderas a la vez.
+- **Aumento injustificado de certeza:** un pasaje posterior afirma con más
+  seguridad lo que antes se presentó como posible o discutible.
+- **Cambio de alcance:** la afirmación se amplía (de «no solo» a «no», de un
+  caso a «ninguno», de lo comparado a todo).
+- **Premisa no desarrollada:** el argumento depende de una afirmación que no
+  se justifica.
+
+Ninguno de los siete puntos es una contradicción explícita.
+
+| # | Ruta | Tipo | Problema |
+| --- | --- | --- | --- |
+| 2.1 | `SN.md:162` frente a `Trinidad.md:59` | Aumento injustificado de certeza (entre las dos partes de la serie) | La parte 1 dice «No hay demostraciones finales» y defiende el ser necesario como la postura más robusta. La parte 2 arranca con «Una vez concluimos que, efectivamente, existe un ser necesario». No se contradicen: `SN.md` sí se inclina por esa conclusión. Lo que cambia es el grado de seguridad. |
+| 2.2 | `TDAH.md:80` frente a `:92` | Aumento injustificado de certeza | El «podría conllevar una recaptación excesiva» del desarrollo se convierte en «Hay una recaptación excesiva» en el resumen. |
+| 2.3 | `Amor.md:24` frente a `:25` y `:129` | Cambio de alcance | `:24` dice que el amor no puede sostenerse «**solo** en los sentimientos»; `:25` y el cierre (`:129`) dicen que «no se siente». El mismo `:25` añade «incluso cuando no se siente», que sugiere el sentido de «no solo»; la diferencia está en la formulación. |
+| 2.4 | `SN.md:94-102` | Premisa no desarrollada | «No hay salida lógica distinta» se afirma sin argumento, y el resto de la serie depende de que solo haya tres opciones. |
+| 2.5 | `TDAH.md:84` | Premisa no desarrollada | El paso de la curva en «U invertida» a la procrastinación («Lo que explica…») no se explica ni tiene fuente. Si ese vínculo tiene respaldo en la literatura es una **sospecha** que queda para la verificación. |
+| 2.6 | `Romanos.md:511` | Cambio de alcance | «No existe nada comparable en ningún sistema filosófico o religioso»: la entrada no compara con otros sistemas, así que la afirmación va más allá de lo que el texto examina. |
+| 2.7 | `Elecciones.md:10` | Ninguno de los cuatro: método declarado y no cumplido | La nota inicial promete basarse «únicamente en propuestas verificables, documentos oficiales y evidencia pública», pero no cita ninguna. Es un problema de fuentes más que de argumento; se resuelve con 1.1 y 1.2. |
 
 #### Prioridad 3: claridad y estilo
 
@@ -719,11 +735,17 @@ registradas, con su alcance, en la sección 7 de
    aumentar la certeza ni eliminar los matices del desarrollo.
 5. **Pendientes:** se verificarán en un encargo separado, en el orden de la
    sección 4.11.
+6. **Alcance:** los formatos se describen por número de entradas,
+   independencia y límites para generalizar (sección 3), y los problemas
+   argumentales se clasifican por tipo (sección 4.11). El sistema no se amplía
+   hasta probarlo con el próximo artículo.
 
 ## 8. Limitaciones del análisis
 
 - **Corpus pequeño:** 13 entradas. Tres de los siete formatos (3.2, 3.6 y
-  3.7) tienen una sola muestra y son provisionales; los demás, dos o tres.
+  3.7) tienen una sola muestra y son provisionales; los demás, dos o tres, y
+  las dos del ensayo argumentativo son de una misma serie. Ninguna
+  descripción de formato es una norma para toda la escritura de Carlos.
 - **Fechas no fiables para hablar de evolución:** un agente cambió fechas y
   nombres de archivo en `1e59c8e`. Se describen diferencias entre entradas, no
   una evolución en el tiempo.

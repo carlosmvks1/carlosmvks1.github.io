@@ -81,17 +81,17 @@ sección 11 de la guía.
 
 ## Contenido y escritura
 
-- **Leé [`docs/editorial-system.md`](docs/editorial-system.md) antes de
-  redactar o editar artículos.** Es una propuesta: solo lo marcado allí como
-  **[Vigente]** o **[Carlos]** es obligatorio; lo marcado como
-  **[Propuesta]** es sugerencia hasta que Carlos lo apruebe.
+- El sistema editorial enlazado arriba es una propuesta: solo lo marcado allí
+  como **[Vigente]** o **[Carlos]** es obligatorio; lo marcado como
+  **[Propuesta]** es sugerencia hasta que Carlos lo apruebe. Sus descripciones
+  de formatos se basan en pocas entradas: orientan, no son normas.
 - **Conservá los enlaces públicos** (nombres de archivo, `permalink`, rutas de
-  categorías), la voz de Carlos (voseo, registro) y el sentido de los textos.
-- **Conservá su voz sin reproducir sus errores.** Las erratas, muletillas,
-  mezclas de voseo y tuteo o afirmaciones sin respaldo no son rasgos de estilo
-  (ver la sección 4 del análisis). Sus recursos frecuentes (antítesis, frases
-  cortas, analogías clínicas, preguntas) están disponibles, no son una receta:
-  no los agregues para que un texto «suene a Carlos».
+  categorías) y el sentido de los textos.
+- **Conservá la voz de Carlos sin reproducir sus errores.** Las erratas,
+  muletillas, mezclas de voseo y tuteo o afirmaciones sin respaldo no son
+  rasgos de estilo (ver la sección 4 del análisis). Sus recursos frecuentes
+  (antítesis, frases cortas, analogías clínicas, preguntas) están disponibles,
+  no son una receta: no los agregues para que un texto «suene a Carlos».
 - **La conclusión no puede aumentar el grado de certeza ni eliminar los
   matices** establecidos en el desarrollo.
 - **Referencias:** en entradas nuevas, notas al pie. Cada cifra clínica, con
