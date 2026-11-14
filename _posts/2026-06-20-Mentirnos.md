@@ -73,7 +73,7 @@ En ese mismo ejemplo, la persona que fuma puede convencerse de que el riesgo est
 
 Entonces, la conducta permanece. Lo que cambia es la estructura de pensamientos que permite sostenerla.
 
-**Lo díficil es que, la racionalización más eficaz no es aquella que sabemos falsa, sino aquella que logramos experimentar como razonable.**
+**Lo difícil es que, la racionalización más eficaz no es aquella que sabemos falsa, sino aquella que logramos experimentar como razonable.**
 
 Entonces, podemos ver lo siguiente:
 
@@ -82,7 +82,7 @@ Entonces, podemos ver lo siguiente:
 
 ## Sesgo autoservicial
 
-Si la disonancia cognitiva era la incomodidad que surgia de contradicciones entre nuestra identidad y nuestras acciones, ahora veamos cómo repartimos las causas a nuestro favor para disminuir esa tensión.
+Si la disonancia cognitiva era la incomodidad que surgía de contradicciones entre nuestra identidad y nuestras acciones, ahora veamos cómo repartimos las causas a nuestro favor para disminuir esa tensión.
 
 Hagámonos la pregunta 
 
@@ -90,7 +90,7 @@ Hagámonos la pregunta
 
 Aquí entra el **sesgo atribucional autoservicial.**
 
-**Internas:** causas que dependen de mí. **Estables:** que seguiran existiendo. **Globales:** que se aplican a muchos ámbitos de nuestra vida.
+**Internas:** causas que dependen de mí. **Estables:** que seguirán existiendo. **Globales:** que se aplican a muchos ámbitos de nuestra vida.
 {: .anotacion}
 
 Este sesgo consiste en explicar los acontecimientos positivos mediante causas más internas, estables y globales que las utilizadas para explicar los acontecimientos negativos.
@@ -123,11 +123,11 @@ Cuando yo reacciono mal:
 
 > "Cualquiera hubiera reaccionado así".
 
-Cuando el otro reaccionas mal:
+Cuando el otro reacciona mal:
 
 > "Es emocionalmente inestable".
 
-El metaanálisis de Amy Mezulis encontró un efecto promedio grande. El 89 % de las muestras mostró una tendencia positiva. [^mezulis].
+El metaanálisis de Amy Mezulis encontró un efecto promedio grande. El 89 % de las muestras mostró una tendencia positiva[^mezulis].
 
 Es decir, es un patrón humano bastante generalizado el siguiente:
 
@@ -167,7 +167,7 @@ El problema, entonces, no es que la mente intente protegernos. El problema es **
 
 Una defensa saludable impide que el error destruya por completo nuestra identidad:
 
-> "Hice algo malo, pero eso no define quien soy".
+> "Hice algo malo, pero eso no define quién soy".
 
 Una defensa rígida impide que el error llegue siquiera a cuestionarla:
 
@@ -355,6 +355,6 @@ Porque peor que no ver es no saber que estamos ciegos.
 
 ¿Utilizás el error para aprender o para construir otra versión de la historia en la que nunca fuiste vos?
 
-[^mezulis]: Mezulis, A. H., Abramson, L. Y., Hyde, J. S. y Hankin, B. L. (2004). «Is there a universal positivity bias in attributions?». *Psychological Bulletin*, 130(5), 711–747. [Resumen en PubMed](https://pubmed.ncbi.nlm.nih.gov/15367078/).
+[^mezulis]: Mezulis, A. H., Abramson, L. Y., Hyde, J. S. y Hankin, B. L. (2004). «Is there a universal positivity bias in attributions?». *Psychological Bulletin*, 130(5), 711–747. [doi:10.1037/0033-2909.130.5.711](https://doi.org/10.1037/0033-2909.130.5.711). [Resumen en PubMed](https://pubmed.ncbi.nlm.nih.gov/15367078/).
 
-[^pronin]: Pronin, E. y colaboradores, sobre el punto ciego del sesgo. [Texto en PDF](https://www.sakkyndig.com/psykologi/artvit/pronin2015.pdf).
+[^pronin]: Pronin, E., Lin, D. Y. y Ross, L. (2002). «The bias blind spot: Perceptions of bias in self versus others». *Personality and Social Psychology Bulletin*, 28(3), 369–381. [doi:10.1177/0146167202286008](https://doi.org/10.1177/0146167202286008). Las encuestas están en el estudio 1; el 24 %, en el estudio 2; la prueba de inteligencia social, en el estudio 3. [Texto en PDF](https://www.sakkyndig.com/psykologi/artvit/pronin2015.pdf).

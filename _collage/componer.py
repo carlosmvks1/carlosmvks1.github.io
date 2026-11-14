@@ -198,6 +198,23 @@ def save(canvas, name, fmt):
     path = os.path.join(OUT, f"{name}-{fmt}.webp")
     im.save(path, "WEBP", quality=78, method=6)
     print(path, im.size, os.path.getsize(path) // 1024, "KB")
+    tamanos(path)
+
+
+# Anchos menores para srcset. Se derivan del archivo grande ya con grano, para
+# que todas las versiones sean la misma imagen.
+ANCHOS = {"v": [800], "m": [800, 640], "h": [800, 480], "frag": [640, 480]}
+
+
+def tamanos(path):
+    base, ext = os.path.splitext(path)
+    fmt = base.rsplit("-", 1)[-1] if "-" in os.path.basename(base) else "frag"
+    im = Image.open(path).convert("RGB")
+    for w in ANCHOS.get(fmt, []):
+        h = round(im.height * w / im.width)
+        out = f"{base}-{w}{ext}"
+        im.resize((w, h), Image.LANCZOS).save(out, "WEBP", quality=74, method=6)
+        print("  ", out, (w, h), os.path.getsize(out) // 1024, "KB")
 
 
 # ---------------------------------------------------------------------------
@@ -333,7 +350,18 @@ def fragmentos():
 
 COLLAGES = {"mentira": mentira, "herida": herida, "tdah": tdah, "fragmentos": fragmentos}
 
+def todos_los_tamanos():
+    """Regenera solo los anchos menores a partir de las imágenes existentes."""
+    import glob, re
+    for f in sorted(glob.glob(os.path.join(OUT, "**", "*.webp"), recursive=True)):
+        if not re.search(r"-\d+\.webp$", f):
+            tamanos(f)
+
+
 if __name__ == "__main__":
     random.seed(1)
+    if sys.argv[1:] == ["tamanos"]:
+        todos_los_tamanos()
+        sys.exit()
     for name in sys.argv[1:] or COLLAGES:
         COLLAGES[name]()

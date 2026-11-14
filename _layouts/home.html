@@ -5,24 +5,37 @@ layout: default
 {%- assign lead_cat = lead.categories | first | default: 'cuaderno' -%}
 
 <section class="portadilla shell" aria-labelledby="portadilla-titulo">
-  <p class="eyebrow">Cuaderno público de Carlos Reyes</p>
-  <h1 id="portadilla-titulo" class="portadilla-titulo">Medicina, filosofía, fe y proyectos, <em>escritos desde Tegucigalpa.</em></h1>
-  <div class="portadilla-texto">
-    <p>Estudio medicina en la UNAH y, mientras aprendo el oficio, intento pensar la vida con un poco de orden. Escribo para entender; y publico para no olvidarme de lo que ya entendí.</p>
-    <p class="portadilla-enlaces"><a href="{{ '/sobre-mi/' | relative_url }}">Sobre mí</a> <a href="{{ '/archivo/' | relative_url }}">Archivo completo</a></p>
+  <div class="portadilla-quien">
+    <p class="eyebrow">Cuaderno público de Carlos Reyes</p>
+    <h1 id="portadilla-titulo" class="portadilla-titulo">Medicina, filosofía, fe y proyectos, <em>escritos desde Tegucigalpa.</em></h1>
+    <p class="portadilla-texto">Estudio medicina en la UNAH y, mientras aprendo el oficio, intento pensar la vida con un poco de orden. Escribo para entender; y publico para no olvidarme de lo que ya entendí. <a href="{{ '/sobre-mi/' | relative_url }}">Sobre mí</a></p>
   </div>
+  <nav class="portadilla-temas" aria-label="Entrar por tema">
+    <p class="portadilla-temas-titulo">Entrar por tema</p>
+    <ul>
+    {%- assign temas = "medicina,filosofia,fe,proyectos" | split: "," -%}
+    {%- for t in temas -%}
+      {%- assign t_posts = site.posts | where_exp: "p", "p.categories contains t" -%}
+      {%- capture t_url %}{% include cat-url.html cat=t %}{% endcapture %}
+      <li class="tema--{{ t }}"><a href="{{ t_url | relative_url }}">{% include category-mark.html cat=t %}<span>{% include cat-name.html cat=t %}</span><small>{{ t_posts.size }}</small></a></li>
+    {%- endfor %}
+      <li class="portadilla-archivo"><a href="{{ '/archivo/' | relative_url }}"><span>Archivo completo</span><small aria-hidden="true">→</small></a></li>
+    </ul>
+  </nav>
 </section>
 
 {%- if lead %}
 <article class="protagonista shell tema--{{ lead_cat }}" aria-labelledby="protagonista-titulo">
+  <div class="protagonista-cabeza">
+    <p class="kicker">Última entrada</p>
+    <h2 id="protagonista-titulo" class="protagonista-titulo"><a href="{{ lead.url | relative_url }}">{{ lead.title }}</a></h2>
+    {% include meta.html post=lead %}
+  </div>
   <a class="protagonista-imagen" href="{{ lead.url | relative_url }}" tabindex="-1">
     {% include cover.html post=lead format="v" eager=true alt=lead.collage_alt %}
   </a>
-  <div class="protagonista-texto">
-    <p class="kicker">Última entrada</p>
-    <h2 id="protagonista-titulo" class="protagonista-titulo"><a href="{{ lead.url | relative_url }}">{{ lead.title }}</a></h2>
+  <div class="protagonista-cuerpo">
     <p class="deck">{{ lead.subtitle | default: lead.description }}</p>
-    {% include meta.html post=lead %}
     {%- if lead.cita %}
     <blockquote class="cita-portada"><p>{{ lead.cita }}</p></blockquote>
     {%- endif %}
@@ -42,7 +55,7 @@ layout: default
       {%- assign p_cat = post.categories | first | default: 'cuaderno' -%}
       {%- if forloop.first %}
       <article class="entrada entrada--grande tema--{{ p_cat }}">
-        <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1">{% include cover.html post=post format="h" alt=post.collage_alt %}</a>
+        <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1">{% include cover.html post=post format="h" alt=post.collage_alt sizes="(min-width: 860px) 640px, calc(100vw - 32px)" %}</a>
         <div class="entrada-texto">
           {% include meta.html post=post %}
           <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
@@ -83,7 +96,7 @@ layout: default
     {%- for post in site.posts offset:4 limit:3 %}
       {%- assign p_cat = post.categories | first | default: 'cuaderno' -%}
       <article class="entrada entrada--columna tema--{{ p_cat }}">
-        <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1">{% include cover.html post=post format="h" %}</a>
+        <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1">{% include cover.html post=post format="h" sizes="(min-width: 760px) 380px, calc(100vw - 32px)" %}</a>
         {% include meta.html post=post %}
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p>{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html | truncate: 170 }}{% endif %}</p>

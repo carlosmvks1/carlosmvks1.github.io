@@ -300,50 +300,80 @@ h1, h2, h3 {
 
 /* ---------- Inicio ---------- */
 
+/* Portadilla: quién escribe y por dónde entrar. Compacta, para que la
+   entrada protagonista conserve el mayor peso visual. */
 .portadilla {
-  padding-top: 2.5rem;
-  padding-bottom: 2rem;
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
   display: grid;
-  gap: 1.25rem;
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+  /* filete inferior alineado con el contenido, no con el borde del shell */
+  background: linear-gradient(var(--linea), var(--linea)) no-repeat center bottom / calc(100% - 2 * var(--gutter)) 1px;
 }
+.portadilla .eyebrow { margin-bottom: 0.6rem; }
 .portadilla-titulo {
-  font-size: clamp(2.1rem, 6.4vw, 4.6rem);
+  font-size: clamp(1.6rem, 4.2vw, 2.6rem);
   font-weight: 500;
-  max-width: 16ch;
-  line-height: 1.02;
+  max-width: 22ch;
+  line-height: 1.08;
+  margin: 0 0 0.8rem;
 }
 .portadilla-titulo em { font-weight: 400; color: var(--ambar); }
-.portadilla-texto { max-width: 34rem; color: var(--marfil-2); }
-.portadilla-texto p { margin: 0 0 0.8rem; }
-.portadilla-enlaces { display: flex; gap: 1.4rem; flex-wrap: wrap; font-weight: 600; color: var(--marfil); }
+.portadilla-texto { max-width: 36rem; color: var(--marfil-2); margin: 0; font-size: 0.98rem; }
+.portadilla-texto a { color: var(--marfil); font-weight: 600; white-space: nowrap; }
+
+.portadilla-temas-titulo {
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gris); margin: 0 0 0.6rem;
+}
+.portadilla-temas ul {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+}
+.portadilla-temas a {
+  display: flex; align-items: center; gap: 0.55rem;
+  min-height: 2.75rem; padding: 0.45rem 0.7rem;
+  border: 1px solid var(--linea); border-left: 3px solid var(--tema, var(--marfil-2));
+  text-decoration: none; font-weight: 600; font-size: 0.95rem;
+  background: rgba(244, 236, 220, 0.03);
+}
+.portadilla-temas a:hover { background: rgba(244, 236, 220, 0.08); }
+.portadilla-temas .category-mark { width: 1.35rem; flex: none; }
+.portadilla-temas small { margin-left: auto; color: var(--gris); font-weight: 400; font-variant-numeric: tabular-nums; }
+.portadilla-archivo { grid-column: 1 / -1; }
+.portadilla-archivo a { border-left-color: var(--marfil-2); }
 
 @media (min-width: 960px) {
   .portadilla {
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.35fr 1fr;
     align-items: end;
-    padding-top: 4rem;
-    padding-bottom: 3rem;
+    padding-top: 2.75rem;
+    padding-bottom: 2.25rem;
     column-gap: 4rem;
+    margin-bottom: 3rem;
   }
-  .portadilla .eyebrow { grid-column: 1 / -1; }
 }
 
-/* Protagonista: imagen grande, el título monta sobre su borde */
+/* Protagonista. En móvil: título y datos antes del collage. En escritorio:
+   collage a la izquierda y el título monta sobre su borde. */
 .protagonista {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
   padding-bottom: 3.5rem;
 }
+.protagonista-cabeza .kicker { margin-bottom: 0.5rem; }
+.protagonista-cabeza .meta { margin-top: 0.9rem; }
 .protagonista-imagen { display: block; margin-inline: calc(var(--gutter) * -1); }
 .protagonista-titulo {
   font-size: clamp(2.2rem, 7.5vw, 5.4rem);
   line-height: 0.98;
   letter-spacing: -0.025em;
+  margin: 0;
 }
 .protagonista-titulo a { text-decoration: none; }
 .protagonista-titulo a:hover { text-decoration: underline; text-decoration-color: var(--tema); text-decoration-thickness: 3px; }
-.protagonista .deck { font-size: 1.25rem; }
-.protagonista .meta { margin-top: 1.4rem; }
+.protagonista .deck { font-size: 1.25rem; margin-top: 0; }
 
 .cita-portada {
   margin: 1.6rem 0;
@@ -374,17 +404,15 @@ h1, h2, h3 {
 @media (min-width: 860px) {
   .protagonista {
     grid-template-columns: repeat(12, 1fr);
-    align-items: center;
+    grid-template-rows: auto auto;
     column-gap: 0;
+    row-gap: 0;
     padding-bottom: 5rem;
   }
-  .protagonista-imagen { grid-column: 1 / 7; grid-row: 1; margin: 0; }
-  .protagonista-texto {
-    grid-column: 7 / 13;
-    grid-row: 1;
-    position: relative;
-    padding: 2.5rem 0 2.5rem 3rem;
-  }
+  .protagonista-imagen { grid-column: 1 / 7; grid-row: 1 / 3; margin: 0; align-self: center; }
+  .protagonista-cabeza { grid-column: 7 / 13; grid-row: 1; align-self: end; padding: 2.5rem 0 0 3rem; position: relative; z-index: 2; }
+  .protagonista-cuerpo { grid-column: 7 / 13; grid-row: 2; align-self: start; padding: 1.4rem 0 2.5rem 3rem; }
+  .protagonista-cabeza .kicker, .protagonista-cabeza .meta { margin-left: 0; }
   /* banda de noche bajo el título para que pueda montar sobre el collage */
   .protagonista-titulo {
     background: linear-gradient(var(--noche), var(--noche)) no-repeat;
