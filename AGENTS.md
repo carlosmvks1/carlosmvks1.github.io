@@ -89,7 +89,16 @@ sección 11 de la guía.
   categorías), la voz de Carlos (voseo, registro) y el sentido de los textos.
 - **Conservá su voz sin reproducir sus errores.** Las erratas, muletillas,
   mezclas de voseo y tuteo o afirmaciones sin respaldo no son rasgos de estilo
-  (ver la sección 4 del análisis).
+  (ver la sección 4 del análisis). Sus recursos frecuentes (antítesis, frases
+  cortas, analogías clínicas, preguntas) están disponibles, no son una receta:
+  no los agregues para que un texto «suene a Carlos».
+- **La conclusión no puede aumentar el grado de certeza ni eliminar los
+  matices** establecidos en el desarrollo.
+- **Referencias:** en entradas nuevas, notas al pie. Cada cifra clínica, con
+  una fuente que respalde la población, el resultado y el contexto
+  mencionados. Las afirmaciones sobre personas o instituciones que puedan
+  afectar su reputación necesitan respaldo; si no lo tienen, se reformulan o
+  se retiran.
 - **No inventes experiencias, creencias ni posiciones personales** de Carlos.
   Si un texto necesita un ejemplo propio, dejá `[EJEMPLO: …]` y preguntale.
 - **No modifiques el sentido de un texto sin señalarlo** en el resumen del

@@ -1,7 +1,8 @@
 # Sistema editorial de El cuaderno
 
 **Estado: propuesta pendiente de revisión por Carlos.** Nada de lo que aquí se
-marca como *Propuesta* es una regla aprobada. Se basa en el análisis de las 13
+marca como *Propuesta* es una regla aprobada. Las decisiones que Carlos ya tomó
+están marcadas como **[Carlos]** y registradas en la sección 7. Se basa en el análisis de las 13
 entradas publicadas: [`editorial-analysis.md`](editorial-analysis.md). Ahí
 están la evidencia y los ejemplos completos; esta guía remite a sus secciones
 como «análisis 4.1», etc.
@@ -12,11 +13,12 @@ cuándo recurrir a ellos.
 
 ## Cómo leer esta guía
 
-Cada pauta lleva una de estas marcas:
+Cada pauta lleva una de estas marcas. Si un título de sección lleva una marca
+y un punto dentro de ella lleva otra, vale la del punto:
 
 - **[Vigente]**: ya está en `AGENTS.md` o en `visual-system.md`.
-- **[Carlos]**: preferencia expresada por Carlos, en `about.md` o en el
-  encargo de este sistema (14 de noviembre de 2026).
+- **[Carlos]**: preferencia o decisión de Carlos, en `about.md`, en el encargo
+  de este sistema o en su respuesta a la primera versión (sección 7).
 - **[Propuesta]**: recomendación nueva de este análisis, pendiente de su
   decisión.
 
@@ -28,6 +30,9 @@ Lo que Carlos ya expresó y vale para todo el sistema:
   pregunta inicial, el mismo número de secciones ni una frase final
   contundente. **[Carlos]**
 - Escribir una entrada no debe volverse un trámite pesado. **[Carlos]**
+- Sus recursos frecuentes (antítesis, frases cortas, analogías clínicas,
+  preguntas) están **disponibles, no son obligatorios**. No son una receta para
+  imitarlo. **[Carlos]**
 - «La reflexión que no se pone a prueba se vuelve dogma» (`about.md`).
   **[Carlos]**
 
@@ -37,10 +42,15 @@ Lo que Carlos ya expresó y vale para todo el sistema:
 
 ### 1.1 Rasgos que conviene conservar
 
+Estos rasgos describen cómo escribe Carlos cuando le sale bien. Son recursos
+disponibles, no una lista que haya que cumplir **[Carlos]**. Un texto sin
+antítesis, sin remate o sin analogía clínica puede ser igual de suyo. Lo que
+convierte un recurso en tic es usarlo por costumbre.
+
 | Rasgo | Ejemplo del corpus | Cómo usarlo bien **[Propuesta]** |
 | --- | --- | --- |
-| Pregunta o tesis explícita | «¿Cómo pueden dos personas sinceras estar tan convencidas de versiones incompatibles?» (`Mentirnos.md`) | En el primer o segundo párrafo. Volver a ella al cerrar. |
-| Voseo y habla hondureña | «Dejá de creer que vas a mejorar sin repetir actos de mejora.» (`IIEAN.md`) | Es la voz del autor. Un solo tratamiento por texto (1.3). |
+| Pregunta o tesis explícita | «¿Cómo pueden dos personas sinceras estar tan convencidas de versiones incompatibles?» (`Mentirnos.md`) | Pronto, en el primer o segundo párrafo, aunque no tiene que ser una pregunta. Volver a ella al cerrar. |
+| Voseo y habla hondureña | «Dejá de creer que vas a mejorar sin repetir actos de mejora.» (`IIEAN.md`) | Voseo cuando se le habla al lector, en cualquier formato; prosa impersonal cuando explica mejor. Expresiones hondureñas solo si salen naturalmente **[Carlos]**. Ver 1.3. |
 | Analogía concreta, a menudo clínica | «Honduras no es un cuerpo sano enfermo de un tumor. Es un cuerpo entero que ha aprendido a funcionar enfermo.» (`Elecciones.md`) | Una por idea. Decir dónde deja de valer. |
 | Antítesis | «No deseo porque amo; muchas veces amo porque algo me falta.» (`Amarlaherida.md`) | Para cerrar un razonamiento, no para reemplazarlo. Espaciarlas. |
 | Frase corta de remate | «Podemos ser completamente sinceros y estar profundamente sesgados. / No estamos fingiendo creer nuestra versión. / La creemos.» (`Mentirnos.md`) | Al final de una sección, no de cada párrafo. |
@@ -53,36 +63,48 @@ Lo que Carlos ya expresó y vale para todo el sistema:
 
 | Formato | Registro | Persona | Fuentes | Extensión orientativa |
 | --- | --- | --- | --- | --- |
-| Divulgación clínica | Técnico explicado, con escena inicial | «Nosotros» y algo de «vos» | Obligatorias para cada dato clínico | La que pidan sus preguntas; si pasa de 4000 palabras, revisar redundancias |
-| Guía práctica | Directo, instructivo | Un solo tratamiento al lector | Para datos y recomendaciones | Variable |
+| Divulgación clínica | Técnico explicado; la escena inicial es opcional | Impersonal para explicar; voseo al dirigirse al lector **[Carlos]** | Obligatorias para cada dato clínico | La que pidan sus preguntas; si pasa de 4000 palabras, revisar redundancias |
+| Guía práctica *(provisional)* | Directo, instructivo | Voseo al dirigirse al lector **[Carlos]**; «usted» solo en los ejemplos de diálogo con pacientes | Para datos y recomendaciones | Variable |
 | Ensayo argumentativo | Preciso, con premisas visibles | «Yo» para la postura, «nosotros» para el razonamiento | Para cada autor o tesis atribuida | 1200–2500 |
 | Lectura comentada | Cercano, con términos originales explicados | «Vos» en la aplicación | Texto comentado citado con referencia exacta | 1200–3500 |
 | Ensayo reflexivo | Conversacional | «Nosotros», «uno», «vos» | Para estudios, cifras y conceptos ajenos | 1200–2500 |
-| Actualidad o comparativo | Sobrio, descriptivo | Tercera persona; «yo» solo en la conclusión | Obligatorias para cada propuesta, cifra y señalamiento | Variable |
-| Prosa breve | Lírico | Libre | Solo epígrafes, con autor y obra | Breve |
+| Actualidad o comparativo *(provisional)* | Sobrio, descriptivo | Tercera persona para los hechos; la opinión, identificada como tal **[Carlos]** | Obligatorias para cada propuesta, cifra y señalamiento | Variable |
+| Prosa breve *(provisional)* | Lírico | Libre | Solo epígrafes, con autor y obra | Breve |
 
-Las extensiones salen del corpus y son orientativas. No son metas.
+Las extensiones salen del corpus y son orientativas. No son metas. Los
+formatos marcados como *provisionales* se basan en una sola entrada
+(`editorial-analysis.md`, sección 3): su descripción orienta, pero no fija un
+patrón.
 
-### 1.3 Hábitos que conviene evitar **[Propuesta]**
+### 1.3 Hábitos que conviene evitar
 
-Ninguno de estos hábitos es parte de la voz. No deben imitarse.
+Ninguno de estos hábitos es parte de la voz. No deben imitarse. Los puntos
+sin marca son **[Propuesta]**.
 
 1. **Afirmar más de lo que se mostró**, sobre todo en resúmenes y conclusiones
    (análisis 4.1).
 2. **Mezclar voseo y tuteo** en la misma entrada (análisis 4.5). Las citas y
-   los diálogos ajenos conservan su forma.
-3. **Transiciones de andamio** que anuncian en vez de avanzar: «Bien,
+   los diálogos ajenos conservan su forma. **[Carlos]** El voseo es la norma
+   cuando se le habla al lector; no hace falta introducirlo donde una
+   explicación impersonal funciona mejor.
+3. **Insertar expresiones hondureñas para fabricar una voz.** Se conservan
+   cuando salen naturalmente y aportan cercanía. Las más coloquiales («mi
+   sangre», «full») pueden funcionar en un ensayo personal; no en una
+   explicación clínica. **[Carlos]**
+4. **Mayúsculas enfáticas** («INCORRECTO») como recurso habitual. **[Carlos]**
+5. **Transiciones de andamio** que anuncian en vez de avanzar: «Bien,
    entonces», «Entonces bueno», «Lo explico ahora», «Exploremos la idea»,
    «Esta parte es bastante interesante» (análisis 4.4).
-4. **Varias conclusiones seguidas** (análisis 4.3).
-5. **Abstracciones encadenadas** sin ejemplo cerca (análisis 4.6).
-6. **Negritas y citas en bloque como énfasis general** (análisis 4.8).
-7. **Llamar «blog» a una entrada.** «Este texto» o «esta entrada».
-8. **Ráfagas de preguntas** que sustituyen una respuesta. Dos o tres preguntas
-   seguidas funcionan cuando el texto las responde después (como en
-   `Juan.md`).
-9. **Errores de superficie** recurrentes: «por que» por «porque», frases
-   cortadas por un punto, comillas mezcladas (análisis 4.9).
+6. **Varias conclusiones seguidas** (análisis 4.3), o una frase contundente
+   añadida por costumbre. **[Carlos]**
+7. **Abstracciones encadenadas** sin ejemplo cerca (análisis 4.6).
+8. **Negritas y citas en bloque como énfasis general** (análisis 4.8).
+9. **Llamar «blog» a una entrada.** «Este texto» o «esta entrada».
+10. **Ráfagas de preguntas** que sustituyen una respuesta. Dos o tres preguntas
+    seguidas funcionan cuando el texto las responde después (como en
+    `Juan.md`).
+11. **Errores de superficie** recurrentes: «por que» por «porque», frases
+    cortadas por un punto, comillas mezcladas (análisis 4.9).
 
 ### 1.4 Editar sin borrar la personalidad
 
@@ -111,7 +133,12 @@ En cualquier nivel:
 - **Preferir quitar a agregar.** Casi todas las mejoras del análisis se logran
   recortando. **[Propuesta]**
 - **No «subir» el registro.** Una frase coloquial no se reemplaza por una
-  culta. Si un coloquialismo no encaja, se consulta (pregunta 1). **[Carlos]**
+  culta. Si un coloquialismo no encaja en el tipo de texto (por ejemplo, en
+  una explicación clínica), se propone el cambio y se señala; no se elimina en
+  silencio. **[Carlos]**
+- **No agregar recursos de su estilo** para que un texto «suene a Carlos»:
+  antítesis, remates, analogías o expresiones hondureñas que él no escribió.
+  **[Carlos]**
 - **Mantener lo que funciona.** La antítesis, el remate y el voseo se
   dosifican; no se eliminan. **[Carlos]**
 
@@ -135,7 +162,13 @@ Ejemplos de edición de línea (propuestas, no aplicadas):
 
 **[Propuesta]** Los modelos describen las partes que suelen funcionar en cada
 formato. Las partes marcadas como opcionales pueden faltar; el orden puede
-cambiar.
+cambiar. No hay una fórmula universal **[Carlos]**.
+
+El análisis encontró **siete formatos**. Cuatro tienen evidencia suficiente
+(dos o tres entradas): divulgación clínica, ensayo argumentativo, lectura
+comentada y ensayo reflexivo. Tres son **provisionales** porque se basan en
+una sola entrada: guía práctica, actualidad y prosa breve. Sus modelos (2.2,
+2.6 y 2.7) son puntos de partida, no patrones confirmados.
 
 ### 2.1 Divulgación clínica
 
@@ -152,7 +185,7 @@ cambiar.
 Si se omite una parte, el índice lo reflejará solo. No hace falta cubrir todos
 los temas de un manual: es mejor responder bien tres preguntas que mal ocho.
 
-### 2.2 Guía práctica
+### 2.2 Guía práctica *(provisional)*
 
 Para quién es → qué se va a poder hacer → pasos o reglas → ejemplos
 utilizables → errores frecuentes (mejor si son propios y reales) → recursos,
@@ -191,16 +224,34 @@ cierre.
 `Mentirnos.md` es el modelo del corpus. El andamio puede ser una sola
 fuente, como en `Amarlaherida.md`.
 
-### 2.6 Actualidad o comparativo
+### 2.6 Actualidad o comparativo *(provisional)*
 
-Aviso de método (fecha de consulta, qué fuentes se usaron) → criterios de
-comparación → misma estructura para cada opción → tabla, si ayuda → costos y
-riesgos de cada opción → conclusión que separa el análisis de la opinión.
+**[Carlos]** No hay una categoría propia por ahora: la entrada va en la
+categoría existente que mejor le corresponda.
 
-Cada señalamiento sobre una persona real necesita fuente. Si no la tiene, no
-se publica.
+Estructura posible **[Propuesta]**: aviso de método (fecha de consulta, qué
+fuentes se usaron) → criterios de comparación → misma estructura para cada
+opción → tabla, si ayuda → costos y riesgos de cada opción → conclusión.
 
-### 2.7 Prosa breve
+Reglas **[Carlos]**:
+
+- Distinguir siempre tres planos: **hechos verificables**, **interpretación**
+  y **opinión**. Quien lee debe saber en cuál está cada afirmación.
+- Las afirmaciones factuales relevantes sobre personas o instituciones
+  necesitan respaldo, especialmente si pueden afectar su reputación.
+- Si no hay evidencia suficiente, la afirmación se reformula (por ejemplo,
+  como lo que alguien denunció, con fuente) o se retira. No se presenta como
+  hecho.
+
+Cómo marcar los planos **[Propuesta]**:
+
+| Plano | Ejemplo de forma |
+| --- | --- |
+| Hecho | «El plan de gobierno de [candidato] propone [N] viviendas en cuatro años», con nota al pie al plan |
+| Interpretación | «Esa meta exigiría construir más rápido que en [período de referencia]», con nota al pie a los datos de comparación |
+| Opinión | «A mí me parece la propuesta más difícil de sostener», en primera persona y sin nota |
+
+### 2.7 Prosa breve *(provisional)*
 
 Sin estructura prescrita. Solo se revisan la economía de imágenes (que una no
 repita lo que otra ya cerró) y los errores de superficie.
@@ -224,15 +275,23 @@ repita lo que otra ya cerró) y los errores de superficie.
 - por pasos de un argumento (`Trinidad.md`);
 - por preguntas que el lector se haría (divulgación).
 
-**Cierres** (uno solo):
+**Cierres.** **[Carlos]** Un solo cierre, que corresponda al argumento: sin
+varias conclusiones sucesivas ni una frase contundente añadida por costumbre.
+
+**Regla de certeza [Carlos]:** la conclusión no puede aumentar el grado de
+certeza ni eliminar los matices establecidos en el desarrollo. Si el cuerpo
+dijo «podría», la conclusión no dice «es»; si el cuerpo dijo «no solo», la
+conclusión no dice «no». Ejemplos de esta falla: análisis 4.11, prioridad 2.
+
+Formas posibles:
 
 - responder la pregunta inicial (`Juan.md`);
 - un giro que vuelve el tema contra el lector o el autor («La última trampa»,
   `Mentirnos.md`);
 - la postura personal, separada del argumento (`SN.md`);
 - la consecuencia práctica (`anamnesis.md`);
-- una pregunta abierta, si el texto ya dio su respuesta y la pregunta abre lo
-  siguiente.
+- una pregunta al lector, si el texto ya dio su respuesta y la pregunta abre lo
+  siguiente. Es un recurso opcional, no una firma **[Carlos]**.
 
 La frase final contundente es opcional. **[Carlos]**
 
@@ -273,17 +332,25 @@ la idea se resume más adelante («hay»). Revisar en especial los párrafos de
   (`Mentirnos.md`).
 - Las palabras «siempre», «nunca», «solo», «todo», «ningún» y «necesariamente»
   piden una segunda lectura.
+- **[Carlos]** Una objeción o un límite que el desarrollo estableció no puede
+  desaparecer en la conclusión (regla de certeza, 2.8).
 
 ### 3.4 Cuándo una afirmación necesita respaldo **[Propuesta]**
 
 Necesita fuente:
 
-- toda cifra, porcentaje o dato epidemiológico;
+- toda cifra, porcentaje o dato epidemiológico. **[Carlos]** Cada cifra clínica
+  debe tener una fuente identificable que realmente respalde **la población,
+  el resultado y el contexto** mencionados. Por ejemplo, una cifra de adultos
+  no se respalda con un estudio en niños; una de prevalencia, no con una de
+  pacientes en consulta;
 - todo criterio diagnóstico, mecanismo biológico o recomendación de
   tratamiento;
 - toda cita textual y toda idea atribuida a un autor;
 - todo dato histórico preciso (fechas, nombres, sucesos);
-- todo señalamiento sobre una persona real;
+- toda afirmación factual relevante sobre una persona o institución,
+  especialmente si puede afectar su reputación. Sin respaldo suficiente, se
+  reformula o se retira **[Carlos]**;
 - toda frase como «los estudios muestran» o «la evidencia indica».
 
 No necesita fuente: la postura del autor, una experiencia propia que Carlos
@@ -294,9 +361,12 @@ contó, una analogía o un ejemplo inventado que se presenta como tal.
 - **[Vigente]** Las referencias van como notas al pie de Markdown
   (`[^nombre]`). En escritorio se muestran al margen, junto al pasaje (ver
   `visual-system.md`, sección 6, y el `README.md`).
-- **[Propuesta]** Usar ese sistema en todas las entradas nuevas. Las
-  bibliografías numeradas de entradas antiguas se dejan como están, salvo que
-  Carlos pida migrarlas.
+- **[Carlos]** Las notas al pie son el sistema principal de referencias en las
+  entradas nuevas. Los enlaces normales siguen sirviendo para navegación y
+  recursos complementarios (otra entrada, una herramienta, una lectura
+  recomendada), no para respaldar una afirmación.
+- **[Propuesta]** Las bibliografías numeradas de entradas antiguas se dejan como
+  están, salvo que Carlos pida migrarlas.
 - **[Propuesta]** Formato de la nota: autores, año, título, revista o editorial,
   DOI o enlace estable y, si hace falta, dónde está el dato («estudio 2»,
   «capítulo 3»). El modelo es la nota `[^pronin]` de `Mentirnos.md`.
@@ -312,8 +382,17 @@ contó, una analogía o un ejemplo inventado que se presenta como tal.
   - no citar una frase célebre sin haberla encontrado en la obra o en una
     fuente fiable. Si no se encuentra, se quita o se presenta como «atribuida
     a».
-- **[Propuesta]** Preferir fuentes primarias, revisiones, guías clínicas y obras
-  de referencia sobre blogs comerciales.
+- **[Carlos]** Priorizar guías, revisiones sistemáticas y estudios originales
+  según la afirmación que se sustenta, no por una jerarquía automática.
+  **[Propuesta]** Una orientación posible: guías clínicas para recomendaciones de
+  diagnóstico o tratamiento; revisiones sistemáticas y metaanálisis para el peso de la
+  evidencia; estudios originales para un hallazgo concreto o una cifra de una
+  población precisa. **[Propuesta]** Los blogs comerciales no sirven para
+  respaldar cifras clínicas.
+- **[Carlos]** **Nunca confundir una proporción con un rango.** «66 de 80
+  pacientes» es una proporción (≈ 82 %); «66–80 %» es un rango.
+  **[Propuesta]** Al pasar un dato a porcentaje, mencionar también la
+  proporción original («66 de 80, ≈ 82 %»).
 - **[Vigente]** Las imágenes y otros recursos externos requieren licencia libre
   verificada y se registran en `creditos.md` (ver `visual-system.md`, 7.5).
 
@@ -325,8 +404,11 @@ contó, una analogía o un ejemplo inventado que se presenta como tal.
   en el texto («no pude confirmar…») o en una anotación al margen.
 - **[Vigente]** En textos ya publicados, una afirmación que no se pudo
   verificar no se cambia: se anota como pendiente. Los pendientes de
-  contenido se registran en la tabla 4.2 de `editorial-analysis.md`; los
-  pendientes visuales, en la sección 11 de `visual-system.md`.
+  contenido se registran en la tabla 4.11 de `editorial-analysis.md`, que
+  separa lo confirmado de lo sospechado y ordena por impacto (errores
+  factuales y atribuciones; contradicciones argumentales; claridad y estilo).
+  Los pendientes visuales, en la sección 11 de `visual-system.md`.
+- **[Carlos]** La verificación de esa tabla es un encargo separado.
 
 ---
 
@@ -457,13 +539,20 @@ paso 1 al 7 en una sola sesión; una guía médica necesita todos.
 Para antes de publicar. Debería tomar unos minutos.
 
 - [ ] La pregunta o tesis aparece pronto y la conclusión vuelve a ella.
-- [ ] Hay una sola conclusión.
-- [ ] Ningún resumen ni conclusión afirma más que el cuerpo.
+- [ ] Hay una sola conclusión y corresponde al argumento.
+- [ ] La conclusión no aumenta la certeza ni borra matices del desarrollo.
 - [ ] Cada cifra, cita y dato atribuido tiene nota al pie.
+- [ ] Cada cifra clínica coincide con la población, el resultado y el contexto
+  de su fuente; ninguna proporción se convirtió en rango.
+- [ ] En textos de actualidad, hechos, interpretación y opinión se distinguen,
+  y nada que afecte la reputación de alguien va sin respaldo.
 - [ ] Las citas textuales son exactas; las paráfrasis no llevan comillas.
 - [ ] No quedan marcadores `[VERIFICAR]` ni `[EJEMPLO]`.
 - [ ] Hay al menos una objeción o un límite (ensayos y lecturas).
-- [ ] Un solo tratamiento al lector (voseo, salvo decisión distinta).
+- [ ] Un solo tratamiento al lector: voseo cuando se le habla; prosa
+  impersonal donde explica mejor.
+- [ ] Ninguna expresión coloquial o recurso de estilo se agregó para
+  «sonar a Carlos»; sin mayúsculas enfáticas.
 - [ ] Ninguna experiencia ni postura atribuida a Carlos fue inventada.
 - [ ] Sin transiciones de andamio ni «este blog».
 - [ ] Negritas y citas en bloque con moderación.
@@ -479,24 +568,49 @@ grep -n "\[VERIFICAR\|\[EJEMPLO" _posts/*.md
 
 ---
 
-## 7. Decisiones pendientes de Carlos
+## 7. Decisiones de Carlos
 
-Estas preguntas condicionan partes de la guía. Mientras no tengan respuesta, se
-aplica lo que esté marcado como **[Vigente]** o **[Carlos]**, y lo marcado como
-**[Propuesta]** queda como sugerencia.
+Respuestas de Carlos a la primera versión de esta guía (14 de noviembre de
+2026). Ya están incorporadas en las secciones indicadas y marcadas como
+**[Carlos]**.
 
-1. **Registro.** ¿El voseo es la norma para la voz del autor en todos los
-   formatos, incluida la divulgación médica? ¿Qué coloquialismos («full», «otro
-   rollo», «mi sangre», mayúsculas como «INCORRECTO») querés conservar, y en
-   qué tipo de texto?
-2. **Fuentes.** ¿Adoptamos las notas al pie como sistema único para entradas
-   nuevas? ¿Qué nivel mínimo de fuente querés para cifras clínicas?
-3. **Actualidad y política.** ¿Vas a publicar más entradas como `Elecciones`?
-   Si es así, ¿en qué categoría, y aceptás exigir referencia para cada
-   señalamiento sobre personas reales?
-4. **Cierres.** ¿La pregunta final dirigida al lector es una firma que querés
-   mantener o un recurso a dosificar?
-5. **Pendientes de verificación.** ¿Querés que un próximo encargo revise la
-   tabla 4.2 del análisis y te proponga correcciones puntuales?
+1. **Voz y registro** (1.1, 1.3, 1.4).
+   - El voseo puede ser la norma cuando se le habla al lector, también en
+     divulgación médica.
+   - No hace falta introducirlo donde una explicación impersonal funciona
+     mejor.
+   - Las expresiones hondureñas se conservan cuando salen naturalmente y
+     aportan cercanía; no se insertan para fabricar una voz. «Mi sangre» o
+     «full» pueden funcionar en un ensayo personal, no en una explicación
+     clínica.
+   - Las mayúsculas enfáticas no se usan como recurso habitual.
+2. **Fuentes** (3.4, 3.5).
+   - Las notas al pie son el sistema principal de referencias en entradas
+     nuevas; los enlaces normales siguen para navegación y recursos
+     complementarios.
+   - Cada cifra clínica necesita una fuente identificable que respalde la
+     población, el resultado y el contexto mencionados.
+   - Se prioriza entre guías, revisiones sistemáticas y estudios originales
+     según la pregunta, sin una jerarquía automática.
+   - Nunca se confunde una proporción (66 de 80) con un rango porcentual.
+3. **Actualidad** (2.6, 3.4).
+   - Sin categoría nueva por ahora.
+   - Se distinguen hechos verificables, interpretación y opinión.
+   - Las afirmaciones factuales relevantes sobre personas o instituciones
+     necesitan respaldo, sobre todo si pueden afectar su reputación. Sin
+     evidencia suficiente, se reformulan o se retiran.
+4. **Cierres** (2.8, 3.3).
+   - La pregunta al lector es un recurso opcional, no una firma.
+   - Un cierre que corresponda al argumento, sin conclusiones sucesivas ni
+     frase contundente por costumbre.
+   - La conclusión no puede aumentar el grado de certeza ni eliminar los
+     matices establecidos en el desarrollo.
+5. **Pendientes** (3.6).
+   - Se verificarán en un encargo separado, en el orden de la tabla 4.11 del
+     análisis.
+6. **Recursos de estilo** (inicio, 1.1, 1.4).
+   - Las antítesis, las frases cortas, las analogías clínicas y las preguntas
+     están disponibles, no son obligatorias ni una receta para imitarlo.
 
-Respuestas: _(pendiente)_
+**Sigue pendiente:** la revisión general de este documento por Carlos. Hasta
+entonces, lo marcado como **[Propuesta]** es sugerencia.

@@ -4,6 +4,12 @@
 describe cómo están escritas las entradas publicadas. Las interpretaciones y
 recomendaciones son del análisis, no decisiones aprobadas. La guía práctica que
 se desprende de aquí está en [`editorial-system.md`](editorial-system.md).
+Las decisiones que Carlos ya tomó sobre este análisis están registradas en la
+sección 7 de esa guía.
+
+Describir un rasgo no lo vuelve obligatorio. Los recursos frecuentes
+(antítesis, frases cortas, analogías clínicas, preguntas) están disponibles, no
+son una receta para imitar a Carlos.
 
 Convenciones:
 
@@ -248,8 +254,24 @@ persona cuando algo falla). El riesgo es que se vuelvan muletillas:
 
 ## 3. Formatos encontrados
 
-No hay una estructura única. Hay seis formatos; dos de ellos tienen una sola
-entrada, así que su descripción es provisional.
+No hay una estructura única. La primera versión de este análisis decía «seis
+formatos», pero enumeraba siete; el recuento correcto es **siete**. Solo cuatro
+tienen evidencia suficiente (dos entradas o más). Los otros tres se basan en
+una sola entrada y son **categorías provisionales**: describen esa entrada, no
+un patrón.
+
+| Formato | Entradas | Evidencia |
+| --- | --- | --- |
+| 3.1 Divulgación clínica | `TDAH.md`, `narcicismo.md` | Suficiente (2) |
+| 3.2 Guía práctica | `anamnesis.md` | Provisional (1) |
+| 3.3 Ensayo argumentativo | `SN.md`, `Trinidad.md` | Suficiente (2, de una misma serie) |
+| 3.4 Lectura comentada | `IIEAN.md`, `Romanos.md`, `Juan.md` | Suficiente (3). La variante filosófica tiene una sola entrada. |
+| 3.5 Ensayo reflexivo | `Amor.md`, `Amarlaherida.md`, `Mentirnos.md` | Suficiente (3) |
+| 3.6 Análisis de actualidad | `Elecciones.md` | Provisional (1) |
+| 3.7 Prosa breve | `Fuego.md` | Provisional (1) |
+
+Incluso los formatos con evidencia suficiente tienen dos o tres entradas: sus
+descripciones son orientativas.
 
 ### 3.1 Divulgación clínica (`TDAH.md`, `narcicismo.md`)
 
@@ -273,7 +295,7 @@ entrada, así que su descripción es provisional.
   aclara si es una experiencia propia o una reconstrucción. **Ningún agente
   debe inferir de esto un diagnóstico o una experiencia personal de Carlos.**
 
-### 3.2 Guía práctica (`anamnesis.md`)
+### 3.2 Guía práctica (`anamnesis.md`, entrada única)
 
 - **Qué hace.** Presentación personal, reglas, tabla de apartados, ejemplos de
   redacción clínica (HEA, FOG), técnicas de entrevista, recursos y una sección
@@ -320,7 +342,7 @@ la vida de quien lee.
   Carlos se borra a veces: «Toda la teología paulina puede resumirse así»
   (`Romanos.md:111`), «No existe nada comparable en ningún sistema filosófico
   o religioso» (`Romanos.md:511`). Citas de terceros sin fuente
-  (`IIEAN.md:74`, `Romanos.md:172`, `Romanos.md:348`; ver 4.2). `Romanos.md`
+  (`IIEAN.md:74`, `Romanos.md:172`, `Romanos.md:348`; ver 4.2 y 4.11). `Romanos.md`
   tiene un cierre muy extenso (ver 4.3).
 
 ### 3.5 Ensayo reflexivo (`Amor.md`, `Amarlaherida.md`, `Mentirnos.md`)
@@ -442,22 +464,9 @@ problema disminuye porque hay frases de límite explícitas.
   Stanford Encyclopedia of Philosophy como intermediaria («La SEP resume esta
   idea…», `:54`), aunque sin enlace.
 
-**Afirmaciones pendientes de verificación.** Ninguna se cambió. Se listan para
-que Carlos decida:
-
-| Ruta | Afirmación | Por qué revisarla |
-| --- | --- | --- |
-| `anamnesis.md:30` | Hampton et al. (1975): «el 66–80 % de los diagnósticos» | El resultado que suele citarse de ese estudio es «66 de 80 pacientes» (≈ 82 %). Parece una lectura de «66 de 80» como rango. Hay que comprobarlo en el artículo. |
-| `Mentirnos.md:130` | Mezulis: «El 89 % de las muestras» | Ya figura como pendiente en `visual-system.md`, sección 11. |
-| `Juan.md:104` | μένω aparece «23 veces» en 1 Juan | El recuento depende del texto griego y de qué formas se cuentan. |
-| `SN.md:83` | Parfit «lo llamó "brute fact"»; cita de Oppy | La expresión no es de Parfit; la frase de Oppy parece paráfrasis. |
-| `Amor.md:89` | «Platón, en El Banquete, contaba el mito del andrógino» | En el diálogo el mito lo cuenta Aristófanes. |
-| `Amor.md:107-108` | Cita atribuida a «Coelho (inspirado en el Tao)» | Sin fuente. |
-| `IIEAN.md:74` | Cita de Miyamoto Musashi | Sin fuente; no se encontró en este análisis. |
-| `Romanos.md:172` | «Dios no nos pide lo que no nos da…» (Agustín) | Parece una paráfrasis de «Da quod iubes et iube quod vis» (*Confesiones* X). |
-| `Romanos.md:348` | Cita atribuida a Nietzsche | Sin fuente. |
-| `Elecciones.md` | Señalamientos, cifras y propuestas de los candidatos | No hay referencias. |
-| `Trinidad.md:59` | «Una vez concluimos que, efectivamente, existe» | Contradice el «No hay demostraciones finales» de `SN.md:162`. No es un error de dato, sino de coherencia de la serie. |
+**Afirmaciones pendientes.** Ninguna se cambió. La verificación será un
+encargo separado (decisión de Carlos). La tabla está en la sección 4.11,
+ordenada por impacto.
 
 **Propuesta (antes/después, sin aplicar):**
 
@@ -485,7 +494,9 @@ volviendo a su pregunta.
 
 **Recomendación.** Una sola conclusión. Si hay prácticas o preguntas para el
 lector, que sean una sección con encabezado propio, antes o después, pero no
-otra conclusión.
+otra conclusión. Carlos agregó una regla: la conclusión no puede aumentar el
+grado de certeza ni eliminar los matices establecidos en el desarrollo
+(`editorial-system.md`, 2.8).
 
 ### 4.4 Transiciones de andamio (prioridad media)
 
@@ -523,8 +534,9 @@ sí mismas «este blog» (`SN.md:31`, `Romanos.md:71`).
   (`Mentirnos.md:218`) dentro de un pasaje sereno.
 
 **Interpretación.** El voseo es voz; la mezcla parece descuido. Los
-coloquialismos («full», «otro rollo», «mi sangre») no son un problema en sí:
-hacen falta criterios de dónde caben (pregunta 1, sección 7).
+coloquialismos («full», «otro rollo», «mi sangre») no son un problema en sí.
+Carlos ya fijó el criterio para usarlos y para las mayúsculas enfáticas: ver
+`editorial-system.md`, 1.3 y 7.
 
 **Propuesta (antes/después, sin aplicar):**
 
@@ -603,6 +615,66 @@ seudotítulos en cursiva o negrita que no entran en el índice
 (`Romanos.md:632`). Como el índice automático se arma con los `h2`, estos
 saltos cambian lo que ve quien lee.
 
+### 4.11 Pendientes priorizados
+
+Ninguna entrada se modificó. La verificación contra las fuentes será un
+encargo separado.
+
+**Estado:**
+
+- **Confirmado:** se comprueba leyendo el propio repositorio (una
+  contradicción entre dos pasajes, una fuente ausente, una cifra que cambia
+  entre dos líneas).
+- **Sospecha:** depende de una fuente externa que este análisis **no
+  consultó**. Puede resultar correcta. No se presenta como error hasta
+  verificarla.
+
+#### Prioridad 1: errores factuales y atribuciones
+
+Ordenados por impacto: primero lo que puede afectar a personas reales, luego
+las cifras clínicas y al final las atribuciones de citas.
+
+| # | Ruta | Afirmación | Estado | Qué hay que comprobar |
+| --- | --- | --- | --- | --- |
+| 1.1 | `Elecciones.md:140-142` y el resto de la entrada | Señalamientos contra candidatos («Caso Pandora», «más de 280 millones de lempiras», contratos dudosos) | **Confirmado:** no tienen fuente. **Sospecha:** su exactitud, que no se evaluó | Fuente de cada señalamiento. Si no la hay, reformular o retirar. |
+| 1.2 | `Elecciones.md` | Propuestas y cifras de los programas (311 000 viviendas, 5000 km, etc.) | **Confirmado:** no tienen fuente | Plan de gobierno o declaración que respalde cada cifra. |
+| 1.3 | `anamnesis.md:30` | Hampton et al. (1975): «el 66–80 % de los diagnósticos» | **Sospecha** | Si el artículo dice «66 de 80 pacientes» (≈ 82 %), no es un rango. |
+| 1.4 | `narcicismo.md:182` | Comorbilidad del 57 % y del 40 %, respaldada en un artículo de revista profesional [6] y un blog de un centro de tratamiento [7] | **Confirmado:** las fuentes citadas son secundarias o comerciales. **Sospecha:** las cifras | Estudio original o revisión con la misma población y resultado. |
+| 1.5 | `TDAH.md` (todo el cuerpo) | Cifras de prevalencia, heredabilidad, comorbilidad y pronóstico | **Confirmado:** la bibliografía no está enlazada a ninguna afirmación; no se sabe qué fuente respalda cada cifra | Asignar a cada cifra su fuente o marcarla. |
+| 1.6 | `Mentirnos.md:130` | Mezulis: «El 89 % de las muestras» | **Sospecha** (ya en `visual-system.md`, 11) | Cifra en el artículo completo. |
+| 1.7 | `TDAH.md:20` | «en psiquiatría hay trastornos o condiciones, no enfermedades» | **Confirmado:** sin fuente | Si es convención terminológica (DSM/CIE) o postura del autor. |
+| 1.8 | `Amor.md:89` | «Platón, en El Banquete, contaba el mito del andrógino» | **Sospecha** | Si en el diálogo el mito lo cuenta Aristófanes. |
+| 1.9 | `SN.md:83` | Parfit «lo llamó "brute fact"»; frase de Oppy en cursiva | **Sospecha** | Origen de la expresión; si la frase de Oppy es cita o paráfrasis. |
+| 1.10 | `Romanos.md:172` | «Dios no nos pide lo que no nos da…» (Agustín) | **Sospecha** | Si es paráfrasis de «Da quod iubes et iube quod vis» (*Confesiones* X). |
+| 1.11 | `Juan.md:104` | μένω aparece «23 veces» en 1 Juan | **Sospecha** | Recuento según el texto griego y las formas contadas. |
+| 1.12 | `IIEAN.md:74` | Cita de Miyamoto Musashi | **Confirmado:** sin fuente. **Sospecha:** su autenticidad | Localizarla en *El libro de los cinco anillos*; si no aparece, retirarla o presentarla como «atribuida». |
+| 1.13 | `Romanos.md:348` | Cita atribuida a Nietzsche | **Confirmado:** sin fuente. **Sospecha:** su autenticidad | Ídem. |
+| 1.14 | `Amor.md:107-108` | Cita atribuida a «Coelho (inspirado en el Tao)» | **Confirmado:** sin fuente. **Sospecha:** su autenticidad | Ídem. |
+
+#### Prioridad 2: contradicciones y saltos argumentales
+
+Todos están **confirmados**: se comprueban leyendo las entradas.
+
+| # | Ruta | Problema |
+| --- | --- | --- |
+| 2.1 | `Trinidad.md:59` frente a `SN.md:162` | La parte 2 da por demostrada la existencia del ser necesario («Una vez concluimos que, efectivamente, existe»); la parte 1 dice «No hay demostraciones finales» y defiende solo que es la postura «más estable». |
+| 2.2 | `TDAH.md:80` frente a `:92` | Un «podría conllevar» se convierte en «Hay una recaptación excesiva». |
+| 2.3 | `Amor.md:24` frente a `:129` | El cuerpo dice «no solo en los sentimientos»; el cierre, «no se siente». |
+| 2.4 | `SN.md:94-102` | «No hay salida lógica distinta» se afirma sin argumento. |
+| 2.5 | `TDAH.md:84` | La curva en «U invertida» «explica la procrastinación», sin respaldo. |
+| 2.6 | `Romanos.md:511` | «No existe nada comparable en ningún sistema filosófico o religioso», sin comparación. |
+| 2.7 | `Elecciones.md:10` | Promete basarse «únicamente en propuestas verificables, documentos oficiales y evidencia pública», pero no cita ninguna. |
+
+#### Prioridad 3: claridad y estilo
+
+Están descritos en las secciones 4.3 a 4.10. Los más visibles son estos
+(todos **confirmados**):
+
+- frases cortadas o incompletas: `Mentirnos.md:21`, `:25` y `:281`;
+- una frase repetida: `narcicismo.md:109` y `:111`;
+- cierres sucesivos: `SN.md`, `Romanos.md`, `narcicismo.md` y `Amor.md`;
+- voseo y tuteo mezclados: `Mentirnos.md` y `TDAH.md`.
+
 ---
 
 ## 5. Lo que conviene conservar (síntesis)
@@ -621,36 +693,37 @@ saltos cambian lo que ve quien lee.
 
 1. Ajustar cada afirmación a su respaldo, sobre todo en resúmenes y
    conclusiones (4.1).
-2. Un sistema único de fuentes para entradas nuevas y verificar los pendientes
-   (4.2).
+2. Notas al pie para las entradas nuevas y verificar los pendientes, en el
+   orden de 4.11 (4.2).
 3. Una sola conclusión por texto (4.3).
 4. Un solo registro de tratamiento por texto (4.5).
 5. Un ejemplo cerca de cada abstracción importante (4.6).
 
-## 7. Preguntas abiertas para Carlos
+## 7. Decisiones de Carlos sobre este análisis
 
-Las mismas preguntas aparecen al final de `editorial-system.md`; las
-respuestas deberían registrarse allí.
+Carlos respondió las preguntas de la primera versión. Las decisiones están
+registradas, con su alcance, en la sección 7 de
+[`editorial-system.md`](editorial-system.md). En resumen:
 
-1. **Registro.** ¿El voseo es la norma para la voz del autor en todos los
-   formatos, incluida la divulgación médica? ¿Qué coloquialismos («full», «otro
-   rollo», «mi sangre», mayúsculas como «INCORRECTO») querés conservar y en qué
-   tipo de texto?
-2. **Fuentes.** ¿Adoptamos las notas al pie como sistema único para entradas
-   nuevas? ¿Qué nivel mínimo de fuente querés para cifras clínicas (revisiones,
-   guías, StatPearls) frente a blogs?
-3. **Actualidad y política.** ¿Vas a publicar más entradas como `Elecciones`?
-   Si es así, ¿en qué categoría, y aceptás exigir referencia para cada
-   señalamiento sobre personas reales?
-4. **Cierres.** La pregunta final dirigida al lector aparece en casi todos los
-   textos. ¿Es una firma que querés mantener o un recurso a dosificar?
-5. **Pendientes.** ¿Querés que un próximo encargo verifique la tabla de 4.2 y
-   te proponga correcciones puntuales, entrada por entrada?
+1. **Registro:** el voseo es la norma cuando se le habla al lector, también en
+   divulgación médica, pero la explicación impersonal es válida. Las
+   expresiones hondureñas, solo si salen naturalmente; nada de mayúsculas
+   enfáticas habituales.
+2. **Fuentes:** notas al pie como sistema principal en entradas nuevas. Cada
+   cifra clínica debe tener una fuente que respalde su población, su resultado
+   y su contexto.
+3. **Actualidad:** sin categoría nueva por ahora. Hechos, interpretación y
+   opinión, separados; las afirmaciones que afecten a personas o instituciones
+   llevan respaldo o se retiran.
+4. **Cierres:** la pregunta al lector es opcional. La conclusión no puede
+   aumentar la certeza ni eliminar los matices del desarrollo.
+5. **Pendientes:** se verificarán en un encargo separado, en el orden de la
+   sección 4.11.
 
 ## 8. Limitaciones del análisis
 
-- **Corpus pequeño:** 13 entradas, dos formatos con una sola muestra. Los
-  patrones de 3.6 y 3.7 son provisionales.
+- **Corpus pequeño:** 13 entradas. Tres de los siete formatos (3.2, 3.6 y
+  3.7) tienen una sola muestra y son provisionales; los demás, dos o tres.
 - **Fechas no fiables para hablar de evolución:** un agente cambió fechas y
   nombres de archivo en `1e59c8e`. Se describen diferencias entre entradas, no
   una evolución en el tiempo.
@@ -661,8 +734,8 @@ respuestas deberían registrarse allí.
   párrafos salen de un conteo automático sobre el Markdown. Sirven para
   comparar, no como medidas exactas.
 - **Verificación de fuentes:** este análisis no consultó las fuentes externas.
-  La tabla de 4.2 lista dudas razonables, no errores confirmados (salvo la
-  coherencia interna de la serie, que se comprueba leyendo las dos entradas).
+  En la tabla 4.11, «confirmado» se refiere solo a lo que se comprueba dentro
+  del repositorio; todo lo que depende de una fuente externa es una sospecha.
 - **Sin intención del autor:** no se preguntó a Carlos por qué escribió cada
   texto como lo hizo. Las interpretaciones describen efectos probables en
   quien lee.
