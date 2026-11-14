@@ -20,8 +20,11 @@ include.sizes: atributo sizes para el formato "h" (opcional).
   </picture>
 {%- else -%}
   {%- assign c_frags = "grabado,calle,casa,escalinata" | split: "," -%}
-  {%- assign c_i = c_post.date | date: "%-d" | modulo: 4 -%}
-  <div class="cover cover--auto cover--{{ c_fmt }} tema-fondo--{{ c_cat }}" aria-hidden="true">
+  {%- comment -%} Días desde 1970: entradas cercanas reciben fragmentos y composiciones distintas. {%- endcomment -%}
+  {%- assign c_dia = c_post.date | date: "%s" | divided_by: 86400 -%}
+  {%- assign c_i = c_dia | divided_by: 2 | modulo: c_frags.size -%}
+  {%- assign c_var = c_dia | modulo: 2 -%}
+  <div class="cover cover--auto cover--{{ c_fmt }}{% if c_var == 1 %} cover--auto-b{% endif %} tema-fondo--{{ c_cat }}" aria-hidden="true">
     {%- assign c_frag = '/assets/collage/fragmentos/' | append: c_frags[c_i] -%}
     <img src="{{ c_frag | append: '.webp' | relative_url }}" srcset="{{ c_frag | append: '-480.webp' | relative_url }} 480w, {{ c_frag | append: '-640.webp' | relative_url }} 640w, {{ c_frag | append: '.webp' | relative_url }} 900w" sizes="(min-width: 860px) 28vw, 70vw" alt="" loading="lazy" decoding="async">
     <span class="cover-shape"></span>

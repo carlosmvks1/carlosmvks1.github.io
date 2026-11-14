@@ -283,6 +283,15 @@ h1, h2, h3 {
   border-radius: 50% 47% 52% 49%;
   box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.45);
 }
+/* Variante B: la foto a la derecha y una banda de papel recto en lugar del disco */
+.cover--auto.cover--auto-b img { left: auto; right: 7%; top: 7%; width: 68%; height: 74%; }
+.cover--auto-b .cover-shape {
+  width: 46%; aspect-ratio: auto; height: 26%;
+  left: 6%; right: auto; bottom: 8%;
+  border-radius: 1px;
+  transform: rotate(-1.5deg);
+}
+.cover--auto.cover--auto-b .category-mark { left: 10%; right: auto; bottom: 12%; width: 13%; }
 .tema-fondo--medicina { --tema: var(--azul); }
 .tema-fondo--filosofia { --tema: var(--terracota); }
 .tema-fondo--fe { --tema: var(--ambar); }

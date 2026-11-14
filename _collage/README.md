@@ -28,7 +28,11 @@ recompuesto con menos piezas) y `-h` (3:2, listas).
 
 Una entrada sin collage propio no necesita nada: el sitio arma una portada
 automática con un fragmento de `assets/collage/fragmentos/`, el color y la
-marca de su tema.
+marca de su tema. Hay dos composiciones (disco a la derecha o banda recta a la
+izquierda); la fecha decide cuál y qué fragmento, de modo que las entradas
+cercanas no se repiten. Para sumar un fragmento: guardarlo en esa carpeta,
+añadir su nombre a la lista de `_includes/cover.html` y correr
+`python3 _collage/componer.py tamanos`.
 
 Para usar un collage en una entrada:
 
