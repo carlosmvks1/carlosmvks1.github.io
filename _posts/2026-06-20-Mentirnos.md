@@ -2,11 +2,15 @@
 layout: post
 title: "La mentira que no se siente como mentira"
 date: 2026-06-20
+subtitle: "Protegemos nuestra identidad, reorganizamos lo ocurrido y terminamos creyendo que nuestra versión es objetiva."
+description: "Disonancia cognitiva, sesgo autoservicial y punto ciego del sesgo: cómo la mente protege nuestra identidad y nos convence de que nuestra versión es la objetiva."
 categories: [filosofia]
+collage: mentira
+collage_alt: "Collage: una fachada del centro de Tegucigalpa partida en dos mitades que no coinciden, rotuladas «mi versión» y «la tuya»; encima, una lámina antigua del ojo con el punto ciego tapado por un disco de terracota."
+cita: "Confundimos la ausencia de intención de engañarnos con la ausencia de autoengaño."
 featured: true
 ---
 
-### _Protegemos nuestra identidad, reorganizamos lo ocurrido y terminamos creyendo que nuestra versión es objetiva_
 
 Esto nos ocurre a todos. Exploremos la idea:
 
@@ -22,7 +26,7 @@ Después de esa reorganización, nuestra se siente como la realidad.
 
 Tres fenómenos estudiados por la psicología permiten reconstruir este proceso: la disonancia cognitiva, el sesgo atribucional autoservicial y el punto ciego del sesgo.
 
-## Disonancia cognitiva.
+## Disonancia cognitiva
 
 Este concepto que seguramente hayas escuchado antes nos lleva a explorar lo que pone en marcha el proceso antes mencionado.
 
@@ -69,7 +73,7 @@ En ese mismo ejemplo, la persona que fuma puede convencerse de que el riesgo est
 
 Entonces, la conducta permanece. Lo que cambia es la estructura de pensamientos que permite sostenerla.
 
-**Lo díficil es que, la racionalización más eficaz no es aquella que sabemos falsa, sino aquella que logramos experimentar como razonable.**
+**Lo difícil es que, la racionalización más eficaz no es aquella que sabemos falsa, sino aquella que logramos experimentar como razonable.**
 
 Entonces, podemos ver lo siguiente:
 
@@ -78,7 +82,7 @@ Entonces, podemos ver lo siguiente:
 
 ## Sesgo autoservicial
 
-Si la disonancia cognitiva era la incomodidad que surgia de contradicciones entre nuestra identidad y nuestras acciones, ahora veamos cómo repartimos las causas a nuestro favor para disminuir esa tensión.
+Si la disonancia cognitiva era la incomodidad que surgía de contradicciones entre nuestra identidad y nuestras acciones, ahora veamos cómo repartimos las causas a nuestro favor para disminuir esa tensión.
 
 Hagámonos la pregunta 
 
@@ -86,7 +90,10 @@ Hagámonos la pregunta
 
 Aquí entra el **sesgo atribucional autoservicial.**
 
-Este sesgo consiste en explicar los acontecimientos positivos mediante causas más internas, estables y globales (Es decir causas que dependen de mí [Internas]; Que seguiran existiendo [Estables] y que se aplican a muchos ámbitos de nuestra vida [Globales]) que las utilizadas para explicar los acontecimientos negativos.
+**Internas:** causas que dependen de mí. **Estables:** que seguirán existiendo. **Globales:** que se aplican a muchos ámbitos de nuestra vida.
+{: .anotacion}
+
+Este sesgo consiste en explicar los acontecimientos positivos mediante causas más internas, estables y globales que las utilizadas para explicar los acontecimientos negativos.
 
 Explicamos los acontecimientos positivos mediante causas que dicen algo favorable y duradero sobre nosotros, ejemplo:
 
@@ -116,11 +123,11 @@ Cuando yo reacciono mal:
 
 > "Cualquiera hubiera reaccionado así".
 
-Cuando el otro reaccionas mal:
+Cuando el otro reacciona mal:
 
 > "Es emocionalmente inestable".
 
-El metaanálisis de Amy Mezulis encontró un efecto promedio grande. El 89 % de las muestras mostró una tendencia positiva. [[1](https://pubmed.ncbi.nlm.nih.gov/15367078/)].
+El metaanálisis de Amy Mezulis encontró un efecto promedio grande. El 89 % de las muestras mostró una tendencia positiva[^mezulis].
 
 Es decir, es un patrón humano bastante generalizado el siguiente:
 
@@ -160,7 +167,7 @@ El problema, entonces, no es que la mente intente protegernos. El problema es **
 
 Una defensa saludable impide que el error destruya por completo nuestra identidad:
 
-> "Hice algo malo, pero eso no define quien soy".
+> "Hice algo malo, pero eso no define quién soy".
 
 Una defensa rígida impide que el error llegue siquiera a cuestionarla:
 
@@ -184,7 +191,7 @@ Hasta aquí podríamos imaginar que quien racionaliza sabe, al menos vagamente, 
 
 Pensalo por un momento: ¿cuántas veces reconocés el autoengaño mientras está ocurriendo? Generalmente solo lo vemos después, y muchas veces ni siquiera entonces. Ese último será el caso si crees que no racionalizas.
 
-El trabajo de Emily Pronin y sus colaboradores mostró que tendemos a percibir los sesgos con mayor facilidad en los demás que en nosotros mismos. En tres encuestas, los participantes se consideraron menos susceptibles a diversos sesgos que el estadounidense promedio, sus propios compañeros de clase o los demás viajeros de un aeropuerto [2](https://www.sakkyndig.com/psykologi/artvit/pronin2015.pdf).
+El trabajo de Emily Pronin y sus colaboradores mostró que tendemos a percibir los sesgos con mayor facilidad en los demás que en nosotros mismos. En tres encuestas, los participantes se consideraron menos susceptibles a diversos sesgos que el estadounidense promedio, sus propios compañeros de clase o los demás viajeros de un aeropuerto [^pronin].
 
 El punto ciego persistió incluso cuando el sesgo acababa de manifestarse. Después de evaluar sus propias cualidades, los participantes recibieron una explicación explícita del efecto "mejor que el promedio". Sin embargo, solo el 24 % de quienes se habían colocado por encima de sus compañeros reconoció que su evaluación había podido estar sesgada. La mayoría sostuvo que había sido objetiva; algunos incluso afirmaron que habían sido demasiado modestos...
 
@@ -347,3 +354,7 @@ Vale más quien sabe que puede estar equivocado que quien necesita tener siempre
 Porque peor que no ver es no saber que estamos ciegos.
 
 ¿Utilizás el error para aprender o para construir otra versión de la historia en la que nunca fuiste vos?
+
+[^mezulis]: Mezulis, A. H., Abramson, L. Y., Hyde, J. S. y Hankin, B. L. (2004). «Is there a universal positivity bias in attributions?». *Psychological Bulletin*, 130(5), 711–747. [doi:10.1037/0033-2909.130.5.711](https://doi.org/10.1037/0033-2909.130.5.711). [Resumen en PubMed](https://pubmed.ncbi.nlm.nih.gov/15367078/).
+
+[^pronin]: Pronin, E., Lin, D. Y. y Ross, L. (2002). «The bias blind spot: Perceptions of bias in self versus others». *Personality and Social Psychology Bulletin*, 28(3), 369–381. [doi:10.1177/0146167202286008](https://doi.org/10.1177/0146167202286008). Las encuestas están en el estudio 1; el 24 %, en el estudio 2; la prueba de inteligencia social, en el estudio 3. [Texto en PDF](https://www.sakkyndig.com/psykologi/artvit/pronin2015.pdf).

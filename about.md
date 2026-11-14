@@ -37,7 +37,7 @@ Descubrí que la virtud no aparece por inspiración, se va construyendo en lo qu
 Este cuaderno me ayuda a ver si de verdad estoy creciendo
 o si solo estoy redactando bien mis excusas.
 
-Podriamos resumirlo así: escribo para entender;
+Podríamos resumirlo así: escribo para entender;
 y publico para no olvidarme de lo que ya entendí.
 
 Si este proceso le sirve a alguien más, bienvenido.

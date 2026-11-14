@@ -1,0 +1,35 @@
+{%- comment -%}
+Portada de una entrada. Si tiene `collage`, usa sus tres recortes
+(4:5 escritorio, 1:1 móvil, 3:2 listas). Si no, arma una portada automática
+con un fragmento (de la rotación o el fijado en `fragmento`), el color y la marca de su tema.
+include.format: "v" (protagonista) u "h" (listas).
+include.sizes: atributo sizes para el formato "h" (opcional).
+{%- endcomment -%}
+{%- assign c_post = include.post -%}
+{%- assign c_cat = c_post.categories | first | default: 'cuaderno' -%}
+{%- assign c_fmt = include.format | default: 'h' -%}
+{%- if c_post.collage -%}
+  {%- assign c_base = '/assets/collage/' | append: c_post.collage -%}
+  {%- assign c_sizes = include.sizes | default: '(min-width: 860px) 40vw, calc(100vw - 32px)' -%}
+  <picture class="cover cover--collage cover--{{ c_fmt }}">
+    {%- if c_fmt == 'v' %}
+    <source media="(min-width: 860px)" srcset="{{ c_base | append: '-v-800.webp' | relative_url }} 800w, {{ c_base | append: '-v.webp' | relative_url }} 1200w" sizes="(min-width: 1240px) 590px, 48vw" width="1200" height="1500">
+    <source media="(max-width: 859px)" srcset="{{ c_base | append: '-m-640.webp' | relative_url }} 640w, {{ c_base | append: '-m-800.webp' | relative_url }} 800w, {{ c_base | append: '-m.webp' | relative_url }} 1000w" sizes="100vw" width="1000" height="1000">
+    {%- endif %}
+    <img src="{{ c_base | append: '-h-800.webp' | relative_url }}" srcset="{{ c_base | append: '-h-480.webp' | relative_url }} 480w, {{ c_base | append: '-h-800.webp' | relative_url }} 800w, {{ c_base | append: '-h.webp' | relative_url }} 1200w" sizes="{{ c_sizes }}" width="1200" height="800" alt="{{ include.alt | default: '' }}" {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+  </picture>
+{%- else -%}
+  {%- comment -%} Rotación general. Una entrada puede fijar el suyo con `fragmento:` (ver docs/visual-system.md). {%- endcomment -%}
+  {%- assign c_frags = "grabado,calle,casa,escalinata,guerrero" | split: "," -%}
+  {%- comment -%} Días desde 1970: entradas cercanas reciben fragmentos y composiciones distintas. {%- endcomment -%}
+  {%- assign c_dia = c_post.date | date: "%s" | divided_by: 86400 -%}
+  {%- assign c_i = c_dia | divided_by: 2 | modulo: c_frags.size -%}
+  {%- assign c_var = c_dia | modulo: 2 -%}
+  <div class="cover cover--auto cover--{{ c_fmt }}{% if c_var == 1 %} cover--auto-b{% endif %} tema-fondo--{{ c_cat }}" aria-hidden="true">
+    {%- assign c_nombre = c_post.fragmento | default: c_frags[c_i] -%}
+    {%- assign c_frag = '/assets/collage/fragmentos/' | append: c_nombre -%}
+    <img src="{{ c_frag | append: '.webp' | relative_url }}" srcset="{{ c_frag | append: '-480.webp' | relative_url }} 480w, {{ c_frag | append: '-640.webp' | relative_url }} 640w, {{ c_frag | append: '.webp' | relative_url }} 900w" sizes="(min-width: 860px) 28vw, 70vw" alt="" loading="lazy" decoding="async">
+    <span class="cover-shape"></span>
+    {% include category-mark.html cat=c_cat %}
+  </div>
+{%- endif -%}

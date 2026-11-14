@@ -1,0 +1,20 @@
+{%- assign al_years = include.posts | group_by_exp: "p", "p.date | date: '%Y'" -%}
+{%- for y in al_years %}
+<section class="anio" aria-labelledby="anio-{{ y.name }}{{ include.id }}">
+  <h2 class="anio-titulo" id="anio-{{ y.name }}{{ include.id }}">{{ y.name }}</h2>
+  <ol class="indice-lista">
+    {%- for post in y.items %}
+    {%- assign p_cat = post.categories | first | default: 'cuaderno' -%}
+    <li class="indice-fila tema--{{ p_cat }}" data-tema="{{ p_cat }}">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{% include fecha.html date=post.date short=true %}</time>
+      <div class="indice-cuerpo">
+        <a class="indice-titulo" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {%- if include.descripciones %}<p>{{ post.description }}</p>{% endif %}
+      </div>
+      <span class="indice-tema">{% include cat-name.html cat=p_cat %}</span>
+      <span class="indice-min">{% assign w = post.content | strip_html | number_of_words | divided_by: 220 | at_least: 1 %}{{ w }} min</span>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+{%- endfor %}

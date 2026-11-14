@@ -1,0 +1,6 @@
+{%- assign nav = "medicina:Medicina,filosofia:Filosofía,fe_y_etica:Fe y ética,proyectos:Proyectos,archivo:Archivo,sobre-mi:Sobre mí" | split: "," -%}
+{%- for item in nav -%}
+  {%- assign parts = item | split: ":" -%}
+  {%- assign href = '/' | append: parts[0] | append: '/' -%}
+  <a class="nav-{{ parts[0] }}" href="{{ href | relative_url }}"{% if page.url == href %} aria-current="page"{% endif %}>{{ parts[1] }}</a>
+{%- endfor -%}

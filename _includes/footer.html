@@ -1,6 +1,15 @@
 <footer class="site-footer">
-  <div class="site-shell footer-inner">
-    <p><a href="{{ '/' | relative_url }}">El cuaderno</a> · {{ site.time | date: "%Y" }}</p>
-    <a href="{{ '/sobre-mi/' | relative_url }}">Sobre mí</a>
+  <div class="shell footer-inner">
+    <div>
+      <p class="footer-mark"><a href="{{ '/' | relative_url }}">El cuaderno</a></p>
+      <p class="footer-note">Escribo para entender; y publico para no olvidarme de lo que ya entendí. Desde Tegucigalpa.</p>
+    </div>
+    <nav aria-label="Pie de página">
+      <a href="{{ '/archivo/' | relative_url }}">Archivo</a>
+      <a href="{{ '/cuaderno/' | relative_url }}">Qué es este cuaderno</a>
+      <a href="{{ '/sobre-mi/' | relative_url }}">Sobre mí</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a href="{{ '/creditos/' | relative_url }}">Créditos de imágenes</a>
+    </nav>
   </div>
 </footer>

@@ -1,0 +1,14 @@
+{%- comment -%} Índice a partir de los h2 del contenido ya convertido. {%- endcomment -%}
+{%- assign t_parts = include.html | split: '<h2 id="' -%}
+{%- if t_parts.size > 3 -%}
+<nav class="toc" aria-labelledby="toc-titulo">
+  <p class="toc-titulo" id="toc-titulo">En este texto</p>
+  <ol>
+  {%- for t_part in t_parts offset: 1 -%}
+    {%- assign t_id = t_part | split: '"' | first -%}
+    {%- assign t_text = t_part | split: '</h2>' | first | split: '>' | shift | join: '>' | strip_html -%}
+    <li><a href="#{{ t_id }}">{{ t_text }}</a></li>
+  {%- endfor -%}
+  </ol>
+</nav>
+{%- endif -%}

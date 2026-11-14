@@ -1,10 +1,19 @@
 title: "El cuaderno"
 description: "Notas sobre medicina, ideas, fe y otras cosas que intento entender."
+author: Carlos Reyes
 lang: es
+locale: es_HN
+url: "https://carlosmvks1.github.io"
 theme: minima
-header_pages:
-  - medicina.md
-  - filosofia.md
-  - fe-y-etica.md
-  - proyectos-personales.md
-  - about.md
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - AGENTS.md
+  - README.md
+  - docs
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - .gitignore
