@@ -1,0 +1,22 @@
+# Fuente única de los temas del cuaderno.
+# - clave: valor de `categories:` en las entradas y sufijo de .tema--clave.
+# - nombre: etiqueta corta en navegación, metadatos, filtros y portadillas.
+# - url: ruta pública de la página del tema (no cambiar: son enlaces publicados).
+# - color: token de paleta de assets/main.scss que define --tema-<clave>.
+# La descripción de cada tema vive en el front matter de su página (medicina.md, etc.).
+- clave: medicina
+  nombre: Medicina
+  url: /medicina/
+  color: azul
+- clave: filosofia
+  nombre: Filosofía
+  url: /filosofia/
+  color: terracota
+- clave: fe
+  nombre: Fe y ética
+  url: /fe_y_etica/
+  color: ambar
+- clave: proyectos
+  nombre: Proyectos
+  url: /proyectos/
+  color: rosa

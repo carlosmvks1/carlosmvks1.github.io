@@ -1,1 +1,2 @@
-{%- case include.cat -%}{%- when 'medicina' -%}/medicina/{%- when 'filosofia' -%}/filosofia/{%- when 'fe' -%}/fe_y_etica/{%- when 'proyectos' -%}/proyectos/{%- else -%}/archivo/{%- endcase -%}
+{%- assign cu_tema = site.data.temas | where: "clave", include.cat | first -%}
+{%- if cu_tema -%}{{ cu_tema.url }}{%- else -%}/archivo/{%- endif -%}
