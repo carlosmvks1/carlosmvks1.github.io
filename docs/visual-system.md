@@ -239,7 +239,7 @@ el CSS.
 | Tipografía | `--fuente-display` (Fraunces), `--fuente-texto` (Public Sans), `--t-rotulo` 0.78rem, `--t-rotulo-chico` 0.72rem, `--rotulo-espaciado` 0.14em, `--t-dato` 0.8rem, `--t-ui` 0.92rem, `--t-apoyo` 0.98rem |
 | Medidas | `--ancho` 1240px, `--gutter` 16px (32px desde 760 px), `--lectura` 40rem |
 | Ritmo de secciones | `--seccion-corta` 3.5rem, `--seccion` 4rem, `--seccion-larga` 5rem |
-| Bordes | `--filete` y `--filete-suave` (1px sólido), `--barra` 4px (bloques y cabeceras de tema, serie), `--barra-media` 3px (botones de tema, cita de portada), `--barra-fina` 2px (citas, anotaciones, notas, subrayado actual) |
+| Bordes | `--filete` y `--filete-suave` (1px sólido), `--barra` 4px (bloques y cabeceras de tema, serie), `--barra-media` 3px (subrayado del título protagonista al pasar), `--barra-fina` 2px (citas, cita de portada, anotaciones, notas, subrayado actual) |
 | Radios | `--radio-pastilla` 99px, `--radio-disco` (disco recortado a mano) |
 | Sombras | `--sombra-papel` 5×7 px, `--sombra-papel-corta` 4×6 px (forma de la portada automática), ambas sin desenfoque al 45 % |
 | Capas | `--capa-montaje` 2 (título sobre collage), `--capa-cabecera` 5, `--capa-salto` 10 |
@@ -252,7 +252,7 @@ quedan escritos a mano, a propósito:
 - el montaje del título sobre el collage;
 - los porcentajes y la rotación de las portadas automáticas;
 - la inclinación de 1.2° de la banda «Del archivo»;
-- el desplazamiento de la segunda columna de «Más entradas».
+- la miniatura de 7,5 rem de las recientes en móvil.
 
 Son composición, no sistema. El movimiento (una transición de 0.4 s, solo con
 `prefers-reduced-motion: no-preference`) tampoco necesita token.
@@ -308,33 +308,50 @@ Escala:
 
 ### 5.3 Jerarquía de la home (`_layouts/home.html`)
 
-1. **Portadilla:** quién escribe, con una frase y «Sobre mí», más «Entrar por
-   tema» con la marca y el número de entradas de cada tema, y «Archivo
-   completo».
-2. **Protagonista:** la entrada más reciente. Lleva el título grande, el
-   collage `-v`/`-m`, la entradilla, una `cita` opcional y «Leer la entrada».
-3. **También en el cuaderno:** una entrada grande con imagen `-h` y dos
-   entradas solo de texto.
-4. **Del archivo:** una banda con la entrada **más antigua** que tenga
-   collage, sin contar la protagonista. La región se nombra con su kicker.
-5. **Más entradas:** tres columnas con imagen. Tiene un `h2` solo para
-   lectores de pantalla.
-6. **Los cuatro temas:** un bloque por tema, con su cuenta, su descripción y su
-   última entrada.
+La home alterna intensidades: **un solo foco fuerte** (la protagonista), un
+grupo medio, un tramo tranquilo y un cierre medio. Ninguna sección compite en
+escala con la protagonista. El análisis está en
+`docs/audits/2026-11-15-portada.md`.
 
-**Accesos repetidos a los temas.** Están en la cabecera, en «Entrar por tema»,
-en «Los cuatro temas» y en el tema de cada entrada. Se conservan porque cumplen
-funciones distintas:
+1. **Portadilla (baja):** quién escribe, con una frase y «Sobre mí».
+   - Por debajo de 960 px, donde la cabecera pliega los temas en «Menú»,
+     suma «Entrar por tema»: una línea de enlaces con su marca, sin cajas ni
+     conteos, de 44 px de alto.
+   - En escritorio no se muestra, porque la cabecera ya tiene esos enlaces.
+2. **Protagonista (alta):** la entrada más reciente.
+   - Lleva el título grande montado sobre el collage `-v`/`-m`, la
+     entradilla y «Leer la entrada».
+   - La `cita` opcional es una voz secundaria: filete lateral fino de
+     `--barra-fina` y 1,12 rem en `--color-texto-2`.
+3. **También en el cuaderno (media):** las tres entradas siguientes, en tres
+   columnas iguales con imagen `-h`, alineadas y sin escalonar.
+   - Por debajo de 700 px, la imagen pasa a miniatura de 7,5 rem junto al
+     texto, y la meta muestra solo el tema y la fecha.
+4. **Los cuatro temas (baja):** un bloque por tema con su marca, nombre,
+   cuenta y descripción. Es la pausa entre composiciones y la bisagra para
+   explorar un tema.
+5. **Del archivo (media):** una banda de otra superficie, al final.
+   - Muestra la entrada **más antigua** que tenga collage, sin contar la
+     protagonista.
+   - El título llega como máximo a 2,4 rem y el collage ocupa 5 de 12
+     columnas, para que no parezca un segundo inicio.
+   - La región se nombra con su kicker.
+
+Las entradas que no entran en la home están en el archivo y en las páginas de
+tema.
+
+**Accesos a los temas.** Cada uno cumple una función distinta, y todos usan el
+mismo término, «tema»:
 
 - la cabecera es la navegación global de todas las páginas, y en móvil está
-  plegada;
-- «Entrar por tema» es la puerta visible de la primera pantalla en móvil, con
-  la marca y la cuenta de cada tema;
-- «Los cuatro temas» explica cada tema con su descripción y su última entrada,
-  al final del recorrido;
+  plegada en «Menú»;
+- «Entrar por tema» solo aparece en móvil, como puerta visible en la primera
+  pantalla;
+- «Los cuatro temas» explica cada tema con su descripción y su cuenta;
 - el enlace de tema en la meta da contexto a cada entrada.
 
-Las cuatro usan el mismo término, «tema».
+No se agregan conteos ni «última entrada» repetidos. Los títulos ya están
+en la página.
 
 **Imágenes de las tarjetas.** El enlace de la imagen tiene `tabindex="-1"` y
 `aria-hidden="true"`, y la imagen tiene `alt=""`: con el ratón se puede hacer
@@ -675,6 +692,10 @@ autorizan a reutilizar sus obras. Revisadas en noviembre de 2026.
   «Importancia de la anamnesis clínica», «Descripción y elementos clave»). Se
   podrían convertir en encabezados sin cambiar las palabras, pero no está
   decidido.
+- **Fragmento repetido en la home:** la portada automática de «La Ontología
+  del Ser Necesario» usa `escalinata`, la misma foto que el collage del TDAH,
+  y las dos se ven en la home. Opciones: aceptarlo, fijar otro `fragmento:` a
+  esa entrada o cambiar la regla de «Del archivo».
 - **Nombre de «Proyectos»:** la página se titula «Proyectos personales» y el
   resto del sitio dice «Proyectos». Hay que decidir si se unifican.
 - **Comprobaciones de accesibilidad que el entorno de agentes no permite:**

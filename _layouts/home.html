@@ -14,10 +14,9 @@ layout: default
     <p class="portadilla-temas-titulo">Entrar por tema</p>
     <ul>
     {%- for t in site.data.temas -%}
-      {%- assign t_posts = site.posts | where_exp: "p", "p.categories contains t.clave" -%}
-      <li class="tema--{{ t.clave }}"><a href="{{ t.url | relative_url }}">{% include category-mark.html cat=t.clave %}<span>{{ t.nombre }}</span><small>{{ t_posts.size }}<span class="solo-lectores"> {% if t_posts.size == 1 %}entrada{% else %}entradas{% endif %}</span></small></a></li>
+      <li class="tema--{{ t.clave }}"><a href="{{ t.url | relative_url }}">{% include category-mark.html cat=t.clave %}<span>{{ t.nombre }}</span></a></li>
     {%- endfor %}
-      <li class="portadilla-archivo"><a href="{{ '/archivo/' | relative_url }}"><span>Archivo completo</span><small aria-hidden="true">→</small></a></li>
+      <li class="portadilla-archivo"><a href="{{ '/archivo/' | relative_url }}"><span>Archivo</span></a></li>
     </ul>
   </nav>
 </section>
@@ -47,55 +46,15 @@ layout: default
     <h2 id="recientes-titulo">También en el cuaderno</h2>
     <a href="{{ '/archivo/' | relative_url }}">Ver todo el archivo <span aria-hidden="true">→</span></a>
   </header>
-
+  {%- comment -%}
+  Tres entradas del mismo peso: ninguna compite con la protagonista. Las
+  anteriores siguen en el archivo.
+  {%- endcomment %}
   <div class="recientes-grid">
-    {%- for post in site.posts offset:1 limit:3 -%}
+    {%- for post in site.posts offset:1 limit:3 %}
       {%- assign p_cat = post.categories | first | default: 'cuaderno' -%}
-      {%- if forloop.first %}
-      <article class="entrada entrada--grande tema--{{ p_cat }}">
-        <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">{% include cover.html post=post format="h" sizes="(min-width: 860px) 640px, calc(100vw - 32px)" %}</a>
-        <div class="entrada-texto">
-          {% include meta.html post=post %}
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p>{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html | truncate: 170 }}{% endif %}</p>
-        </div>
-      </article>
-      <div class="recientes-columna">
-      {%- else %}
-        <article class="entrada entrada--texto tema--{{ p_cat }}">
-          {% include meta.html post=post %}
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p>{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html | truncate: 170 }}{% endif %}</p>
-        </article>
-      {%- endif -%}
-    {%- endfor %}
-      </div>
-  </div>
-</section>
-
-{%- assign archivo_destacado = site.posts | where_exp: "p", "p.collage" | where_exp: "p", "p.url != lead.url" | last -%}
-{%- if archivo_destacado %}
-{%- assign a_cat = archivo_destacado.categories | first | default: 'cuaderno' -%}
-<section class="pausa tema--{{ a_cat }}" aria-labelledby="pausa-kicker">
-  <div class="shell pausa-inner">
-    <a class="pausa-imagen" href="{{ archivo_destacado.url | relative_url }}" tabindex="-1" aria-hidden="true">{% include cover.html post=archivo_destacado format="h" %}</a>
-    <div class="pausa-texto">
-      <p class="kicker" id="pausa-kicker">Del archivo</p>
-      <h2 id="pausa-titulo"><a href="{{ archivo_destacado.url | relative_url }}">{{ archivo_destacado.title }}</a></h2>
-      <p>{{ archivo_destacado.description }}</p>
-      {% include meta.html post=archivo_destacado %}
-    </div>
-  </div>
-</section>
-{%- endif %}
-
-<section class="mas shell" aria-labelledby="mas-titulo">
-  <h2 class="solo-lectores" id="mas-titulo">Más entradas</h2>
-  <div class="mas-grid">
-    {%- for post in site.posts offset:4 limit:3 %}
-      {%- assign p_cat = post.categories | first | default: 'cuaderno' -%}
-      <article class="entrada entrada--columna tema--{{ p_cat }}">
-        <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">{% include cover.html post=post format="h" sizes="(min-width: 760px) 380px, calc(100vw - 32px)" %}</a>
+      <article class="entrada entrada--columna entrada--reciente tema--{{ p_cat }}">
+        <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">{% include cover.html post=post format="h" sizes="(min-width: 760px) 380px, 7.5rem" %}</a>
         {% include meta.html post=post %}
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p>{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html | truncate: 170 }}{% endif %}</p>
@@ -117,8 +76,23 @@ layout: default
         <strong>{{ t.nombre }}</strong>
         <span class="tema-cuenta">{{ t_posts.size }} {% if t_posts.size == 1 %}entrada{% else %}entradas{% endif %}</span>
         <span class="tema-desc">{{ t_page.description }}</span>
-        {%- if t_posts.first %}<span class="tema-ultima">Última: {{ t_posts.first.title }}</span>{% endif %}
       </a>
     {%- endfor %}
   </div>
 </section>
+
+{%- assign archivo_destacado = site.posts | where_exp: "p", "p.collage" | where_exp: "p", "p.url != lead.url" | last -%}
+{%- if archivo_destacado %}
+{%- assign a_cat = archivo_destacado.categories | first | default: 'cuaderno' -%}
+<section class="pausa tema--{{ a_cat }}" aria-labelledby="pausa-kicker">
+  <div class="shell pausa-inner">
+    <a class="pausa-imagen" href="{{ archivo_destacado.url | relative_url }}" tabindex="-1" aria-hidden="true">{% include cover.html post=archivo_destacado format="h" sizes="(min-width: 860px) 520px, calc(100vw - 32px)" %}</a>
+    <div class="pausa-texto">
+      <p class="kicker" id="pausa-kicker">Del archivo</p>
+      <h2 id="pausa-titulo"><a href="{{ archivo_destacado.url | relative_url }}">{{ archivo_destacado.title }}</a></h2>
+      <p>{{ archivo_destacado.description }}</p>
+      {% include meta.html post=archivo_destacado %}
+    </div>
+  </div>
+</section>
+{%- endif %}
