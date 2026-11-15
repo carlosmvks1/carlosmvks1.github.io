@@ -27,6 +27,9 @@ redactar o editar artículos.
 - Paleta, tipografías (solo Fraunces y Public Sans) y tokens: los de
   `assets/main.scss`, documentados en la guía. No agregues familias ni
   colores nuevos sin decisión de Carlos.
+- Los componentes usan los tokens de función (`--color-*`, `--tema`), no la
+  paleta directamente. Los temas (nombre, URL y color) se definen solo en
+  `_data/temas.yml`.
 
 ## Collages
 

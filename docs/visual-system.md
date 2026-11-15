@@ -175,41 +175,113 @@ Los fragmentos miden como máximo 900 px y tienen anchos de 640 y 480.
 ## 5. Diseño implementado
 
 Todo el CSS está en [`assets/main.scss`](../assets/main.scss), en este orden:
-tokens, base, cabecera, portada, artículo, archivo, pie y utilidades. El
-JavaScript está en [`assets/cuaderno.js`](../assets/cuaderno.js) y solo hace
-mejora progresiva: sin él, todo se puede leer.
+tokens, base, cabecera, portada, inicio, artículo, archivo, pie, utilidades y
+movimiento. El JavaScript está en [`assets/cuaderno.js`](../assets/cuaderno.js)
+y solo hace mejora progresiva: sin él, todo se puede leer y usar (sección 6).
 
 ### 5.1 Tokens (`:root`)
 
-| Token | Valor | Uso | Contraste sobre `--noche` |
-|---|---|---|---|
-| `--noche` | `#13171e` | Fondo general, `theme-color` | — |
-| `--noche-2` | `#191e27` | Bandas, anotaciones, fondo de portadas | — |
-| `--noche-3` | `#212835` | Superficies elevadas | — |
-| `--linea` | `#2d3442` | Filetes | — |
-| `--linea-suave` | `#232a36` | Filete de cabecera | — |
-| `--marfil` | `#ece4d4` | Texto principal | 14.2:1 |
-| `--marfil-2` | `#c9c1b1` | Texto secundario | — |
-| `--gris` | `#a29b8d` | Metadatos, kickers neutros | 6.5:1 |
-| `--terracota` | `#d9774f` | Filosofía | 5.7:1 |
-| `--ambar` | `#e6ad4a` | Fe y ética; foco; cursivas de la home | 8.9:1 |
-| `--azul` | `#93b1c7` | Medicina | 8.0:1 |
-| `--rosa` | `#e2a3a0` | Proyectos | 8.5:1 |
-| `--cal` | `#e9e1cf` | Papel | — |
-| `--tema` | Según `.tema--{medicina,filosofia,fe,proyectos}` | Acento de cada tema | — |
-| `--ancho` | `1240px` | Ancho máximo del `.shell` | — |
-| `--gutter` | `16px` (`32px` desde 760 px) | Margen lateral | — |
-| `--lectura` | `40rem` | Medida del cuerpo de texto | — |
+Hay dos capas de color, pequeñas a propósito:
 
-Cada tema tiene un color, y se asigna con `.tema--x` (texto) o con
-`.tema-fondo--x` (portadas automáticas). Cada uno tiene además una **marca**
-SVG en `_includes/category-mark.html`:
+1. **Paleta**: los colores de identidad, con nombres de material. Solo se usan
+   dentro de `:root`, para definir funciones y temas.
+2. **Funciones**: lo que usan los componentes. Varias comparten valor
+   (`--color-foco`, `--color-acento` y `--tema-fe` son ámbar), pero se pueden
+   cambiar por separado: cambiar el color de Fe no cambia el foco.
+
+**Paleta**
+
+| Token | Valor | Contraste sobre `--noche` |
+|---|---|---|
+| `--noche` | `#13171e` | — |
+| `--noche-2` | `#191e27` | — |
+| `--linea` | `#2d3442` | 1.44:1 (solo filetes) |
+| `--linea-suave` | `#232a36` | 1.25:1 (solo filetes) |
+| `--marfil` | `#ece4d4` | 14.2:1 |
+| `--marfil-2` | `#c9c1b1` | 10.1:1 |
+| `--marfil-claro` | `#f6efe2` | 15.7:1 |
+| `--gris` | `#a29b8d` | 6.5:1 |
+| `--terracota` | `#d9774f` | 5.7:1 |
+| `--ambar` | `#e6ad4a` | 8.9:1 |
+| `--azul` | `#93b1c7` | 8.0:1 |
+| `--rosa` | `#e2a3a0` | 8.5:1 |
+
+Sobre `--noche-2`, todos los colores de texto siguen por encima de 5.3:1. El
+texto `--noche` sobre cualquier color de tema supera 5.7:1. `--cal` (papel) y
+los colores planos de los collages viven en `componer.py` (sección 3.2), no en
+el CSS.
+
+**Funciones**
+
+| Token | Valor actual | Uso |
+|---|---|---|
+| `--color-fondo` | `--noche` | Fondo general, banda bajo títulos montados |
+| `--color-superficie` | `--noche-2` | Bandas, menú móvil, notas, pie, portadas automáticas |
+| `--color-filete` / `--color-filete-suave` | `--linea` / `--linea-suave` | Filetes y bordes de controles |
+| `--color-texto` | `--marfil` | Texto principal |
+| `--color-texto-2` | `--marfil-2` | Texto secundario, entradillas |
+| `--color-texto-3` | `--gris` | Metadatos, rótulos neutros |
+| `--color-texto-fuerte` | `--marfil-claro` | `<strong>` en el cuerpo |
+| `--color-sobre-acento` | `--noche` | Texto sobre fondos de color o marfil |
+| `--color-control-activo` | `--marfil` | Filtro activo, menú abierto |
+| `--color-foco` | `--ambar` | Contorno de foco, «Saltar al contenido» |
+| `--color-acento` | `--ambar` | Marca: «El», cursivas de la portadilla, años del archivo, subrayado de página actual |
+| `--color-anotacion` | `--ambar` | Filete y énfasis de las anotaciones del autor |
+| `--color-seleccion` | `--terracota` | Selección de texto |
+| `--velo` / `--velo-hover` | marfil al 3 % / 8 % | Fondo de los botones de «Entrar por tema» |
+| `--tema-{clave}` | Desde `_data/temas.yml` | Color de cada tema |
+| `--tema` | `--tema-{clave}` o `--color-acento` | Acento del contexto actual |
+
+**Otras familias**
+
+| Grupo | Tokens |
+|---|---|
+| Tipografía | `--fuente-display` (Fraunces), `--fuente-texto` (Public Sans), `--t-rotulo` 0.78rem, `--t-rotulo-chico` 0.72rem, `--rotulo-espaciado` 0.14em, `--t-dato` 0.8rem, `--t-ui` 0.92rem, `--t-apoyo` 0.98rem |
+| Medidas | `--ancho` 1240px, `--gutter` 16px (32px desde 760 px), `--lectura` 40rem |
+| Ritmo de secciones | `--seccion-corta` 3.5rem, `--seccion` 4rem, `--seccion-larga` 5rem |
+| Bordes | `--filete` y `--filete-suave` (1px sólido), `--barra` 4px (bloques y cabeceras de tema, serie), `--barra-media` 3px (botones de tema, cita de portada), `--barra-fina` 2px (citas, anotaciones, notas, subrayado actual) |
+| Radios | `--radio-pastilla` 99px, `--radio-disco` (disco recortado a mano) |
+| Sombras | `--sombra-papel` 5×7 px, `--sombra-papel-corta` 4×6 px (forma de la portada automática), ambas sin desenfoque al 45 % |
+| Capas | `--capa-montaje` 2 (título sobre collage), `--capa-cabecera` 5, `--capa-salto` 10 |
+| Puntos de corte (Sass) | `$bp-columnas` 700, `$bp-margen` 760, `$bp-diseno` 860, `$bp-nav` 960, `$bp-lectura` 1100 |
+
+**Criterio:** un valor se vuelve token cuando expresa un rol que se repite. Se
+quedan escritos a mano, a propósito:
+
+- los `clamp()` de títulos;
+- el montaje del título sobre el collage;
+- los porcentajes y la rotación de las portadas automáticas;
+- la inclinación de 1.2° de la banda «Del archivo»;
+- el desplazamiento de la segunda columna de «Más entradas».
+
+Son composición, no sistema. El movimiento (una transición de 0.4 s, solo con
+`prefers-reduced-motion: no-preference`) tampoco necesita token.
+
+**Temas.** La fuente única es [`_data/temas.yml`](../_data/temas.yml), con
+`clave`, `nombre`, `url` y `color` (un token de la paleta). De ahí salen:
+
+- la navegación (`nav-links.html`);
+- `cat-name.html` y `cat-url.html`;
+- los bloques de la home y los filtros del archivo;
+- el CSS: `--tema-{clave}` y la regla `.tema--{clave}, .tema-fondo--{clave}`,
+  que Liquid genera en `main.scss`.
+
+La descripción de cada tema sigue en el front matter de su página
+(`medicina.md`, etc.). Cada tema tiene además una **marca** SVG en
+`_includes/category-mark.html`:
 
 - medicina: pulso en círculo;
 - filosofía: tres nodos;
 - fe: cruz con arco;
 - proyectos: dos bloques;
 - el cuaderno, por defecto: una hoja.
+
+**Rótulo editorial.** Las versalitas espaciadas en Public Sans se escriben
+con el mixin `rotulo` de `main.scss`. Hay dos tamaños: el normal (eyebrows,
+kickers, «Anterior por fecha», «Siguiente parte de la serie») y el chico
+(«Entrar por tema», «En este texto», «Anotación»). El color es gris, salvo en
+el kicker de tema, que usa `--tema`. El numeral de sección de los `h2`
+(«01») no es un rótulo y se mantiene aparte.
 
 ### 5.2 Tipografía
 
@@ -232,7 +304,7 @@ Escala:
 | Titular de la portadilla | `clamp(1.6rem, 4.2vw, 2.6rem)`, con la cursiva en ámbar |
 | Entradilla (`.deck`) | Fraunces cursiva, `clamp(1.15rem, 2.4vw, 1.4rem)` en la apertura |
 | Cuerpo (`.prose`) | 1.125rem (1.1875rem desde 760 px), interlínea 1.72, medida de 40rem |
-| Kicker o eyebrow | 0.78rem, versalitas con espaciado de 0.14em |
+| Rótulo (eyebrow, kicker) | `--t-rotulo` 0.78rem o `--t-rotulo-chico` 0.72rem, versalitas, peso 600, espaciado 0.14em |
 
 ### 5.3 Jerarquía de la home (`_layouts/home.html`)
 
@@ -244,10 +316,36 @@ Escala:
 3. **También en el cuaderno:** una entrada grande con imagen `-h` y dos
    entradas solo de texto.
 4. **Del archivo:** una banda con la entrada **más antigua** que tenga
-   collage, sin contar la protagonista.
-5. **Más entradas:** tres columnas con imagen.
-6. **Cuatro líneas de trabajo:** un bloque por tema, con su cuenta y su
+   collage, sin contar la protagonista. La región se nombra con su kicker.
+5. **Más entradas:** tres columnas con imagen. Tiene un `h2` solo para
+   lectores de pantalla.
+6. **Los cuatro temas:** un bloque por tema, con su cuenta, su descripción y su
    última entrada.
+
+**Accesos repetidos a los temas.** Están en la cabecera, en «Entrar por tema»,
+en «Los cuatro temas» y en el tema de cada entrada. Se conservan porque cumplen
+funciones distintas:
+
+- la cabecera es la navegación global de todas las páginas, y en móvil está
+  plegada;
+- «Entrar por tema» es la puerta visible de la primera pantalla en móvil, con
+  la marca y la cuenta de cada tema;
+- «Los cuatro temas» explica cada tema con su descripción y su última entrada,
+  al final del recorrido;
+- el enlace de tema en la meta da contexto a cada entrada.
+
+Las cuatro usan el mismo término, «tema».
+
+**Imágenes de las tarjetas.** El enlace de la imagen tiene `tabindex="-1"` y
+`aria-hidden="true"`, y la imagen tiene `alt=""`: con el ratón se puede hacer
+clic en la imagen, y con teclado o tecnologías de apoyo hay un solo enlace
+(el título). El `collage_alt` se reserva para la apertura del artículo, donde
+el collage es contenido.
+
+**Pendiente (decisión de Carlos):** siete entradas tienen `featured: true`,
+pero ninguna plantilla lo usa. No está decidido si la home debe sugerir una
+primera lectura ni cuál. La banda «Del archivo» sigue mostrando la entrada más
+antigua con collage (sección 11).
 
 ### 5.4 Aperturas de artículos (`_layouts/post.html`)
 
@@ -288,34 +386,81 @@ Las genera `_includes/cover.html` cuando una entrada no tiene `collage`:
 
 ## 6. Lectura y navegación
 
-- **Índice:** `_includes/toc.html` lo arma con los `h2` cuando hay más de tres
-  secciones. En escritorio (≥ 1100 px) está abierto y en móvil, plegado.
-  `cuaderno.js` marca la sección actual.
+Comportamiento comprobado en la auditoría del 15 de noviembre de 2026
+([`docs/audits/`](audits/)).
+
+- **Menú móvil:** es un `<details>`.
+  - Se abre con Enter o Espacio sobre «Menú».
+  - Se cierra con Escape, y el foco vuelve a «Menú».
+  - También se cierra cuando el foco sale del menú y al tocar fuera. Así, el
+    foco nunca avanza detrás del panel.
+  - La página actual lleva `aria-current="page"` y un subrayado ámbar, igual
+    que en escritorio.
+- **Índice:** `_includes/toc.html` lo arma con los `h2` cuando hay **3 o más**.
+  - El `<details>` sale abierto en el HTML, así que sin JavaScript se ve
+    siempre.
+  - `cuaderno.js` lo pliega por debajo de 1100 px y lo vuelve a abrir al pasar
+    a escritorio. En escritorio, el `summary` se oculta solo cuando está
+    abierto.
+  - La sección actual lleva `aria-current="location"`, más color y subrayado.
 - **Notas y referencias:** se escriben como notas al pie de Markdown
-  (`[^id]`). `cuaderno.js` copia cada nota junto a su párrafo, en el margen en
-  escritorio y plegable bajo el número en móvil. Al final siguen las notas
-  completas.
-- **Tablas:** sin clases especiales. En pantallas estrechas se desplazan
-  dentro de su propio marco, de modo que la página nunca desborda.
-- **Anotaciones del autor:** un párrafo con `{: .anotacion}`, que se muestra
-  en cursiva con un filete ámbar.
-- **Archivo** (`/archivo/`): agrupado por año, con filtros de tema
-  (botones con `aria-pressed`).
+  (`[^id]`).
+  - La llamada `<sup id="fnref:…">` se conserva siempre. Es el destino de «↩»
+    («Volver al pasaje de la fuente N»).
+  - **Escritorio (≥ 1100 px):** el número es un enlace a «Fuentes». Al margen
+    aparece una copia visual de la nota, con `aria-hidden` y sus enlaces
+    fuera del orden de Tab, para no duplicar la lectura.
+  - **Móvil:** el número es un botón («Fuente N», con `aria-expanded`) que
+    despliega la nota bajo el párrafo. Su área táctil mide 24 × 24 px sin
+    cambiar el tamaño visual.
+  - **Sin JavaScript:** el enlace y «↩» funcionan igual.
+  - «Fuentes» es un `<h2>` real que agrega `post.html`. La misma plantilla
+    quita el rol obsoleto `doc-endnote` y pasa `doc-noteref` del `<sup>` al
+    enlace.
+- **Tablas:**
+  - Sin JavaScript, se desplazan dentro de su propio marco.
+  - Con JavaScript, `cuaderno.js` las envuelve en `.tabla-marco`. Cuando
+    desbordan, el marco recibe el foco (`tabindex="0"`), `role="region"` y un
+    nombre («Tabla N: título de la sección»), y se desplaza con las flechas.
+  - La tabla conserva `display: table`.
+- **Anotaciones del autor:** un párrafo con `{: .anotacion}`, en cursiva y con
+  un filete del color de anotación.
+- **Archivo** (`/archivo/`): agrupado por año, con filtros de tema (botones
+  con `aria-pressed`).
+  - Al filtrar, la entradilla visible pasa a «3 de 13 entradas · Medicina…».
+  - Una región `role="status"` anuncia el resultado.
+  - Sin JavaScript, los filtros no se muestran.
 - **Categorías:**
   - `/medicina/`, `/filosofia/`, `/fe_y_etica/` y `/proyectos/`, con la marca
     y la descripción de cada tema;
-  - las entradas usan `categories: [medicina|filosofia|fe|proyectos]`.
-- **Series:** se marcan con `serie` y `serie_parte`. La entrada lleva un aviso
-  bajo la entradilla y la lista de la serie al pie.
-- **Foco:** `:focus-visible` con un contorno ámbar de 2 px, desplazado 3 px.
-  Hay un enlace para saltar al contenido.
-- **Contraste:** todo el texto debe pasar 4.5:1 sobre su fondo (ver la
-  tabla 5.1). El desplazamiento suave solo se activa con
-  `prefers-reduced-motion: no-preference`.
-- **Texto alternativo:** cada `collage` lleva su `collage_alt`, que describe lo
-  que se ve. Las portadas automáticas son decorativas (`aria-hidden`).
+  - las entradas usan `categories: [medicina|filosofia|fe|proyectos]`
+    (claves de `_data/temas.yml`).
+- **Pie del artículo.** Tiene tres continuaciones distintas, en este orden:
+  1. **Serie** (`serie` y `serie_parte`):
+     - bloque con «Serie: nombre · parte N de M»;
+     - si existe, «Siguiente parte de la serie» destacada;
+     - la lista completa de partes.
 
----
+     El aviso bajo la entradilla («Parte N de M de la serie…») enlaza a ese
+     bloque.
+  2. **Lecturas relacionadas · Tema:** hasta tres entradas del mismo tema,
+     sin repetir las de la serie.
+  3. **Entradas vecinas por fecha:** «Anterior por fecha» y «Siguiente por
+     fecha».
+- **Encabezados:** `h1` es el título. Las secciones son `h2` (numeradas y en
+  el índice), y los niveles no se saltan. Los párrafos en negrita que hacen de
+  título no se convierten sin decisión de Carlos.
+- **Foco:** `:focus-visible` con un contorno de 2 px en `--color-foco`,
+  desplazado 3 px. Hay un enlace para saltar al contenido.
+- **Contraste:** todo el texto debe pasar 4.5:1 sobre su fondo (tabla 5.1). El
+  desplazamiento suave solo se activa con
+  `prefers-reduced-motion: no-preference`.
+- **Texto alternativo:** cada `collage` lleva su `collage_alt`, que describe
+  lo que se ve **e incluye las palabras recortadas en papel**. Las portadas
+  automáticas son decorativas (`aria-hidden`).
+- **Utilidad `.solo-lectores`:** texto disponible para lectores de pantalla y
+  oculto en pantalla. Por ejemplo, «entradas» junto a las cifras de «Entrar
+  por tema».
 
 ## 7. Producción de imágenes
 
@@ -401,7 +546,7 @@ sección cubre solo la parte técnica.
 1. Crea `_posts/AAAA-MM-DD-slug.md`, con la misma fecha en el nombre y en
    `date:`. Incluye `title`, `description` (una o dos frases) y `categories`.
    Los campos opcionales están en el [README](../README.md).
-2. Las secciones empiezan en `##`.
+2. Las secciones empiezan en `##`, y los niveles no se saltan (`##` → `###` → `####`).
 3. Las fuentes van como notas al pie.
 
 ### 8.2 ¿Collage propio o portada automática?
@@ -423,7 +568,7 @@ Para un collage nuevo:
    regístrala en `COLLAGES`.
 3. Corre `python3 _collage/componer.py nombre`.
 4. En el front matter, agrega `collage: nombre` y un `collage_alt` que
-   describa lo que se ve.
+   describa lo que se ve, incluidas las palabras que lleve la imagen.
 5. Registra la procedencia en `_collage/README.md` y en `creditos.md`.
 
 Para un fragmento nuevo:
@@ -454,7 +599,11 @@ Verificá además:
 - que todas las imágenes carguen (ninguna con `naturalWidth` 0);
 - que los enlaces internos respondan 200;
 - que el foco con teclado sea visible;
-- que el `collage_alt` exista;
+- que el `collage_alt` exista e incluya las palabras de la imagen;
+- con teclado: el menú móvil se cierra con Escape y no deja el foco detrás del
+  panel; en una entrada con notas, el número lleva a «Fuentes» y «↩» vuelve al
+  pasaje;
+- sin JavaScript: el índice se ve y no aparecen controles que no funcionan;
 - que no haya metadatos (sección 7.4).
 
 ---
@@ -518,6 +667,19 @@ autorizan a reutilizar sus obras. Revisadas en noviembre de 2026.
   - las propuestas de frases destacadas siguen sin decidir;
   - la cifra «89 % de las muestras» atribuida a Mezulis et al. (2004) no está
     verificada contra el artículo completo.
+
+- **Primera lectura en la home:** siete entradas tienen `featured: true`, pero
+  ninguna plantilla lo usa. Hay que decidir si la home sugiere una primera
+  lectura, cuál, y si `featured` es el mecanismo (sección 5.3).
+- **Párrafos en negrita usados como títulos** (por ejemplo, en «Anamnesis»:
+  «Importancia de la anamnesis clínica», «Descripción y elementos clave»). Se
+  podrían convertir en encabezados sin cambiar las palabras, pero no está
+  decidido.
+- **Nombre de «Proyectos»:** la página se titula «Proyectos personales» y el
+  resto del sitio dice «Proyectos». Hay que decidir si se unifican.
+- **Comprobaciones de accesibilidad que el entorno de agentes no permite:**
+  lector de pantalla, Safari y Firefox, dispositivos reales y alto contraste
+  (ver `docs/audits/`).
 
 **Ideas futuras (sin aprobar), a partir de fotos candidatas que no se usan
 todavía:**
