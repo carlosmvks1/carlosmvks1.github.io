@@ -6,6 +6,19 @@ layout: default
 {%- unless page.collage -%}{%- assign apertura = 'sencilla' -%}{%- endunless -%}
 {%- if page.apertura == 'guia' -%}{%- assign apertura = 'guia' -%}{%- endif -%}
 {%- capture toc -%}{% include toc.html html=content %}{%- endcapture -%}
+{%- comment -%}
+Notas al pie de kramdown: título «Fuentes» como encabezado real, sin el rol
+obsoleto doc-endnote, con doc-noteref en el enlace (no en <sup>) y con un nombre claro para el enlace de regreso.
+{%- endcomment -%}
+{%- assign cuerpo = content | replace: '<div class="footnotes" role="doc-endnotes">', '<div class="footnotes" role="doc-endnotes"><h2 class="fuentes-titulo" id="fuentes">Fuentes</h2>' | replace: ' role="doc-endnote"', '' | replace: ' role="doc-noteref"><a ', '><a role="doc-noteref" ' | replace: 'role="doc-backlink">', 'role="doc-backlink" aria-label="Volver al pasaje">' -%}
+{%- if page.serie -%}
+  {%- assign serie_posts = site.posts | where: "serie", page.serie | sort: "serie_parte" -%}
+  {%- assign serie_siguiente = nil -%}
+  {%- assign parte_siguiente = page.serie_parte | plus: 1 -%}
+  {%- for s in serie_posts -%}
+    {%- if s.serie_parte == parte_siguiente -%}{%- assign serie_siguiente = s -%}{%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
 
 <article class="articulo articulo--{{ apertura }} tema--{{ cat }}">
   <header class="apertura">
@@ -18,7 +31,7 @@ layout: default
         <p class="deck">{{ deck }}</p>
         {%- endif %}
         {%- if page.serie %}
-        <p class="serie-aviso">Parte {{ page.serie_parte }} de la serie <em>{{ page.serie }}</em></p>
+        <p class="serie-aviso">Parte {{ page.serie_parte }} de {{ serie_posts.size }} de la serie <a href="#serie"><em>{{ page.serie }}</em></a></p>
         {%- endif %}
       </div>
       {%- if page.collage %}
@@ -32,24 +45,32 @@ layout: default
 
   <div class="shell lectura{% if toc != '' %} lectura--con-indice{% endif %}">
     {%- if toc != '' %}
-    <aside class="lectura-indice">
-      <details class="toc-movil">
+    <div class="lectura-indice">
+      <details class="toc-movil" open>
         <summary>Índice</summary>
         {{ toc }}
       </details>
-    </aside>
+    </div>
     {%- endif %}
 
     <div class="prose">
-      {{ content }}
+      {{ cuerpo }}
     </div>
   </div>
 
   <footer class="articulo-pie shell">
+    {%- comment -%}
+    Tres continuaciones distintas, en orden de prioridad:
+    1. la siguiente parte de la serie (si la hay);
+    2. lecturas relacionadas del mismo tema, sin repetir la serie;
+    3. las entradas vecinas por fecha de publicación.
+    {%- endcomment -%}
     {%- if page.serie %}
-      {%- assign serie_posts = site.posts | where: "serie", page.serie | sort: "serie_parte" -%}
-      <nav class="serie" aria-labelledby="serie-titulo">
-        <p class="kicker" id="serie-titulo">Serie: {{ page.serie }}</p>
+      <nav class="serie" id="serie" aria-labelledby="serie-titulo">
+        <h2 class="kicker" id="serie-titulo">Serie: {{ page.serie }} · parte {{ page.serie_parte }} de {{ serie_posts.size }}</h2>
+        {%- if serie_siguiente %}
+        <a class="serie-siguiente" href="{{ serie_siguiente.url | relative_url }}"><span>Siguiente parte de la serie</span>{{ serie_siguiente.title }}</a>
+        {%- endif %}
         <ol>
           {%- for s in serie_posts %}
           <li>{% if s.url == page.url %}<span aria-current="page">{{ s.title }}</span>{% else %}<a href="{{ s.url | relative_url }}">{{ s.title }}</a>{% endif %}</li>
@@ -59,13 +80,14 @@ layout: default
     {%- endif %}
 
     {%- assign relacionadas = site.posts | where_exp: "p", "p.categories contains cat" | where_exp: "p", "p.url != page.url" -%}
+    {%- if page.serie -%}{%- assign relacionadas = relacionadas | where_exp: "p", "p.serie != page.serie" -%}{%- endif -%}
     {%- if relacionadas.size > 0 %}
     <section class="relacionadas" aria-labelledby="relacionadas-titulo">
-      <h2 id="relacionadas-titulo" class="kicker">Para seguir leyendo</h2>
+      <h2 id="relacionadas-titulo" class="kicker">Lecturas relacionadas · {% include cat-name.html cat=cat %}</h2>
       <div class="relacionadas-grid">
         {%- for post in relacionadas limit:3 %}
         <article class="entrada entrada--columna tema--{{ cat }}">
-          <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1">{% include cover.html post=post format="h" alt=post.collage_alt %}</a>
+          <a class="entrada-imagen" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">{% include cover.html post=post format="h" %}</a>
           {% include meta.html post=post %}
           <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         </article>
@@ -74,12 +96,12 @@ layout: default
     </section>
     {%- endif %}
 
-    <nav class="adyacentes" aria-label="Entradas anterior y siguiente">
+    <nav class="adyacentes" aria-label="Entradas vecinas por fecha">
       {%- if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}"><span>Anterior</span>{{ page.previous.title }}</a>
+      <a href="{{ page.previous.url | relative_url }}"><span>Anterior por fecha</span>{{ page.previous.title }}</a>
       {%- endif %}
       {%- if page.next %}
-      <a class="siguiente" href="{{ page.next.url | relative_url }}"><span>Siguiente</span>{{ page.next.title }}</a>
+      <a class="siguiente" href="{{ page.next.url | relative_url }}"><span>Siguiente por fecha</span>{{ page.next.title }}</a>
       {%- endif %}
     </nav>
   </footer>

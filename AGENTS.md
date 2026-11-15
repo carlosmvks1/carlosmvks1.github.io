@@ -27,6 +27,9 @@ redactar o editar artículos.
 - Paleta, tipografías (solo Fraunces y Public Sans) y tokens: los de
   `assets/main.scss`, documentados en la guía. No agregues familias ni
   colores nuevos sin decisión de Carlos.
+- Los componentes usan los tokens de función (`--color-*`, `--tema`), no la
+  paleta directamente. Los temas (nombre, URL y color) se definen solo en
+  `_data/temas.yml`.
 
 ## Collages
 
@@ -67,6 +70,9 @@ redactar o editar artículos.
   repositorio.
 - Las fotos de «fotos blog» se pueden publicar cuando encajen con el
   contenido y la composición.
+- **Portada** (15/11/2026): la jerarquía de `docs/visual-system.md` §5.3, con
+  tres entradas recientes. La foto que se repite entre la portada automática
+  de «La Ontología del Ser Necesario» y el collage del TDAH puede quedarse.
 
 Lo que no figure en esta lista no está aprobado. Los pendientes están en la
 sección 11 de la guía.

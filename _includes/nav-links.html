@@ -1,6 +1,6 @@
-{%- assign nav = "medicina:Medicina,filosofia:Filosofía,fe_y_etica:Fe y ética,proyectos:Proyectos,archivo:Archivo,sobre-mi:Sobre mí" | split: "," -%}
-{%- for item in nav -%}
-  {%- assign parts = item | split: ":" -%}
-  {%- assign href = '/' | append: parts[0] | append: '/' -%}
-  <a class="nav-{{ parts[0] }}" href="{{ href | relative_url }}"{% if page.url == href %} aria-current="page"{% endif %}>{{ parts[1] }}</a>
+{%- comment -%} Temas (desde _data/temas.yml), archivo y «Sobre mí». {%- endcomment -%}
+{%- for t in site.data.temas -%}
+  <a class="nav-{{ t.clave }}" href="{{ t.url | relative_url }}"{% if page.url == t.url %} aria-current="page"{% endif %}>{{ t.nombre }}</a>
 {%- endfor -%}
+<a class="nav-archivo" href="{{ '/archivo/' | relative_url }}"{% if page.url == '/archivo/' %} aria-current="page"{% endif %}>Archivo</a>
+<a class="nav-sobre-mi" href="{{ '/sobre-mi/' | relative_url }}"{% if page.url == '/sobre-mi/' %} aria-current="page"{% endif %}>Sobre mí</a>

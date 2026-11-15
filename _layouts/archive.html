@@ -5,16 +5,17 @@ layout: default
   <header class="pagina-cabeza">
     <p class="eyebrow">Índice</p>
     <h1>{{ page.title }}</h1>
-    <p class="deck">{{ site.posts.size }} entradas, de la más reciente a la más antigua.</p>
+    <p class="deck" id="archivo-cuenta" data-total="{{ site.posts.size }}">{{ site.posts.size }} entradas, de la más reciente a la más antigua.</p>
   </header>
 
   <div class="filtros" role="group" aria-label="Filtrar por tema" hidden>
     <button type="button" aria-pressed="true" data-filtro="todos">Todos</button>
-    {%- assign temas = "medicina,filosofia,fe,proyectos" | split: "," -%}
-    {%- for t in temas %}
-    <button type="button" aria-pressed="false" data-filtro="{{ t }}" class="tema--{{ t }}">{% include cat-name.html cat=t %}</button>
+    {%- for t in site.data.temas %}
+    <button type="button" aria-pressed="false" data-filtro="{{ t.clave }}" data-nombre="{{ t.nombre }}" class="tema--{{ t.clave }}">{{ t.nombre }}</button>
     {%- endfor %}
   </div>
+
+  <p class="solo-lectores" role="status" id="archivo-estado"></p>
 
   {% include archive-list.html posts=site.posts %}
 </section>

@@ -16,7 +16,7 @@ La forma en que entendemos la salud está profundamente influida por nuestras ci
 
 Con esa visión en mente, que la anamnesis es tanto técnica como vínculo humano, comparto aquí una guía estructurada que puede ayudar a estudiantes a dominar los elementos clínicos sin perder de vista la dimensión ética y empática del acto médico.
 
-### Reglas de oro
+## Reglas de oro
 
 Aunque hay que ser humanos por intención, también hay que ser precisos por responsabilidad. La historia clínica no es únicamente un texto: es un documento médico legal, social, económico, etc. Además de un registro clínico que refleja el quehacer profesional. Por eso, estas reglas no son negociables:
 
@@ -41,7 +41,7 @@ Un formato detallado de historia clínica incluye varios apartados que el estudi
 
 ---
 
-#### Apartado de la historia clínica
+### Apartado de la historia clínica
 
 **Descripción y elementos clave**
 
@@ -57,7 +57,7 @@ Un formato detallado de historia clínica incluye varios apartados que el estudi
 | **Antecedentes familiares** | Historia médica relevante de familiares cercanos (padres, abuelos, hermanos), especialmente enfermedades hereditarias o ambientales. También se exploran causas de fallecimiento. |
 | **Antecedentes personales no patológicos** | Hábitos de vida y entorno: tipo de vivienda, ocupación, estilo de vida, alimentación, sustancias psicoactivas, nivel educativo, religión, idioma, creencias. |
 
-#### Motivo de consulta vs. Síntoma principal (la diferencia que más te evalúan)
+### Motivo de consulta vs. Síntoma principal (la diferencia que más te evalúan)
 
 **Motivo de consulta (MC):** lo que el paciente dice que lo trae: es el **único** apartado que puede ir en **léxico del paciente** y debe ir **entre comillas**.
 
@@ -69,7 +69,7 @@ Un formato detallado de historia clínica incluye varios apartados que el estudi
 
 ---
 
-#### HEA (HPI) ejemplo
+### HEA (HPI) ejemplo
 Paciente masculino de 9 años con 24 horas de evolución de dolor abdominal de localización difusa ("en todo el abdomen"), sin irradiación. Describe el dolor como urente, de intensidad 7/10 (ENV), con alivio parcial con el reposo y exacerbaciones, que aumenta con la ingesta de alimentos y con la marcha. Niega distensión abdominal; niega evacuación de sangre; niega antecedente de trauma abdominal.
 
 A las 2 horas del inicio del dolor abdominal comienza con vómitos, presentando 15 episodios en el transcurso de aproximadamente 22 horas, con mayor intensidad durante las primeras 6 horas (1 episodio cada 30–60 min) y posteriormente con disminución relativa (3 episodios en las últimas 6 horas). Los vómitos fueron inicialmente de contenido alimentario y luego de contenido acuoso amarillento, sin sangre, asociados a intolerancia a la vía oral. Niega vómito biliar; niega hematemesis; niega cefalea intensa. La madre administró un antiemético no especificado, sin mejoría.
@@ -78,7 +78,7 @@ En el transcurso del día presenta diarrea líquida en 2 episodios, sin sangre n
 
 ---
 
-#### FOG: se redacta comparando “antes vs durante”
+### FOG: se redacta comparando “antes vs durante”
 
 
 Formato recomendado:
@@ -89,7 +89,7 @@ Formato recomendado:
 - Defecación: antes ___ / durante ___ / Relación ___
 ---
 
-#### IOAS
+### IOAS
 IOAS sirve para **capturar síntomas no mencionados** y complementar la HEA. Dos reglas:
 
 - Si es **negativo**, se anota corto.
@@ -116,40 +116,40 @@ Para lograr una buena narrativa se puede recurrir a herramientas mnemotécnicas 
 
 ---
 
-#### Crear un ambiente adecuado
+### Crear un ambiente adecuado
 Iniciar la aproximación al paciente presentándose, explicando el propósito de la entrevista y asegurando privacidad y confidencialidad. Una postura atenta, tono de voz calmado y contacto visual adecuado ayudan a generar confianza. Desde el comienzo se debe establecer rapport (una conexión) con el paciente [6].
 
 ---
 
-#### Escucha activa
+### Escucha activa
 Implica prestar atención genuina al relato del paciente, sin interrupciones prematuras. Se debe evitar interrumpir constantemente y demostrar que escucha con verbalizaciones de refuerzo (ej. “entiendo”, “ajá”) y lenguaje corporal afirmativo (asentir con la cabeza, inclinarse ligeramente hacia el paciente).
 
 La escucha activa es una habilidad fundamental que se mejora con la práctica deliberada y consiste en recibir la información y retroalimentar al interlocutor para asegurar la comprensión mutua [7]. Por ejemplo, tras un relato complejo, usted puede resumir (“Entonces, para resumir, usted ha tenido fiebre y tos desde hace 3 días, ¿Verdad?”) para verificar que interpretó bien los datos, esta técnica de resumir y reflejar es parte de la escucha activa.
 
 ---
 
-#### Empatía y respeto
+### Empatía y respeto
 Tener empatía es aprender a ponerse en el lugar del paciente y reconocer sus emociones. Es útil utilizar frases empáticas (“Me imagino que esto debe ser muy difícil para usted”, “Entiendo su preocupación”) que validen los sentimientos del paciente. La empatía mejora la comunicación y está asociada a mejores resultados: ayuda a construir confianza, aumenta la satisfacción del paciente e incluso mejora la adhesión al tratamiento [8]. Se deben practicar habilidades como aceptar silencios (dar tiempo al paciente para expresarse), mostrar calidez y evitar juicios durante la entrevista.
 
 Pequeños hábitos marcan la diferencia: mantener el contacto visual, hacer preguntas abiertas, confirmar la comprensión y no apresurar al paciente son todas conductas propias de un clínico empático.
 
 ---
 
-#### Preguntas abiertas y dirigidas
+### Preguntas abiertas y dirigidas
 Iniciar con lo general y luego ir avanzando hacia lo específico. Se recomienda usar preguntas abiertas (“¿Qué le trae a consulta?” “¿Cómo ha sido eso para usted?”) que permiten al paciente dar su propio relato sin coacción. Posteriormente, el entrevistador puede hacer preguntas más específicas o dirigidas para aclarar detalles (“¿Cuántos episodios de diarrea tuvo ayer?”). Esta técnica de inicio amplio y luego enfoque concreto asegura que primero se escuche la perspectiva del paciente antes de profundizar en datos puntuales.
 
 También se deben evitar preguntas capciosas o enredadas; en su lugar, usar lenguaje claro y comprensible para el nivel sociocultural del paciente.
 
 ---
 
-#### Organización y transición
+### Organización y transición
 Aprender a organizar su entrevista en secciones (primero motivo de consulta, luego HPI, etc.) pero de forma flexible. Deben saber hacer transiciones claras de un tema a otro: por ejemplo, al terminar de indagar la enfermedad actual, pueden decir “Ahora me gustaría preguntarle sobre otros aspectos de su salud, como sus antecedentes médicos”, facilitando el cambio de tema sin brusquedad.
 
 Usar el propio formato de la historia clínica como guía mental ayuda a no olvidar apartados (motivo, síntomas, revisión por sistemas, antecedentes, etc.), pero siempre adaptándose a la situación.
 
 ---
 
-#### Comunicación no verbal y lenguaje claro
+### Comunicación no verbal y lenguaje claro
 Debemos ser conscientes de nuestra comunicación no verbal. Un gesto de desagrado o mirar el reloj puede inhibir al paciente. Se debe mantener una postura abierta, mirar al paciente (sin quedarse pegado al formulario), y mostrar interés.
 
 Asimismo, emplear un lenguaje sencillo y claro, evitando jerga médica o explicándola cuando sea necesario, mejora la comprensión. Por ejemplo: en lugar de preguntar “¿Tiene disnea decúbito?” es mejor preguntar “¿Le falta el aire al acostarse?”.
@@ -158,7 +158,7 @@ La culturalización y sensibilidad también son parte de la buena práctica: con
 
 ---
 
-#### Empoderamiento y cierre
+### Empoderamiento y cierre
 Hacia el final de la anamnesis, es útil invitar al paciente a aclarar dudas (“¿Hay algo más importante que cree que deba saber?”). Esto asegura que el paciente sienta que ha sido escuchado completamente. Finalmente, resumir los hallazgos principales al paciente y agradecer su colaboración cierra la entrevista de manera positiva. Esta recapitulación final demuestra que el entrevistador entendió la historia y brinda al paciente la oportunidad de corregir o agregar información.
 
 ---
@@ -190,16 +190,16 @@ Existen otros varios textos en español (ej. Propedéutica y Semiología Clínic
 
 ## Errores que me enseñaron a escuchar mejor
 
-#### 1. Interrumpir demasiado pronto:
+### 1. Interrumpir demasiado pronto:
 Cuando el paciente dudaba, yo me apuraba a completar su frase, pensando que eso mostraba interés. Pero aprendí algo muy importante: el silencio no es vacío, es pausa. El paciente necesita tiempo para armar lo que quiere decir. Interrumpirlo es sacarlo de su hilo.
 
-#### 2. Convertir la entrevista en un interrogatorio:
+### 2. Convertir la entrevista en un interrogatorio:
 Mi primera entrevista fue a un muchacho con apendicitis. Recuerdo que esa vez le pregunté por los síntomas como si fueran casillas en una lista del supermercado. Al final, tenía todos los datos… pero no tenía la historia. Supe entonces que la anamnesis no es solo lo que se pregunta, sino cómo se pregunta.
 
-#### 3. Aferrarme al formato y olvidar la conversación:
+### 3. Aferrarme al formato y olvidar la conversación:
 Al principio quería hacerlo todo “como se debía”. Me aferraba al formato de historia clínica como si fuera una receta exacta, y cuando el paciente se salía del orden que tenía en mente, me desubicaba. Sentía que estaba fallando. Pero con el tiempo entendí que el formato está para guiarnos, no para encarcelarnos. Hacer una buena anamnesis no es seguir una lista, es saber adaptarse. Es encontrar un punto medio entre lo que necesito saber… y lo que el paciente necesita decir.
 
-#### 4. Olvidar que el paciente también tiene miedo:
+### 4. Olvidar que el paciente también tiene miedo:
 Una vez entrevisté a la madre de un adolescente ingresado en medicina pediátrica. Al principio, se veía bien seria, distante. Pero al acercarme con amabilidad, hablarle con respeto, sin prisa. Para mi sorpresa, al poco rato estaba bromeando conmigo. Su hijo tenía una esporotricosis: Una herida pequeña en un dedo le había comprometido todo el brazo. Ella no estaba molesta conmigo. Estaba asustada. Y si no hubiese superado mi propio temor de acercarme, nunca habría aprendido su historia, ni lo que ella necesitaba.
 
 ---
