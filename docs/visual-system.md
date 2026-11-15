@@ -156,6 +156,9 @@ Los fragmentos miden como máximo 900 px y tienen anchos de 640 y 480.
   encajen con el contenido y la composición. Esto incluye subir al
   repositorio los derivados que el blog necesite, sin metadatos privados.
 - Los originales de Drive no se borran ni se modifican.
+- **Portada** (15/11/2026): la jerarquía de la sección 5.3, con tres entradas
+  recientes. La foto repetida entre la portada automática de «La Ontología
+  del Ser Necesario» y el collage del TDAH puede quedarse.
 
 ### 4.2 Uso actual de fotos propias
 
@@ -692,10 +695,6 @@ autorizan a reutilizar sus obras. Revisadas en noviembre de 2026.
   «Importancia de la anamnesis clínica», «Descripción y elementos clave»). Se
   podrían convertir en encabezados sin cambiar las palabras, pero no está
   decidido.
-- **Fragmento repetido en la home:** la portada automática de «La Ontología
-  del Ser Necesario» usa `escalinata`, la misma foto que el collage del TDAH,
-  y las dos se ven en la home. Opciones: aceptarlo, fijar otro `fragmento:` a
-  esa entrada o cambiar la regla de «Del archivo».
 - **Nombre de «Proyectos»:** la página se titula «Proyectos personales» y el
   resto del sitio dice «Proyectos». Hay que decidir si se unifican.
 - **Comprobaciones de accesibilidad que el entorno de agentes no permite:**
