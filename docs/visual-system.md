@@ -394,6 +394,10 @@ print(bad or 'sin metadatos'); sys.exit(bool(bad))"
 
 ### 8.1 Añadir un artículo
 
+La escritura, la estructura y las fuentes del texto se tratan en
+[`editorial-system.md`](editorial-system.md) (en prueba). Esta
+sección cubre solo la parte técnica.
+
 1. Crea `_posts/AAAA-MM-DD-slug.md`, con la misma fecha en el nombre y en
    `date:`. Incluye `title`, `description` (una o dos frases) y `categories`.
    Los campos opcionales están en el [README](../README.md).
