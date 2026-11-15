@@ -1,7 +1,8 @@
 # Sistema editorial de El cuaderno
 
-**Estado: propuesta pendiente de revisión por Carlos.** Nada de lo que aquí se
-marca como *Propuesta* es una regla aprobada. Las decisiones que Carlos ya tomó
+**Estado: integrado con aprobación de Carlos (noviembre de 2026), en prueba.**
+Integrar la guía no aprueba cada recomendación: nada de lo que aquí se marca
+como *Propuesta* es una regla obligatoria. Las decisiones que Carlos ya tomó
 están marcadas como **[Carlos]** y registradas en la sección 7. Se basa en el
 análisis de las 13 entradas publicadas: [`editorial-analysis.md`](editorial-analysis.md). Ahí
 están la evidencia y los ejemplos completos; esta guía remite a sus secciones
@@ -626,5 +627,7 @@ Respuestas de Carlos a la primera versión de esta guía (14 de noviembre de
    - El sistema no se amplía por ahora: se probará con el próximo artículo y
      se ajustará según los problemas reales que aparezcan.
 
-**Sigue pendiente:** la revisión general de este documento por Carlos. Hasta
-entonces, lo marcado como **[Propuesta]** es sugerencia.
+Carlos aprobó integrar esta guía en noviembre de 2026. Eso no convierte las
+recomendaciones en reglas: lo marcado como **[Propuesta]** sigue siendo
+sugerencia hasta que él lo decida. La guía se probará con el próximo artículo
+y se ajustará según los problemas reales que aparezcan.

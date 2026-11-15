@@ -1,6 +1,6 @@
 # Análisis editorial de El cuaderno
 
-**Estado: propuesta pendiente de revisión por Carlos.** Este documento
+**Estado: integrado con aprobación de Carlos (noviembre de 2026).** Este documento
 describe cómo están escritas las entradas publicadas. Las interpretaciones y
 recomendaciones son del análisis, no decisiones aprobadas. La guía práctica que
 se desprende de aquí está en [`editorial-system.md`](editorial-system.md).

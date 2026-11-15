@@ -9,7 +9,7 @@ Leela antes de tocar el diseño, los collages o las imágenes. Estas son las
 reglas esenciales. Si algo cambia en el código, actualizá esa guía en el
 mismo cambio.
 
-**Sistema editorial (propuesta pendiente de revisión de Carlos):**
+**Sistema editorial (integrado; solo es obligatorio lo marcado como [Vigente] o [Carlos]):**
 [`docs/editorial-system.md`](docs/editorial-system.md), con su análisis en
 [`docs/editorial-analysis.md`](docs/editorial-analysis.md). Leelo antes de
 redactar o editar artículos.

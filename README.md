@@ -3,8 +3,7 @@
 Blog personal de Carlos Reyes sobre medicina, filosofía, fe y ética. Publicado con Jekyll en GitHub Pages: https://carlosmvks1.github.io
 
 Sistema visual e instrucciones para agentes: [`AGENTS.md`](AGENTS.md) y
-[`docs/visual-system.md`](docs/visual-system.md). Sistema editorial (propuesta
-en revisión): [`docs/editorial-system.md`](docs/editorial-system.md).
+[`docs/visual-system.md`](docs/visual-system.md). Sistema editorial (en prueba): [`docs/editorial-system.md`](docs/editorial-system.md).
 
 ## Escribir una entrada
 
